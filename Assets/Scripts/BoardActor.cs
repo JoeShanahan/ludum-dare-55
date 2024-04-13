@@ -33,13 +33,12 @@ namespace LudumDare55
 
         protected void DoMove(Vector3 direction, float time)
         {
+            if (IsRight == false)
+                direction.x = -direction.x;
+            
             Vector3 newPos = transform.localPosition + direction;
             newPos.x = Mathf.RoundToInt(newPos.x);
             newPos.y = Mathf.RoundToInt(newPos.y);
-            newPos.z = transform.localPosition.z;
-
-            if (IsRight == false)
-                newPos.x = -newPos.x;
             
             transform.DOLocalMoveX(newPos.x, time).SetEase(Ease.Linear);
             transform.DOLocalMoveY(newPos.y, time).SetEase(Ease.Linear);

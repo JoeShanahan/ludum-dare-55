@@ -95,6 +95,8 @@ namespace LudumDare55
             PlayerAvatar.SetSprite(_leftPlayerSprite, true);
             OpponentAvatar.SetSprite(_rightPlayerSprite, false);
             
+            OpponentAvatar.EnableAI(this);
+            
             _allActors.Add(PlayerAvatar);
             _allActors.Add(OpponentAvatar);
             

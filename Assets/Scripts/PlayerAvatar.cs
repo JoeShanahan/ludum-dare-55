@@ -1,12 +1,21 @@
-using UnityEngine;
+using System.Numerics;
 using DG.Tweening;
+using Vector3 = UnityEngine.Vector3;
 
 namespace LudumDare55
 {
     public class PlayerAvatar : BoardActor
     {
         private Vector3 _desiredDirection;
-
+        private bool _isAi;
+        private BoardController _board;
+        
+        public void EnableAI(BoardController board)
+        {
+            _isAi = true;
+            _board = board;
+        }
+        
         public void SetDesiredDirection(Vector3 dir)
         {
             _desiredDirection = dir;
@@ -25,6 +34,9 @@ namespace LudumDare55
         
         public override void DoAction(float time)
         {
+            if (_isAi)
+                DetermineAIAction();
+            
             if (_desiredDirection.magnitude > 0)
             {
                 DoMove(_desiredDirection, time);
@@ -34,6 +46,23 @@ namespace LudumDare55
             {
                 SkipTurnAnimation(time);
             }
+        }
+
+        private bool _isMovingUp = true;
+
+        private void DetermineAIAction()
+        {
+            Vector3 newPos = transform.localPosition;
+            newPos += _isMovingUp ? Vector3.up : Vector3.down;
+
+            if (_board.IsSpaceValid(newPos) == false)
+            {
+                _isMovingUp = !_isMovingUp;
+                newPos = transform.localPosition;
+                newPos += _isMovingUp ? Vector3.up : Vector3.down;
+            }
+
+            _desiredDirection = newPos - transform.localPosition;
         }
         
         private void SkipTurnAnimation(float time)
