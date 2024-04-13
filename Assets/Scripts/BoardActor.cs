@@ -25,7 +25,7 @@ namespace LudumDare55
             _renderer.sprite = sprite;
             _renderer.flipX = isRight == false;
         }
-
+        
         public virtual void DoAction(float time)
         {
             

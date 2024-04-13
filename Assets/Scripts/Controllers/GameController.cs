@@ -9,6 +9,7 @@ namespace LudumDare55
         [SerializeField] private BoardController _board;
         [SerializeField] private float _moveTime = 0.5f;
         [SerializeField] private BookData _playerChosenBook;
+        [SerializeField] private BookData _opponentBook;
         
         private InputSystem_Actions _input;
         private bool _isMoving;
@@ -20,8 +21,16 @@ namespace LudumDare55
 
             _input.Player.Summon.performed += OnSummonPressed;
             _input.Player.SkipMove.performed += OnSkipPressed;
+            
+            Application.targetFrameRate = 60;
+            StartGame();
         }
 
+        private void StartGame()
+        {
+            _board.InitBoard(9, 5, _playerChosenBook, _opponentBook);
+        }
+        
         private void OnSummonPressed(InputAction.CallbackContext ctx)
         {
             if (_isMoving)

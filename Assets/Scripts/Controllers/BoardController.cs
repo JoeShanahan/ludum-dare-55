@@ -64,8 +64,15 @@ namespace LudumDare55
             summon.SetSummonData(data, avatar.IsRight);
             _allActors.Add(summon);
         }
+
+        public void InitBoard(int width, int height, BookData playerBook, BookData NpcBook)
+        {
+            CreateBoard(width, height);
+            PlayerAvatar.SetBook(playerBook);
+            OpponentAvatar.SetBook(NpcBook);
+        }
         
-        public void CreateBoard(int width, int height)
+        private void CreateBoard(int width, int height)
         {
             _allActors = new List<BoardActor>();
             _width = width;
@@ -103,13 +110,6 @@ namespace LudumDare55
             transform.position = new Vector3((1 - width) / 2f, (1 - height) / 2f, 0);
         }
         
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-            Application.targetFrameRate = 60;
-            CreateBoard(9, 5);
-        }
-
         // Update is called once per frame
         void Update()
         {

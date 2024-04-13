@@ -6,6 +6,8 @@ namespace LudumDare55
 {
     public class PlayerAvatar : BoardActor
     {
+        public BookData Book { get; private set; }
+        
         private Vector3 _desiredDirection;
         private bool _isAi;
         private BoardController _board;
@@ -47,7 +49,14 @@ namespace LudumDare55
                 SkipTurnAnimation(time);
             }
         }
+        
+        // TODO this shouldn't live on the Avatar, but a separate player object somewhere
+        public void SetBook(BookData book)
+        {
+            Book = book;
+        }
 
+        
         private bool _isMovingUp = true;
 
         private void DetermineAIAction()
