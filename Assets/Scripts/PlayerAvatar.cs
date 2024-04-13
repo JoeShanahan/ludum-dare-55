@@ -1,5 +1,6 @@
 using System.Numerics;
 using DG.Tweening;
+using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
 namespace LudumDare55
@@ -37,7 +38,8 @@ namespace LudumDare55
 
         public void OnMoveComplete()
         {
-            TrySummon();
+            if (Mathf.RoundToInt(transform.localPosition.y) == 4)
+                TrySummon();
         }
         
         public Vector3 SummonPosition
@@ -53,18 +55,8 @@ namespace LudumDare55
         
         public override void DoAction(float time)
         {
-            if (_isAi)
-                DetermineAIAction();
-            
-            if (_desiredDirection.magnitude > 0)
-            {
-                DoMove(_desiredDirection, time);
-                _desiredDirection = Vector3.zero;
-            }
-            else
-            {
-                SkipTurnAnimation(time);
-            }
+            base.DoAction(time);
+            _desiredDirection = Vector3.zero;
         }
         
         // TODO this shouldn't live on the Avatar, but a separate player object somewhere
@@ -91,10 +83,25 @@ namespace LudumDare55
             _desiredDirection = newPos - transform.localPosition;
         }
         
-        private void SkipTurnAnimation(float time)
+        
+        public override void CommitToAction()
         {
-            transform.DOScale(new Vector3(1.2f, 0.8f, 1f), time / 2f).SetEase(Ease.OutSine);
-            transform.DOScale(Vector3.one, time / 2f).SetDelay(time / 2f).SetEase(Ease.InSine);
+            // Probably could be simplified
+            if (_isAi)
+                DetermineAIAction();
+
+            if (_desiredDirection == Vector3.zero)
+            {
+                NextAction = SummonAction.Wait;
+                NextDirection = Vector2Int.zero;
+                NextPosition = GridPosition;
+            }
+            else
+            {
+                NextAction = SummonAction.Move;
+                NextDirection = Vector2Int.RoundToInt(_desiredDirection);
+                NextPosition = GridPosition + NextDirection;
+            }
         }
     }
 }

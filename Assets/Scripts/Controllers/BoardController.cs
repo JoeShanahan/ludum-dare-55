@@ -50,6 +50,13 @@ namespace LudumDare55
         {
             foreach (BoardActor actor in _allActors)
             {
+                actor.CommitToAction();
+            }
+
+            ResolveCollisions();
+            
+            foreach (BoardActor actor in _allActors)
+            {
                 // TODO just prepare to do the action, because it might have to change if there are collisions
                 actor.DoAction(moveTime);
             }
@@ -116,6 +123,55 @@ namespace LudumDare55
         public void OnMoveComplete()
         {
             OpponentAvatar.OnMoveComplete();
+        }
+
+        private void ResolveCollisions()
+        {
+            ResolveDirectBumps();
+            ResolveSpaceDispute();
+        }
+
+        // For times when two actors are standing face to face and both trying to move forwards
+        private void ResolveDirectBumps()
+        {
+            foreach (BoardActor actorA in _allActors)
+            {
+                foreach (BoardActor actorB in _allActors)
+                {
+                    if (actorA == actorB)
+                        continue;
+
+                    bool bothMoving = actorA.NextAction == SummonAction.Move && actorB.NextAction == SummonAction.Move;
+                    bool AtoB = actorA.NextPosition == actorB.GridPosition;
+                    bool BtoA = actorB.NextPosition == actorA.GridPosition;
+
+                    if (bothMoving && AtoB && BtoA)
+                    {
+                        Debug.Log("Direct Bump Detected!");
+                    }
+                }
+            }
+        }
+        
+        // For times when two actors are standing one tile apart and both trying to go for the same tile
+        private void ResolveSpaceDispute()
+        {
+            foreach (BoardActor actorA in _allActors)
+            {
+                foreach (BoardActor actorB in _allActors)
+                {
+                    if (actorA == actorB)
+                        continue;
+
+                    bool bothMoving = actorA.NextAction == SummonAction.Move && actorB.NextAction == SummonAction.Move;
+                    bool bothSamePos = actorA.NextPosition == actorB.NextPosition;
+
+                    if (bothMoving && bothSamePos)
+                    {
+                        Debug.Log("Space dispute Detected!");
+                    }
+                }
+            }
         }
         
         // Update is called once per frame

@@ -19,22 +19,28 @@ namespace LudumDare55
  
         public override void DoAction(float time)
         {
+            base.DoAction(time);
+            // Make sure it wraps back round to 0
+            _queueIdx = (_queueIdx + 1) % _actionQueue.Count;
+        }
+
+        public override void CommitToAction()
+        {
             if (_data.ActionQueue.Count == 0)
                 return;
-            
-            SummonAction currentAction = _data.ActionQueue[_queueIdx];
 
-            if (currentAction == SummonAction.Move)
-            {
-                DoMove(Vector3.right, time);   
-            }
-            else if (currentAction == SummonAction.DoubleMove)
-            {
-                DoMove(Vector3.right * 2, time);
-            }
+            NextAction = _actionQueue[_queueIdx];
+
+            Vector2Int forward = IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
             
-            // Make sure it wraps back round to 0
-            _queueIdx = (_queueIdx + 1) % _data.ActionQueue.Count;
+            if (NextAction == SummonAction.Move)
+            {
+                NextPosition = GridPosition + forward;
+            }
+            else if (NextAction == SummonAction.DoubleMove)
+            {
+                NextPosition = GridPosition + forward + forward;
+            }
         }
     }
 }
