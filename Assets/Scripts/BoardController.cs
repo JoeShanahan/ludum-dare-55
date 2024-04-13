@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace LudumDare55
@@ -5,6 +6,7 @@ namespace LudumDare55
     public class BoardController : MonoBehaviour
     {
         [SerializeField] private GameObject _playerPrefab;
+        [SerializeField] private GameObject _summonPrefab;
         [SerializeField] private GameObject _squarePrefab;
         [SerializeField] private Color _colorA;
         [SerializeField] private Color _colorB;
@@ -14,9 +16,24 @@ namespace LudumDare55
         
         public PlayerAvatar PlayerAvatar { get; private set; }
         public PlayerAvatar OpponentAvatar { get; private set; }
+
+        private List<BoardActor> _allActors = new();
+        
+        public void CreateNewSummon(PlayerAvatar avatar, SummonData data)
+        {
+            GameObject newObj = Instantiate(_summonPrefab, transform);
+            newObj.transform.localPosition = avatar.transform.localPosition;
+            newObj.transform.localPosition += avatar.IsRight ? Vector3.right : Vector3.left;
+            
+            SummonAvatar summon = newObj.GetComponent<SummonAvatar>();
+            summon.SetSummonData(data, avatar.IsRight);
+            _allActors.Add(summon);
+        }
         
         public void CreateBoard(int width, int height)
         {
+            _allActors = new List<BoardActor>();
+            
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
@@ -40,6 +57,9 @@ namespace LudumDare55
             
             PlayerAvatar.SetSprite(_leftPlayerSprite, true);
             OpponentAvatar.SetSprite(_rightPlayerSprite, false);
+            
+            _allActors.Add(PlayerAvatar);
+            _allActors.Add(OpponentAvatar);
             
             transform.position = new Vector3((1 - width) / 2f, (1 - height) / 2f, 0);
         }

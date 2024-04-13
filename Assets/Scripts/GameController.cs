@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace LudumDare55
 {
@@ -7,6 +8,7 @@ namespace LudumDare55
     {
         [SerializeField] private BoardController _board;
         [SerializeField] private float _moveTime = 0.5f;
+        [SerializeField] private BookData _playerChosenBook;
         
         private InputSystem_Actions _input;
         private bool _isMoving;
@@ -15,7 +17,15 @@ namespace LudumDare55
         {
             _input = new InputSystem_Actions();
             _input.Enable();
+
+            _input.Player.Summon.performed += OnSummonPressed;
         }
+
+        private void OnSummonPressed(InputAction.CallbackContext ctx)
+        {
+            _board.CreateNewSummon(_board.PlayerAvatar, _playerChosenBook.Summons[0]);
+        }
+        
 
         // Update is called once per frame
         void Update()
