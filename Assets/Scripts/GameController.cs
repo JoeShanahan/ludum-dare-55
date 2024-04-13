@@ -19,6 +19,7 @@ namespace LudumDare55
             _input.Enable();
 
             _input.Player.Summon.performed += OnSummonPressed;
+            _input.Player.SkipMove.performed += OnSkipPressed;
         }
 
         private void OnSummonPressed(InputAction.CallbackContext ctx)
@@ -30,6 +31,14 @@ namespace LudumDare55
                 return;
             
             _board.CreateNewSummon(_board.PlayerAvatar, _playerChosenBook.Summons[0]);
+        }
+        
+        private void OnSkipPressed(InputAction.CallbackContext ctx)
+        {
+            if (_isMoving)
+                return;
+            
+            TriggerBoardUpdate(Vector3.zero);
         }
         
 
@@ -46,12 +55,15 @@ namespace LudumDare55
 
             bool valid = _board.IsSpaceValid(_board.PlayerAvatar.transform.localPosition + moveDir);
 
-            if (valid == false)
-                return;
+            if (valid)
+                TriggerBoardUpdate(moveDir);
+        }
+
+        private void TriggerBoardUpdate(Vector3 moveDir)
+        {
             
             _board.PlayerAvatar.SetDesiredDirection(moveDir);
             _board.MoveEverything(_moveTime);
-            _board.PlayerAvatar.ResetDesiredDirection();
             
             StartCoroutine(WaitForMoveFinish());
         }

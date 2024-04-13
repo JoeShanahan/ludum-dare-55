@@ -42,5 +42,36 @@ namespace LudumDare55
         
         [TextArea(3, 10)]
         public string Description;
+        
+        [Header("Behaviour")]
+        public List<SummonAction> ActionQueue;
+        public AttackArea AttackArea;
+        public AttackMode AttackMode;
+    }
+
+    public enum AttackMode
+    {
+        Never,
+        Bump,
+        InRange,
+        OnDeath
+    }
+
+    public enum AttackArea
+    {
+        InFront,
+        Sides,
+        Circle,
+        Ranged,
+        Row,
+        Column
+    }
+    
+    public enum SummonAction
+    {
+        Wait,
+        Move,
+        DoubleMove,
+        Attack
     }
 }

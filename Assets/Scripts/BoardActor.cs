@@ -26,23 +26,26 @@ namespace LudumDare55
             _renderer.flipX = isRight == false;
         }
 
-        public void DoMove(Vector3 direction, float time)
+        public virtual void DoAction(float time)
+        {
+            
+        }
+
+        protected void DoMove(Vector3 direction, float time)
         {
             Vector3 newPos = transform.localPosition + direction;
             newPos.x = Mathf.RoundToInt(newPos.x);
             newPos.y = Mathf.RoundToInt(newPos.y);
             newPos.z = transform.localPosition.z;
+
+            if (IsRight == false)
+                newPos.x = -newPos.x;
             
             transform.DOLocalMoveX(newPos.x, time).SetEase(Ease.Linear);
             transform.DOLocalMoveY(newPos.y, time).SetEase(Ease.Linear);
 
             transform.DOLocalMoveZ(newPos.z - 0.5f, time / 2f).SetEase(Ease.OutSine);
             transform.DOLocalMoveZ(newPos.z, time / 2f).SetDelay(time / 2f).SetEase(Ease.InSine);
-        }
-
-        public virtual Vector3 GetMoveDirection()
-        {
-            return Vector3.zero;
         }
     }
 }

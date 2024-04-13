@@ -50,12 +50,8 @@ namespace LudumDare55
         {
             foreach (BoardActor actor in _allActors)
             {
-                Vector3 moveDir = actor.GetMoveDirection();
-                
-                if (moveDir.magnitude != 0)
-                {
-                    actor.DoMove(moveDir, moveTime);
-                }
+                // TODO just prepare to do the action, because it might have to change if there are collisions
+                actor.DoAction(moveTime);
             }
         }
         
