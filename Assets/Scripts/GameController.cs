@@ -23,6 +23,9 @@ namespace LudumDare55
 
         private void OnSummonPressed(InputAction.CallbackContext ctx)
         {
+            if (_isMoving)
+                return;
+            
             _board.CreateNewSummon(_board.PlayerAvatar, _playerChosenBook.Summons[0]);
         }
         
@@ -38,8 +41,11 @@ namespace LudumDare55
             if (moveDir.magnitude == 0)
                 return;
 
+            _board.PlayerAvatar.SetDesiredDirection(moveDir);
+            _board.MoveEverything(_moveTime);
+            _board.PlayerAvatar.ResetDesiredDirection();
+            
             StartCoroutine(WaitForMoveFinish());
-            _board.PlayerAvatar.DoMove(moveDir, _moveTime);
         }
 
         private IEnumerator WaitForMoveFinish()

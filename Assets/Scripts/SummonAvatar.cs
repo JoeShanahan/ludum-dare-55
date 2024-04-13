@@ -11,5 +11,10 @@ namespace LudumDare55
             _data = data;
             SetSprite(data.Sprite, isRight);
         }
+
+        public override Vector3 GetMoveDirection()
+        {
+            return Vector3.right;
+        }
     }
 }

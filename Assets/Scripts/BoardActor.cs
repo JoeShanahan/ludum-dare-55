@@ -29,5 +29,10 @@ namespace LudumDare55
             transform.DOLocalMoveZ(newPos.z - 0.5f, time / 2f).SetEase(Ease.OutSine);
             transform.DOLocalMoveZ(newPos.z, time / 2f).SetDelay(time / 2f).SetEase(Ease.InSine);
         }
+
+        public virtual Vector3 GetMoveDirection()
+        {
+            return Vector3.zero;
+        }
     }
 }

@@ -18,6 +18,19 @@ namespace LudumDare55
         public PlayerAvatar OpponentAvatar { get; private set; }
 
         private List<BoardActor> _allActors = new();
+
+        public void MoveEverything(float moveTime)
+        {
+            foreach (BoardActor actor in _allActors)
+            {
+                Vector3 moveDir = actor.GetMoveDirection();
+                
+                if (moveDir.magnitude != 0)
+                {
+                    actor.DoMove(moveDir, moveTime);
+                }
+            }
+        }
         
         public void CreateNewSummon(PlayerAvatar avatar, SummonData data)
         {
