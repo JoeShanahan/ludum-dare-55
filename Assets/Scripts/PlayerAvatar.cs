@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 namespace LudumDare55
 {
@@ -19,50 +20,18 @@ namespace LudumDare55
             _renderer.flipX = isRight == false;
         }
 
-        public void Init(bool isPlayerControlled)
+        public void DoMove(Vector3 direction, float time)
         {
+            Vector3 newPos = transform.localPosition + direction;
+            newPos.x = Mathf.RoundToInt(newPos.x);
+            newPos.y = Mathf.RoundToInt(newPos.y);
+            newPos.z = transform.localPosition.z;
             
-            _isPlayerControlled = isPlayerControlled;
+            transform.DOLocalMoveX(newPos.x, time).SetEase(Ease.Linear);
+            transform.DOLocalMoveY(newPos.y, time).SetEase(Ease.Linear);
 
-            if (isPlayerControlled)
-            {
-                _input = new InputSystem_Actions();
-                _input.Enable();
-            }
-        }
-        
-        void HandlePlayerInput()
-        {
-            Vector2 moveDir = _input.Player.Move.ReadValue<Vector2>();
-            var playerInput = Vector2.ClampMagnitude(moveDir, 1);
-
-            if (playerInput.magnitude < 0.3f)
-                return;
-
-            float horzMagnitude = Mathf.Abs(playerInput.x);
-            float vertMagnitude = Mathf.Abs(playerInput.y);
-
-            if (horzMagnitude > vertMagnitude)
-            {
-                DoMove(playerInput.x > 0 ? Vector3.right : Vector3.left);
-            }
-            else
-            {
-                DoMove(playerInput.y > 0 ? Vector3.up : Vector3.down);
-            }
-        }
-
-        public void DoMove(Vector3 direction)
-        {
-            transform.localPosition += direction;
-        }
-
-        void Update()
-        {
-            if (_isPlayerControlled)
-            {
-                HandlePlayerInput();
-            }
+            transform.DOLocalMoveZ(newPos.z - 0.5f, time / 2f).SetEase(Ease.OutSine);
+            transform.DOLocalMoveZ(newPos.z, time / 2f).SetDelay(time / 2f).SetEase(Ease.InSine);
         }
     }
 }

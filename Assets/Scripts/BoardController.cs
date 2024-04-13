@@ -12,6 +12,9 @@ namespace LudumDare55
         [SerializeField] private Sprite _leftPlayerSprite;
         [SerializeField] private Sprite _rightPlayerSprite;
         
+        public PlayerAvatar PlayerAvatar { get; private set; }
+        public PlayerAvatar OpponentAvatar { get; private set; }
+        
         public void CreateBoard(int width, int height)
         {
             for (int x = 0; x < width; x++)
@@ -31,12 +34,13 @@ namespace LudumDare55
             
             playerLeft.transform.localPosition = new Vector3(0, (height - 1) / 2f, 0);
             playerRight.transform.localPosition = new Vector3(width - 1, (height - 1) / 2f, 0);
-            
-            playerLeft.GetComponent<PlayerAvatar>().SetSprite(_leftPlayerSprite, true);
-            playerRight.GetComponent<PlayerAvatar>().SetSprite(_rightPlayerSprite, false);
-            
-            playerLeft.GetComponent<PlayerAvatar>().Init(true);
 
+            PlayerAvatar = playerLeft.GetComponent<PlayerAvatar>();
+            OpponentAvatar = playerRight.GetComponent<PlayerAvatar>();
+            
+            PlayerAvatar.SetSprite(_leftPlayerSprite, true);
+            OpponentAvatar.SetSprite(_rightPlayerSprite, false);
+            
             transform.position = new Vector3((1 - width) / 2f, (1 - height) / 2f, 0);
         }
         
