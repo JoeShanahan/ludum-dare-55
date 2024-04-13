@@ -9,7 +9,7 @@ namespace LudumDare55
 
         public bool IsRight { get; private set; }
         
-        public SummonAction NextAction { get; protected set; }
+        public BoardAction NextAction { get; protected set; }
         public Vector2Int NextPosition { get; protected set; }
         public Vector2Int NextDirection { get; protected set; }
         
@@ -30,14 +30,46 @@ namespace LudumDare55
 
         public virtual void DoAction(float time)
         {
-            if (NextAction == SummonAction.Move)
+            if (NextAction == BoardAction.Move)
             {
                 DoMove(NextPosition, time);
             }
-            else if (NextAction == SummonAction.Wait)
+            else if (NextAction == BoardAction.Wait)
             {
                 SkipTurnAnimation(time);
             }
+            else if (NextAction == BoardAction.Bounce)
+            {
+                DoBounce(NextDirection, time, true);
+            }
+            else if (NextAction == BoardAction.HalfBounce)
+            {
+                DoBounce(NextDirection, time, false);
+            }
+        }
+
+        public void OverrideNextAction(BoardAction action, Vector2Int endPosition)
+        {
+            NextAction = action;
+            NextPosition = endPosition;
+        }
+        
+        protected void DoBounce(Vector2Int direction, float time, bool isFull)
+        {
+            Vector3 newPos = transform.localPosition;
+            float mul = isFull ? 0.7f : 0.35f;
+            newPos += new Vector3(direction.x * mul, direction.y * mul, 0);
+
+            float halfTime = time / 2f;
+
+            transform.DOLocalMoveX(newPos.x, halfTime).SetEase(Ease.Linear);
+            transform.DOLocalMoveY(newPos.y, halfTime).SetEase(Ease.Linear);
+            
+            transform.DOLocalMoveX(NextPosition.x, halfTime).SetDelay(halfTime).SetEase(Ease.Linear);
+            transform.DOLocalMoveY(NextPosition.y, halfTime).SetDelay(halfTime).SetEase(Ease.Linear);
+
+            transform.DOLocalMoveZ(newPos.z - 0.5f, halfTime).SetEase(Ease.OutSine);
+            transform.DOLocalMoveZ(newPos.z, halfTime).SetDelay(halfTime).SetEase(Ease.InSine);
         }
 
         protected void DoMove(Vector2Int localPos, float time)

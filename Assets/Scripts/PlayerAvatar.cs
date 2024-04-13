@@ -92,13 +92,13 @@ namespace LudumDare55
 
             if (_desiredDirection == Vector3.zero)
             {
-                NextAction = SummonAction.Wait;
+                NextAction = BoardAction.Wait;
                 NextDirection = Vector2Int.zero;
                 NextPosition = GridPosition;
             }
             else
             {
-                NextAction = SummonAction.Move;
+                NextAction = BoardAction.Move;
                 NextDirection = Vector2Int.RoundToInt(_desiredDirection);
                 NextPosition = GridPosition + NextDirection;
             }

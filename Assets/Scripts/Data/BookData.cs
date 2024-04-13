@@ -44,7 +44,7 @@ namespace LudumDare55
         public string Description;
         
         [Header("Behaviour")]
-        public List<SummonAction> ActionQueue;
+        public List<BoardAction> ActionQueue;
         public AttackArea AttackArea;
         public AttackMode AttackMode;
     }
@@ -67,11 +67,14 @@ namespace LudumDare55
         Column
     }
     
-    public enum SummonAction
+    public enum BoardAction
     {
         Wait,
         Move,
         DoubleMove,
-        Attack
+        Attack,
+        Bounce,
+        HalfBounce,
+        AttackMove
     }
 }

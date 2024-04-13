@@ -7,7 +7,7 @@ namespace LudumDare55
     {
         private SummonData _data;
         private int _queueIdx;
-        private List<SummonAction> _actionQueue;    // TODO be able to overwrite if charmed, etc
+        private List<BoardAction> _actionQueue;    // TODO be able to overwrite if charmed, etc
         
         public void SetSummonData(SummonData data, bool isRight)
         {
@@ -33,13 +33,15 @@ namespace LudumDare55
 
             Vector2Int forward = IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
             
-            if (NextAction == SummonAction.Move)
+            if (NextAction == BoardAction.Move)
             {
                 NextPosition = GridPosition + forward;
+                NextDirection = forward;
             }
-            else if (NextAction == SummonAction.DoubleMove)
+            else if (NextAction == BoardAction.DoubleMove)
             {
                 NextPosition = GridPosition + forward + forward;
+                NextDirection = forward;
             }
         }
     }

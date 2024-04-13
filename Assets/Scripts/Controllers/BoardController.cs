@@ -22,6 +22,7 @@ namespace LudumDare55
         private List<BoardActor> _allActors = new();
         private int _width;
         private int _height;
+        private bool _areConflicts;
         
         public bool IsSpaceTaken(Vector3 pos)
         {
@@ -137,8 +138,19 @@ namespace LudumDare55
 
         private void ResolveCollisions()
         {
-            ResolveDirectBumps();
-            ResolveSpaceDispute();
+            for (int i = 0; i < 16; i++)
+            {
+                ResolveDirectBumps();
+                ResolveSpaceDispute();
+                CheckForAllyBlocking();
+                CheckForRemainingConflicts();
+
+                if (_areConflicts == false)
+                    break;
+                
+                if (i == 15)
+                    Debug.LogWarning("Couldn't resolve all the conflicts!");
+            }
         }
 
         // For times when two actors are standing face to face and both trying to move forwards
@@ -151,13 +163,16 @@ namespace LudumDare55
                     if (actorA == actorB)
                         continue;
 
-                    bool bothMoving = actorA.NextAction == SummonAction.Move && actorB.NextAction == SummonAction.Move;
+                    bool bothMoving = actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move;
                     bool AtoB = actorA.NextPosition == actorB.GridPosition;
                     bool BtoA = actorB.NextPosition == actorA.GridPosition;
 
                     if (bothMoving && AtoB && BtoA)
                     {
-                        Debug.Log("Direct Bump Detected!");
+                        // If can kill, do that and then move
+                        // If not, half bump
+                        actorA.OverrideNextAction(BoardAction.HalfBounce, actorA.GridPosition);
+                        actorB.OverrideNextAction(BoardAction.HalfBounce, actorB.GridPosition);
                     }
                 }
             }
@@ -173,12 +188,65 @@ namespace LudumDare55
                     if (actorA == actorB)
                         continue;
 
-                    bool bothMoving = actorA.NextAction == SummonAction.Move && actorB.NextAction == SummonAction.Move;
+                    bool bothMoving = actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move;
                     bool bothSamePos = actorA.NextPosition == actorB.NextPosition;
 
                     if (bothMoving && bothSamePos)
                     {
-                        Debug.Log("Space dispute Detected!");
+                        // If can kill, do that and then move
+                        // If being killed, move and die
+                        // If not, bump
+                        actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
+                        actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                    }
+                }
+            }
+        }
+        
+        private void CheckForAllyBlocking()
+        {
+            foreach (BoardActor actorA in _allActors)
+            {
+                foreach (BoardActor actorB in _allActors)
+                {
+                    if (actorA == actorB)
+                        continue;
+
+                    bool bothSamePos = actorA.NextPosition == actorB.NextPosition;
+                    bool bothSameSide = actorA.IsRight == actorB.IsRight;
+                    
+                    if (bothSamePos && bothSameSide)
+                    {
+                        if (actorA.NextAction == BoardAction.Move)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Wait, actorA.GridPosition);
+                        }
+                        if (actorB.NextAction == BoardAction.Move)
+                        {
+                            actorB.OverrideNextAction(BoardAction.Wait, actorB.GridPosition);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void CheckForRemainingConflicts()
+        {
+            _areConflicts = false;
+            
+            foreach (BoardActor actorA in _allActors)
+            {
+                foreach (BoardActor actorB in _allActors)
+                {
+                    if (actorA == actorB)
+                        continue;
+
+                    bool bothSamePos = actorA.NextPosition == actorB.NextPosition;
+
+                    if (bothSamePos)
+                    {
+                        _areConflicts = true;
+                        return;
                     }
                 }
             }
