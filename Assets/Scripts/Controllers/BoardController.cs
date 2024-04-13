@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace LudumDare55
@@ -84,6 +85,8 @@ namespace LudumDare55
             _allActors = new List<BoardActor>();
             _width = width;
             _height = height;
+
+            Vector3 midpoint = new Vector3((width-1) / 2f, (height-1) / 2f, 0);
             
             for (int x = 0; x < width; x++)
             {
@@ -94,6 +97,13 @@ namespace LudumDare55
                     GameObject newObj = Instantiate(_squarePrefab, transform);
                     newObj.GetComponent<SpriteRenderer>().color = isOdd ? _colorA : _colorB;
                     newObj.transform.localPosition = new Vector3(x, y, 0);
+
+                    float distFromCenter = Vector3.Distance(midpoint, newObj.transform.localPosition);
+                    newObj.transform.localScale = Vector3.zero;
+                    newObj.transform.eulerAngles = new Vector3(0, 0, 90);
+
+                    newObj.transform.DOScale(1, 0.4f).SetEase(Ease.OutQuad).SetDelay(distFromCenter * 0.1f);
+                    newObj.transform.DOLocalRotate(Vector3.zero, 0.4f).SetEase(Ease.OutQuad).SetDelay(distFromCenter * 0.1f);
                 }
             }
 
