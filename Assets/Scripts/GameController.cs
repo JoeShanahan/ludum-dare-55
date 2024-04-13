@@ -25,6 +25,9 @@ namespace LudumDare55
         {
             if (_isMoving)
                 return;
+
+            if (_board.IsSpaceTaken(_board.PlayerAvatar.SummonPosition))
+                return;
             
             _board.CreateNewSummon(_board.PlayerAvatar, _playerChosenBook.Summons[0]);
         }
@@ -41,6 +44,11 @@ namespace LudumDare55
             if (moveDir.magnitude == 0)
                 return;
 
+            bool valid = _board.IsSpaceValid(_board.PlayerAvatar.transform.localPosition + moveDir);
+
+            if (valid == false)
+                return;
+            
             _board.PlayerAvatar.SetDesiredDirection(moveDir);
             _board.MoveEverything(_moveTime);
             _board.PlayerAvatar.ResetDesiredDirection();

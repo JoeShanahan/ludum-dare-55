@@ -8,6 +8,16 @@ namespace LudumDare55
         [SerializeField] protected SpriteRenderer _renderer;
         
         public bool IsRight { get; private set; }
+
+        public Vector2Int GridPosition
+        {
+            get
+            {
+                int x = Mathf.RoundToInt(transform.localPosition.x);
+                int y = Mathf.RoundToInt(transform.localPosition.y);
+                return new Vector2Int(x, y);
+            }
+        }
         
         public void SetSprite(Sprite sprite, bool isRight)
         {

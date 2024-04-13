@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +19,33 @@ namespace LudumDare55
         public PlayerAvatar OpponentAvatar { get; private set; }
 
         private List<BoardActor> _allActors = new();
+        private int _width;
+        private int _height;
+        
+        public bool IsSpaceTaken(Vector3 pos)
+        {
+            Vector2Int intPos = new Vector2Int(Mathf.RoundToInt(pos.x), Mathf.RoundToInt(pos.y));
+            
+            foreach (BoardActor actor in _allActors)
+            {
+                if (actor.GridPosition == intPos)
+                    return true;
+            }
+            
+            return false;
+        }
 
+        public bool IsSpaceValid(Vector3 pos)
+        {
+            if (pos.x < 0 || pos.y < 0)
+                return false;
+
+            if (pos.x >= _width || pos.y >= _height)
+                return false;
+            
+            return true;
+        }
+        
         public void MoveEverything(float moveTime)
         {
             foreach (BoardActor actor in _allActors)
@@ -35,8 +62,7 @@ namespace LudumDare55
         public void CreateNewSummon(PlayerAvatar avatar, SummonData data)
         {
             GameObject newObj = Instantiate(_summonPrefab, transform);
-            newObj.transform.localPosition = avatar.transform.localPosition;
-            newObj.transform.localPosition += avatar.IsRight ? Vector3.right : Vector3.left;
+            newObj.transform.localPosition = avatar.SummonPosition;
             
             SummonAvatar summon = newObj.GetComponent<SummonAvatar>();
             summon.SetSummonData(data, avatar.IsRight);
@@ -46,6 +72,8 @@ namespace LudumDare55
         public void CreateBoard(int width, int height)
         {
             _allActors = new List<BoardActor>();
+            _width = width;
+            _height = height;
             
             for (int x = 0; x < width; x++)
             {

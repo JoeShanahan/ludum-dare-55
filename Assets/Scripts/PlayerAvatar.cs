@@ -21,5 +21,16 @@ namespace LudumDare55
         {
             return _desiredDirection;
         }
+
+        public Vector3 SummonPosition
+        {
+            get
+            {
+                if (IsRight)
+                    return transform.localPosition + Vector3.right;
+
+                return transform.localPosition + Vector3.left;
+            }
+        }
     }
 }
