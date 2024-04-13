@@ -882,7 +882,7 @@ MonoBehaviour:
   _board: {fileID: 813166145}
   _moveTime: 0.2
   _playerChosenBook: {fileID: 11400000, guid: b43291133760a4e0db234b869652391c, type: 2}
-  _opponentBook: {fileID: 11400000, guid: b43291133760a4e0db234b869652391c, type: 2}
+  _opponentBook: {fileID: 11400000, guid: dbaa59942a47e4ff7a41e831227afe4b, type: 2}
 --- !u!4 &515823179
 Transform:
   m_ObjectHideFlags: 0
@@ -1369,8 +1369,8 @@ MonoBehaviour:
   _squarePrefab: {fileID: 648056366039275500, guid: 29776b6ad760947c185005860026abfc, type: 3}
   _colorA: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   _colorB: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
-  _leftPlayerSprite: {fileID: 21300000, guid: 5f72fdb6500d9494aa19e788849a9791, type: 3}
-  _rightPlayerSprite: {fileID: 21300000, guid: 33672e667e0084660bf87d0df25837e1, type: 3}
+  _leftPlayerSprite: {fileID: 21300000, guid: 33672e667e0084660bf87d0df25837e1, type: 3}
+  _rightPlayerSprite: {fileID: 21300000, guid: e9322b44cacbf497d86219051f4c6eb6, type: 3}
 --- !u!4 &813166146
 Transform:
   m_ObjectHideFlags: 0
@@ -1715,7 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.94509804, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2164,7 +2164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2653,7 +2653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

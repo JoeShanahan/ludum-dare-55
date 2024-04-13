@@ -21,7 +21,9 @@ namespace LudumDare55
         {
             base.DoAction(time);
             // Make sure it wraps back round to 0
-            _queueIdx = (_queueIdx + 1) % _actionQueue.Count;
+    
+            if (_actionQueue.Count > 0)
+                _queueIdx = (_queueIdx + 1) % _actionQueue.Count;
         }
 
         public override void CommitToAction()

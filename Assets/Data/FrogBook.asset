@@ -10,46 +10,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29beef7a0df3643ed9c124dda796b8b5, type: 3}
-  m_Name: AlphabetBook
+  m_Name: FrogBook
   m_EditorClassIdentifier: 
-  BookName: The Alphabet
-  Genre: For kids under 3
-  LongDescription: Now you know your ABC's, come and start a fight with me!
+  BookName: Frog Encyclopedia (Volume III)
+  Genre: Non Fiction
+  LongDescription: Contains everything you ever wanted to know about frogs, as well
+    as many things you could've lived your whole life without knowing and probably
+    been the better for it.
   Summons:
-  - Name: A
-    Sprite: {fileID: 21300000, guid: 8227d4cf44ccf47f8b5bfd1fa8dccf2f, type: 3}
+  - Name: Common Frog
+    Sprite: {fileID: 21300000, guid: bc2fc27e99bb6424f807e50235d4cbe5, type: 3}
     Count: 3
     DoesStartWith: 1
     Description: Alpha
     ActionQueue: 01000000
     AttackArea: 0
     AttackMode: 1
-  - Name: B
-    Sprite: {fileID: 21300000, guid: 517ed9e2fb6a24d119930421562c3f9a, type: 3}
+  - Name: Cane Toad
+    Sprite: {fileID: 21300000, guid: 07debec054ece48b8ac2b094f8bde788, type: 3}
     Count: 3
     DoesStartWith: 1
     Description: Beta
     ActionQueue: 01000000
     AttackArea: 0
     AttackMode: 0
-  - Name: C
-    Sprite: {fileID: 21300000, guid: d482d195f57914f829c38b3187cb3a80, type: 3}
+  - Name: Flying Frog
+    Sprite: {fileID: 21300000, guid: 2e719cd83e9714e519c0ccb8c579679d, type: 3}
     Count: 3
     DoesStartWith: 1
     Description: Gamma
     ActionQueue: 01000000
     AttackArea: 0
     AttackMode: 0
-  - Name: D
-    Sprite: {fileID: 21300000, guid: 12c93648aa445420caf6ae06b47a156d, type: 3}
+  - Name: Dart Frog
+    Sprite: {fileID: 21300000, guid: 361f949f8b7424504af90949331eafe1, type: 3}
     Count: 2
     DoesStartWith: 0
     Description: Delta
     ActionQueue: 01000000
     AttackArea: 0
     AttackMode: 0
-  - Name: E
-    Sprite: {fileID: 21300000, guid: 6bdbbedca67f1424d84473302d0c767b, type: 3}
+  - Name: Fighting Frog
+    Sprite: {fileID: 21300000, guid: 051d5740b2093486ca06db969c5ba6d5, type: 3}
     Count: 1
     DoesStartWith: 0
     Description: Epsilon

@@ -32,13 +32,16 @@ namespace LudumDare55
         {
             if (_board.IsSpaceTaken(SummonPosition))
                 return;
-            
-            _board.CreateNewSummon(this, Book.Summons[0]);
+
+            int idx = Random.Range(0, 5);
+            _board.CreateNewSummon(this, Book.Summons[idx]);
         }
 
         public void OnMoveComplete()
         {
-            if (Mathf.RoundToInt(transform.localPosition.y) == 4)
+            int ypos = Mathf.RoundToInt(transform.localPosition.y);
+            
+            if (ypos is 4 or 0)
                 TrySummon();
         }
         
