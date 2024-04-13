@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29beef7a0df3643ed9c124dda796b8b5, type: 3}
+  m_Name: AlphabetBook
+  m_EditorClassIdentifier: 
+  BookName: The Alphabet
+  Genre: For kids under 3
+  LongDescription: Now you know your ABC's, come and start a fight with me!
+  Summons:
+  - Name: A
+    Sprite: {fileID: 21300000, guid: 571c4c685b3664ee381e20fb9daac5d7, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    Description: Alpha
+  - Name: B
+    Sprite: {fileID: 21300000, guid: 517ed9e2fb6a24d119930421562c3f9a, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    Description: Beta
+  - Name: C
+    Sprite: {fileID: 21300000, guid: d482d195f57914f829c38b3187cb3a80, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    Description: Gamma
+  - Name: D
+    Sprite: {fileID: 21300000, guid: 12c93648aa445420caf6ae06b47a156d, type: 3}
+    Count: 2
+    DoesStartWith: 0
+    Description: Delta
+  - Name: E
+    Sprite: {fileID: 21300000, guid: 6bdbbedca67f1424d84473302d0c767b, type: 3}
+    Count: 1
+    DoesStartWith: 0
+    Description: Epsilon
