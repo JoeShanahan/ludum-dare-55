@@ -35,11 +35,8 @@ namespace LudumDare55
         {
             if (_isMoving)
                 return;
-
-            if (_board.IsSpaceTaken(_board.PlayerAvatar.SummonPosition))
-                return;
             
-            _board.CreateNewSummon(_board.PlayerAvatar, _playerChosenBook.Summons[0]);
+            _board.PlayerAvatar.TrySummon();
         }
         
         private void OnSkipPressed(InputAction.CallbackContext ctx)
@@ -82,6 +79,8 @@ namespace LudumDare55
             _isMoving = true;
             yield return new WaitForSeconds(_moveTime);
             _isMoving = false;
+
+            _board.OnMoveComplete();
         }
         
         private Vector3 GetRequestedMoveDir()

@@ -102,12 +102,20 @@ namespace LudumDare55
             PlayerAvatar.SetSprite(_leftPlayerSprite, true);
             OpponentAvatar.SetSprite(_rightPlayerSprite, false);
             
-            OpponentAvatar.EnableAI(this);
+            PlayerAvatar.Init(this);
+            OpponentAvatar.Init(this);
+            
+            OpponentAvatar.EnableAI();
             
             _allActors.Add(PlayerAvatar);
             _allActors.Add(OpponentAvatar);
             
             transform.position = new Vector3((1 - width) / 2f, (1 - height) / 2f, 0);
+        }
+
+        public void OnMoveComplete()
+        {
+            OpponentAvatar.OnMoveComplete();
         }
         
         // Update is called once per frame

@@ -814,6 +814,7 @@ MonoBehaviour:
   _board: {fileID: 813166145}
   _moveTime: 0.2
   _playerChosenBook: {fileID: 11400000, guid: b43291133760a4e0db234b869652391c, type: 2}
+  _opponentBook: {fileID: 11400000, guid: b43291133760a4e0db234b869652391c, type: 2}
 --- !u!4 &515823179
 Transform:
   m_ObjectHideFlags: 0

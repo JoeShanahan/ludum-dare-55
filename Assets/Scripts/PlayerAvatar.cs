@@ -12,15 +12,32 @@ namespace LudumDare55
         private bool _isAi;
         private BoardController _board;
         
-        public void EnableAI(BoardController board)
+        public void EnableAI()
         {
             _isAi = true;
+        }
+
+        public void Init(BoardController board)
+        {
             _board = board;
         }
         
         public void SetDesiredDirection(Vector3 dir)
         {
             _desiredDirection = dir;
+        }
+
+        public void TrySummon()
+        {
+            if (_board.IsSpaceTaken(SummonPosition))
+                return;
+            
+            _board.CreateNewSummon(this, Book.Summons[0]);
+        }
+
+        public void OnMoveComplete()
+        {
+            TrySummon();
         }
         
         public Vector3 SummonPosition
