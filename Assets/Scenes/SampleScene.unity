@@ -593,9 +593,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b11859a529444b17a6d2102b8beb5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerPrefab: {fileID: 4264037330470395817, guid: db53aeb861b0b4ac0900f17d913ef0ba, type: 3}
   _squarePrefab: {fileID: 648056366039275500, guid: 29776b6ad760947c185005860026abfc, type: 3}
   _colorA: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   _colorB: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
+  _leftPlayerSprite: {fileID: 21300000, guid: 5f72fdb6500d9494aa19e788849a9791, type: 3}
+  _rightPlayerSprite: {fileID: 21300000, guid: 33672e667e0084660bf87d0df25837e1, type: 3}
 --- !u!4 &813166146
 Transform:
   m_ObjectHideFlags: 0
