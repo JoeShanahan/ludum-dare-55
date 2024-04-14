@@ -19,5 +19,10 @@ namespace LudumDare55
             _bodyText.text = data.Description;
             _icon.sprite = data.Sprite;
         }
+
+        public void OnCardPress()
+        {
+            
+        }
     }
 }

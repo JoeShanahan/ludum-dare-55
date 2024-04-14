@@ -7,12 +7,26 @@ namespace LudumDare55
     public class GameController : MonoBehaviour
     {
         [SerializeField] private BoardController _board;
+        [SerializeField] private CardController _cards;
         [SerializeField] private float _moveTime = 0.5f;
         [SerializeField] private ActiveGameState _gameState;
         
         private InputSystem_Actions _input;
         private bool _isMoving;
 
+        public void GetNewCard()
+        {
+            if (_gameState.PlayerDeck.Count == 0)
+                return;
+            
+            int randomIndex = Random.Range(0, _gameState.PlayerDeck.Count);
+            SummonData newSummon = _gameState.PlayerDeck[randomIndex];
+            _gameState.PlayerDeck.RemoveAt(randomIndex);
+            _gameState.PlayerHand.Add(newSummon);
+            
+            _cards.Refresh();
+        }
+        
         private void Start()
         {
             _input = new InputSystem_Actions();
@@ -20,6 +34,10 @@ namespace LudumDare55
 
             _input.Player.Summon.performed += OnSummonPressed;
             _input.Player.SkipMove.performed += OnSkipPressed;
+            
+            _gameState.InitHands();
+            
+            _cards.Refresh();
             
             Application.targetFrameRate = 60;
             StartGame();

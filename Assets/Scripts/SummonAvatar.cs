@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,6 +18,15 @@ namespace LudumDare55
             _actionQueue = data.ActionQueue;
             SetSprite(data.Sprite, isRight);
         }
+
+        private void OnEnable()
+        {
+            transform.localEulerAngles = new Vector3(0, 0, -160);
+            transform.localScale = Vector3.zero;
+            transform.DOLocalRotate(new Vector3(0, 0, 0), 0.5f).SetEase(Ease.OutExpo);
+            transform.DOScale(1, 0.5f).SetEase(Ease.OutExpo);
+        }
+        
 
         public override void OnMoveComplete()
         {
