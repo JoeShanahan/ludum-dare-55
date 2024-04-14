@@ -11,7 +11,9 @@ namespace LudumDare55
         
         private Vector3 _desiredDirection;
         private bool _isAi;
-        
+
+
+
         public void EnableAI()
         {
             _isAi = true;
@@ -22,24 +24,30 @@ namespace LudumDare55
             _desiredDirection = dir;
         }
 
-        public void TrySummon()
+        public bool TrySummon(SummonData data)
         {
-            if (_board.IsSpaceTaken(SummonPosition))
-                return;
 
-            int idx = Random.Range(0, Book.Summons.Count);
-            _board.CreateNewSummon(this, Book.Summons[idx]);
+            if (_board.IsSpaceTaken(SummonPosition)) 
+            { 
+                return false; 
+            }
+            
+            _board.CreateNewSummon(this, data);
+            return true;
+
         }
 
         public override void OnMoveComplete()
         {
-            if (_isAi == false)
-                return;
+            if (_isAi == false) { return; }
             
             int ypos = Mathf.RoundToInt(transform.localPosition.y);
-            
+
             if (ypos is 4 or 0)
-                TrySummon();
+            {
+                int i = Random.Range(0, 4);
+                TrySummon(Book.Summons[i]);
+            }
         }
         
         public Vector3 SummonPosition

@@ -26,17 +26,28 @@ namespace LudumDare55
             
             _cards.Refresh();
         }
+
+        public void ReturnToPlayerHand(SummonData s)
+        {
+            _gameState.PlayerHand.Add(s);
+            _cards.Refresh();
+        }
+
+        public void RemoveCard(int pos)
+        {
+            _gameState.PlayerHand.RemoveAt(pos);
+            _cards.Refresh();
+        }
         
         private void Start()
         {
             _input = new InputSystem_Actions();
             _input.Enable();
 
-            _input.Player.Summon.performed += OnSummonPressed;
+            //_input.Player.Summon.performed += OnSummonPressed;
             _input.Player.SkipMove.performed += OnSkipPressed;
-            
+
             _gameState.InitHands();
-            
             _cards.Refresh();
             
             Application.targetFrameRate = 60;
@@ -46,16 +57,17 @@ namespace LudumDare55
         private void StartGame()
         {
             _board.InitBoard(9, 5, _gameState.PlayerBook, _gameState.Opponent.ChosenBook);
+            _cards.Player = _board.PlayerAvatar;
         }
-        
-        private void OnSummonPressed(InputAction.CallbackContext ctx)
+
+        /*private void OnSummonPressed(InputAction.CallbackContext ctx)
         {
             if (_isMoving)
                 return;
             
             _board.PlayerAvatar.TrySummon();
-        }
-        
+        }*/
+
         private void OnSkipPressed(InputAction.CallbackContext ctx)
         {
             if (_isMoving)
