@@ -11,18 +11,12 @@ namespace LudumDare55
         
         private Vector3 _desiredDirection;
         private bool _isAi;
-        private BoardController _board;
         
         public void EnableAI()
         {
             _isAi = true;
         }
 
-        public void Init(BoardController board)
-        {
-            _board = board;
-        }
-        
         public void SetDesiredDirection(Vector3 dir)
         {
             _desiredDirection = dir;
@@ -37,8 +31,11 @@ namespace LudumDare55
             _board.CreateNewSummon(this, Book.Summons[idx]);
         }
 
-        public void OnMoveComplete()
+        public override void OnMoveComplete()
         {
+            if (_isAi == false)
+                return;
+            
             int ypos = Mathf.RoundToInt(transform.localPosition.y);
             
             if (ypos is 4 or 0)

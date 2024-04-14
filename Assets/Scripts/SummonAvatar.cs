@@ -1,22 +1,31 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace LudumDare55
 {
     public class SummonAvatar : BoardActor
     {
-        private SummonData _data;
+        public SummonData SummonData { get; private set; }
+        
         private int _queueIdx;
         private List<BoardAction> _actionQueue;    // TODO be able to overwrite if charmed, etc
         
         public void SetSummonData(SummonData data, bool isRight)
         {
-            _data = data;
+            SummonData = data;
             _actionQueue = data.ActionQueue;
             SetSprite(data.Sprite, isRight);
         }
 
- 
+        public override void OnMoveComplete()
+        {
+            if (_board.IsSpaceValid(transform.localPosition) == false)
+            {
+                _board.ReturnToSender(this);
+            }
+        }
+
         public override void DoAction(float time)
         {
             base.DoAction(time);
@@ -28,7 +37,7 @@ namespace LudumDare55
 
         public override void CommitToAction()
         {
-            if (_data.ActionQueue.Count == 0)
+            if (SummonData.ActionQueue.Count == 0)
                 return;
 
             NextAction = _actionQueue[_queueIdx];

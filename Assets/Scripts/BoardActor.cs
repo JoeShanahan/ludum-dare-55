@@ -8,15 +8,30 @@ namespace LudumDare55
         [SerializeField] protected SpriteRenderer _renderer;
 
         public bool IsRight { get; private set; }
+
+        public bool IsPlayer => IsRight;
         
         public BoardAction NextAction { get; protected set; }
         public Vector2Int NextPosition { get; protected set; }
         public Vector2Int NextDirection { get; protected set; }
+
+        protected BoardController _board;
         
         // TODO this is dumb
         public Vector2Int GridPosition => Vector2Int.RoundToInt(transform.localPosition);
         
+        public void Init(BoardController board)
+        {
+            _board = board;
+        }
+
+        
         public virtual void CommitToAction()
+        {
+            
+        }
+
+        public virtual void OnMoveComplete()
         {
             
         }

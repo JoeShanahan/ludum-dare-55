@@ -23,6 +23,13 @@ namespace LudumDare55
         private int _width;
         private int _height;
         private bool _areConflicts;
+
+        private List<SummonAvatar> _summonsToReset = new();
+        
+        public void ReturnToSender(SummonAvatar summon)
+        {
+            _summonsToReset.Add(summon);
+        }
         
         public bool IsSpaceTaken(Vector3 pos)
         {
@@ -71,6 +78,7 @@ namespace LudumDare55
             
             SummonAvatar summon = newObj.GetComponent<SummonAvatar>();
             summon.SetSummonData(data, avatar.IsRight);
+            summon.Init(this);
             _allActors.Add(summon);
         }
 
@@ -133,7 +141,33 @@ namespace LudumDare55
 
         public void OnMoveComplete()
         {
-            OpponentAvatar.OnMoveComplete();
+            _summonsToReset.Clear();
+            var actorCache = new List<BoardActor>(_allActors);
+            
+            foreach (BoardActor actor in actorCache)
+            {
+                actor.OnMoveComplete();
+            }
+
+            foreach (SummonAvatar summon in _summonsToReset)
+            {
+                _allActors.Remove(summon);
+                summon.transform.DOLocalRotate(new Vector3(0, 0, 160), 0.5f).SetEase(Ease.InSine);
+                summon.transform.DOScale(0, 0.5f).SetEase(Ease.InSine).OnComplete(() =>
+                {
+                    var toRemove = summon.gameObject;
+                    Destroy(toRemove);
+                });
+
+                if (summon.IsPlayer)
+                {
+                    // TODO add to player hand
+                }
+                else
+                {
+                    // TODO add to opponent hand
+                }
+            }
         }
 
         private void ResolveCollisions()
