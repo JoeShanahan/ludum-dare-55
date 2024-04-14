@@ -594,6 +594,7 @@ MonoBehaviour:
   _colorB: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   _leftPlayerSprite: {fileID: 21300000, guid: 33672e667e0084660bf87d0df25837e1, type: 3}
   _rightPlayerSprite: {fileID: 21300000, guid: e9322b44cacbf497d86219051f4c6eb6, type: 3}
+  GameController: {fileID: 515823178}
 --- !u!4 &813166146
 Transform:
   m_ObjectHideFlags: 0
@@ -761,7 +762,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d39b57cd4d64221a54f83068a2ef4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   _cardPrefab: {fileID: 7980261360461268356, guid: 0b4a2ea104bba4923ac5ad11dc17b9f2, type: 3}
+  _gameController: {fileID: 515823178}
   _gameState: {fileID: 11400000, guid: 151646503f3a44d1ea16ecf871a79bf4, type: 2}
   _cardLayout: {fileID: 8437633}
 --- !u!1 &1764428386

@@ -19,6 +19,8 @@ namespace LudumDare55
         public PlayerAvatar PlayerAvatar { get; private set; }
         public PlayerAvatar OpponentAvatar { get; private set; }
 
+        public GameController GameController;
+
         private List<BoardActor> _allActors = new();
         private int _width;
         private int _height;
@@ -161,7 +163,8 @@ namespace LudumDare55
 
                 if (summon.IsPlayer)
                 {
-                    // TODO add to player hand
+                    GameController.ReturnToPlayerHand(summon.SummonData);
+                    Debug.Log("is returning");
                 }
                 else
                 {
