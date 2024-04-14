@@ -239,8 +239,8 @@ namespace LudumDare55
                     {
                         // If can kill, do that and then move
                         // If not, half bump
-                        actorA.OverrideNextAction(BoardAction.HalfBounce, actorA.GridPosition);
-                        actorB.OverrideNextAction(BoardAction.HalfBounce, actorB.GridPosition);
+                        actorA.OverrideNextAction(BoardAction.X_HalfBounce, actorA.GridPosition);
+                        actorB.OverrideNextAction(BoardAction.X_HalfBounce, actorB.GridPosition);
                         actorA.CollideWith(actorB);
                     }
                 }
@@ -264,8 +264,8 @@ namespace LudumDare55
                     if (!potential)
                         continue;
                     
-                    bool isAWaiting = actorA.NextAction == BoardAction.Wait;
-                    bool isBWaiting = actorB.NextAction == BoardAction.Wait;
+                    bool isAWaiting = actorA.NextAction is BoardAction.Wait or BoardAction.AOEAttack;
+                    bool isBWaiting = actorB.NextAction is BoardAction.Wait or BoardAction.AOEAttack;
                     
                     bool isAMoving = actorA.NextAction == BoardAction.Move;
                     bool isBMoving = actorB.NextAction == BoardAction.Move;
@@ -285,11 +285,11 @@ namespace LudumDare55
                     {
                         if (AtoB)
                         {
-                            actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
+                            actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
                         }
                         if (BtoA)
                         {
-                            actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                            actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
                         }
                     }
                     else
@@ -325,8 +325,8 @@ namespace LudumDare55
                         // If can kill, do that and then move
                         // If being killed, move and die
                         // If not, bump
-                        actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
-                        actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                        actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
+                        actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
                         actorA.CollideWith(actorB);
                     }
                 }

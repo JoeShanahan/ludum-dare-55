@@ -83,9 +83,8 @@ namespace LudumDare55
         Wait,
         Move,
         DoubleMove,
-        Attack,
-        Bounce,
-        HalfBounce,
-        AttackMove
+        AOEAttack,
+        X_Bounce,       // X means not to be used in the editor
+        X_HalfBounce    // X means not to be used in the editor
     }
 }

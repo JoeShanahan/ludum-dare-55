@@ -69,11 +69,11 @@ namespace LudumDare55
             {
                 SkipTurnAnimation(time);
             }
-            else if (NextAction == BoardAction.Bounce)
+            else if (NextAction == BoardAction.X_Bounce)
             {
                 DoBounce(NextDirection, time, true);
             }
-            else if (NextAction == BoardAction.HalfBounce)
+            else if (NextAction == BoardAction.X_HalfBounce)
             {
                 DoBounce(NextDirection, time, false);
             }
