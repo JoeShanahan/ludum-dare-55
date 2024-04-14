@@ -20,14 +20,18 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 8227d4cf44ccf47f8b5bfd1fa8dccf2f, type: 3}
     Count: 3
     DoesStartWith: 1
+    HealthPoints: 2
+    Attack: 1
     Description: Just a derpy darcy
-    ActionQueue: 01000000
+    ActionQueue: 0100000000000000
     AttackArea: 0
     AttackMode: 1
   - Name: B
     Sprite: {fileID: 21300000, guid: 517ed9e2fb6a24d119930421562c3f9a, type: 3}
     Count: 3
     DoesStartWith: 1
+    HealthPoints: 2
+    Attack: 1
     Description: Beta
     ActionQueue: 01000000
     AttackArea: 0
@@ -36,6 +40,8 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: d482d195f57914f829c38b3187cb3a80, type: 3}
     Count: 3
     DoesStartWith: 1
+    HealthPoints: 2
+    Attack: 1
     Description: Gamma
     ActionQueue: 01000000
     AttackArea: 0
@@ -44,6 +50,8 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 12c93648aa445420caf6ae06b47a156d, type: 3}
     Count: 2
     DoesStartWith: 0
+    HealthPoints: 2
+    Attack: 1
     Description: Delta
     ActionQueue: 01000000
     AttackArea: 0
@@ -52,6 +60,8 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 6bdbbedca67f1424d84473302d0c767b, type: 3}
     Count: 1
     DoesStartWith: 0
+    HealthPoints: 2
+    Attack: 1
     Description: Epsilon
     ActionQueue: 01000000
     AttackArea: 0
