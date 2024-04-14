@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 namespace LudumDare55
 {
@@ -14,6 +16,7 @@ namespace LudumDare55
         
         [SerializeField] private BookCover _leftBookCover;
         [SerializeField] private BookCover _rightBookCover;
+        [SerializeField] private Transform _pauseMenu;
         
         private InputSystem_Actions _input;
         private bool _isMoving;
@@ -50,12 +53,20 @@ namespace LudumDare55
 
             //_input.Player.Summon.performed += OnSummonPressed;
             _input.Player.SkipMove.performed += OnSkipPressed;
+            _input.Player.Menu.performed += OnMenuPressed;
 
             _gameState.InitHands();
             _cards.Refresh();
             
             Application.targetFrameRate = 60;
             StartGame();
+        }
+
+        private void OnDestroy()
+        {
+            _input.Disable();
+            _input.Player.SkipMove.performed -= OnSkipPressed;
+            _input.Player.Menu.performed -= OnMenuPressed;
         }
 
         private void StartGame()
@@ -75,9 +86,19 @@ namespace LudumDare55
             
             _board.PlayerAvatar.TrySummon();
         }*/
+        
+        
+        private void OnMenuPressed(InputAction.CallbackContext ctx)
+        {
+            _pauseMenu.gameObject.SetActive(true);
+        }
+
 
         private void OnSkipPressed(InputAction.CallbackContext ctx)
         {
+            if (_pauseMenu.gameObject.activeSelf)
+                return;
+
             if (_isMoving)
                 return;
             
@@ -88,6 +109,9 @@ namespace LudumDare55
         // Update is called once per frame
         void Update()
         {
+            if (_pauseMenu.gameObject.activeSelf)
+                return;
+            
             if (_isMoving)
                 return;
 

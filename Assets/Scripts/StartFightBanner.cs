@@ -33,6 +33,8 @@ namespace LudumDare55
 
         private IEnumerator AnimateRoutine()
         {
+            yield return new WaitForSeconds(0.5f);
+            
             var rect = transform as RectTransform;
             Vector2 newSize = new Vector2(rect.sizeDelta.x, 200);
             rect.DOSizeDelta(newSize, 0.5f).SetEase(Ease.OutExpo);
