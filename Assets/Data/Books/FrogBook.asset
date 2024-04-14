@@ -22,6 +22,8 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: bc2fc27e99bb6424f807e50235d4cbe5, type: 3}
     Count: 3
     DoesStartWith: 1
+    HealthPoints: 2
+    Attack: 1
     Description: It may be common but that doesn't make it any less special
     ActionQueue: 01000000
     AttackArea: 0
@@ -30,31 +32,40 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 07debec054ece48b8ac2b094f8bde788, type: 3}
     Count: 3
     DoesStartWith: 1
-    Description: Hey you!
-    ActionQueue: 01000000
-    AttackArea: 0
-    AttackMode: 0
+    HealthPoints: 2
+    Attack: 1
+    Description: He's still banned from Australia. He knows what he did.
+    ActionQueue: 0100000003000000
+    AttackArea: 2
+    AttackMode: 2
   - Name: Flying Frog
     Sprite: {fileID: 21300000, guid: 2e719cd83e9714e519c0ccb8c579679d, type: 3}
     Count: 3
     DoesStartWith: 1
-    Description: Gamma
-    ActionQueue: 01000000
-    AttackArea: 0
-    AttackMode: 0
+    HealthPoints: 1
+    Attack: 1
+    Description: Flyest of all the frogs!
+    ActionQueue: 02000000
+    AttackArea: 3
+    AttackMode: 2
   - Name: Dart Frog
     Sprite: {fileID: 21300000, guid: 361f949f8b7424504af90949331eafe1, type: 3}
     Count: 2
     DoesStartWith: 0
-    Description: Delta
+    HealthPoints: 1
+    Attack: 2
+    Description: Not poisonous, but lethally accurate.
     ActionQueue: 01000000
-    AttackArea: 0
-    AttackMode: 0
-  - Name: Fighting Frog
+    AttackArea: 3
+    AttackMode: 2
+  - Name: Peruvian Fighting Frog
     Sprite: {fileID: 21300000, guid: 051d5740b2093486ca06db969c5ba6d5, type: 3}
     Count: 1
     DoesStartWith: 0
-    Description: Epsilon
-    ActionQueue: 01000000
+    HealthPoints: 3
+    Attack: 4
+    Description: Upon spotting another Peruvian Fighting Frog (or anything else for
+      that matter) they will commence battle until nightfall.
+    ActionQueue: 02000000
     AttackArea: 0
-    AttackMode: 0
+    AttackMode: 1
