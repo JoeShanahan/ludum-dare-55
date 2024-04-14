@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace LudumDare55
 {
@@ -9,6 +10,7 @@ namespace LudumDare55
     {
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private GameObject _summonPrefab;
+        [SerializeField] private GameObject _pagePrefab;
         [SerializeField] private GameObject _squarePrefab;
         [SerializeField] private ActiveGameState _gameState;
         
@@ -17,16 +19,17 @@ namespace LudumDare55
         
         public PlayerAvatar PlayerAvatar { get; private set; }
         public PlayerAvatar OpponentAvatar { get; private set; }
-
         public GameController GameController;
 
         private List<BoardActor> _allActors = new();
+        public List<BoardActor> _pageActors { get; private set; } = new();
         private int _width;
         private int _height;
         private bool _areConflicts;
 
         private List<SummonAvatar> _summonsToReset = new();
         private List<SummonAvatar> _summonsToKill = new();
+        private int _turnsUntilPage;
         
         public void ReturnToSender(SummonAvatar summon)
         {
@@ -105,6 +108,7 @@ namespace LudumDare55
             CreateBoard(width, height);
             PlayerAvatar.SetBook(playerBook);
             OpponentAvatar.SetBook(NpcBook);
+            _turnsUntilPage = 10;
         }
         
         private void CreateBoard(int width, int height)
@@ -193,6 +197,9 @@ namespace LudumDare55
             {
                 _allActors.Remove(summon);
             }
+            
+            _turnsUntilPage -= 1;
+            if (_turnsUntilPage == 0) { SpawnPage(); }
         }
 
         private void ResolveCollisions()
@@ -375,7 +382,36 @@ namespace LudumDare55
                 }
             }
         }
-        
+
+        private void SpawnPage()
+        {
+            Vector2Int rPos = new Vector2Int();
+            bool validPos = false;
+            int i = 0;
+            while (validPos == false)
+            {
+                i++;
+                validPos = true;
+                rPos = new Vector2Int(Random.Range(1, 8), Random.Range(0, 5));
+                foreach (BoardActor a in _allActors)
+                {
+                    if (a.GridPosition == rPos) { validPos = false; }
+                }
+                if (i > 50)
+                {
+                    _turnsUntilPage = 5;
+                    return;
+                }
+            }
+            GameObject newObj = Instantiate(_pagePrefab, transform);
+            newObj.transform.localPosition = new Vector3(rPos.x, rPos.y, 0f);
+            PageAvatar page = newObj.GetComponent<PageAvatar>();
+            page.IsPage = true;
+            page.Init(this);
+            _pageActors.Add(page);
+            _turnsUntilPage = 10;
+        }
+
         // Update is called once per frame
         void Update()
         {
