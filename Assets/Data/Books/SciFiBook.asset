@@ -30,7 +30,7 @@ MonoBehaviour:
     Description: Bump
     ActionQueue: 01000000
     AttackArea: 0
-    AttackMode: 1
+    AoePrefab: {fileID: 0}
   - Name: Move-Attack
     Sprite: {fileID: 21300000, guid: 517ed9e2fb6a24d119930421562c3f9a, type: 3}
     Count: 3
@@ -39,8 +39,8 @@ MonoBehaviour:
     Attack: 2
     Description: Hey you!
     ActionQueue: 0100000003000000
-    AttackArea: 1
-    AttackMode: 0
+    AttackArea: 4
+    AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
   - Name: Archer
     Sprite: {fileID: 21300000, guid: d482d195f57914f829c38b3187cb3a80, type: 3}
     Count: 3
@@ -50,4 +50,4 @@ MonoBehaviour:
     Description: Gamma
     ActionQueue: 01000000
     AttackArea: 0
-    AttackMode: 0
+    AoePrefab: {fileID: 0}

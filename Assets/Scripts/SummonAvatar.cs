@@ -87,6 +87,79 @@ namespace LudumDare55
             if (_actionQueue.Count > 0)
                 _queueIdx = (_queueIdx + 1) % _actionQueue.Count;
         }
+        
+        protected override void DoAoeAttack()
+        {
+            AttackArea aoeMode = SummonData.AttackArea;
+
+            List<Vector2Int> positions = new();
+            Vector2Int currentPos = GridPosition;
+
+            int one = IsRight ? 1 : -1;
+
+            // Around
+            if (aoeMode is AttackArea.Sides or AttackArea.Circle or AttackArea.Cardinals)
+            {
+                positions.Add(currentPos + new Vector2Int(0, 1));
+                positions.Add(currentPos + new Vector2Int(0, -1));
+            }
+            if (aoeMode is AttackArea.Circle or AttackArea.Cardinals)
+            {
+                positions.Add(currentPos + new Vector2Int(-one, 0));
+                positions.Add(currentPos + new Vector2Int(one, 0));
+            }
+            if (aoeMode is AttackArea.Circle)
+            {
+                positions.Add(currentPos + new Vector2Int(-one, -1));
+                positions.Add(currentPos + new Vector2Int(one, -1));
+                positions.Add(currentPos + new Vector2Int(-one, 1));
+                positions.Add(currentPos + new Vector2Int(one, 1));
+            }
+            
+            // In front
+            if (aoeMode is AttackArea.OneByOne or AttackArea.OneByTwo or AttackArea.OneByThree or AttackArea.ThreeByOne)
+            {
+                positions.Add(currentPos + new Vector2Int(one, 0));
+            }
+            if (aoeMode is AttackArea.OneByTwo)
+            {
+                positions.Add(currentPos + new Vector2Int(one + one, 0));
+            }
+            if (aoeMode is AttackArea.OneByThree)
+            {
+                positions.Add(currentPos + new Vector2Int(one + one, 0));
+                positions.Add(currentPos + new Vector2Int(one + one + one, 0));
+            }
+            if (aoeMode is AttackArea.ThreeByOne)
+            {
+                positions.Add(currentPos + new Vector2Int(one, 1));
+                positions.Add(currentPos + new Vector2Int(one, -1));
+            }
+            
+            // full row/column
+            if (aoeMode == AttackArea.Row)
+            {
+                for (int i = 1; i < 9; i++)
+                {
+                    positions.Add(new Vector2Int(currentPos.x + (one * i), currentPos.y));
+                }
+            }
+            
+            if (aoeMode == AttackArea.Column)
+            {
+                for (int i = 1; i < 5; i++)
+                {
+                    positions.Add(new Vector2Int(currentPos.x, currentPos.y - i));
+                    positions.Add(new Vector2Int(currentPos.x, currentPos.y + i));
+                }
+            }
+
+
+            foreach (Vector2Int pos in positions)
+            {
+                _board.DoAoeAttack(pos, AttackDamage, SummonData.AoePrefab);
+            }
+        }
 
         public override void CommitToAction()
         {

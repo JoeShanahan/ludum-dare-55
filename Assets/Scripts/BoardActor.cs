@@ -77,6 +77,15 @@ namespace LudumDare55
             {
                 DoBounce(NextDirection, time, false);
             }
+            else if (NextAction == BoardAction.AOEAttack)
+            {
+                DoAoeAttack();
+            }
+        }
+
+        protected virtual void DoAoeAttack()
+        {
+               
         }
 
         public void OverrideNextAction(BoardAction action, Vector2Int endPosition)

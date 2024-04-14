@@ -57,25 +57,21 @@ namespace LudumDare55
         [Header("Behaviour")]
         public List<BoardAction> ActionQueue;
         public AttackArea AttackArea;
-        public AttackMode AttackMode;
+        public GameObject AoePrefab;
     }
 
-    public enum AttackMode
-    {
-        Never,
-        Bump,
-        InRange,
-        OnDeath
-    }
 
     public enum AttackArea
     {
-        InFront,
+        OneByOne,
         Sides,
         Circle,
-        Ranged,
         Row,
-        Column
+        Column,
+        ThreeByOne,
+        OneByTwo,
+        OneByThree,
+        Cardinals
     }
     
     public enum BoardAction

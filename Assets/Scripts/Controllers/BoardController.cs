@@ -52,6 +52,17 @@ namespace LudumDare55
             return null;
         }
         
+        public BoardActor GetActorGoingToBeAt(Vector2Int pos)
+        {
+            foreach (BoardActor actor in _allActors)
+            {
+                if (actor.NextPosition == pos)
+                    return actor;
+            }
+
+            return null;
+        }
+        
         public bool IsSpaceTaken(Vector3 pos)
         {
             Vector2Int intPos = new Vector2Int(Mathf.RoundToInt(pos.x), Mathf.RoundToInt(pos.y));
@@ -244,6 +255,39 @@ namespace LudumDare55
                         actorA.CollideWith(actorB);
                     }
                 }
+            }
+        }
+
+        private List<AoeTarget> _toHitWithAoe = new();
+
+        private class AoeTarget
+        {
+            public BoardActor Actor;
+            public int Damage;
+
+            public AoeTarget(BoardActor actor, int damage)
+            {
+                Actor = actor;
+                Damage = damage;
+            }
+        }
+
+        public void DoAoeAttack(Vector2Int position, int damage, GameObject prefab)
+        {
+            Vector3 pos = new Vector3(position.x, position.y);
+            
+            if (IsSpaceValid(pos) == false)
+                return;
+            
+            GameObject newObj = Instantiate(prefab, transform);
+            newObj.transform.localPosition = pos;
+            
+            BoardActor onThisTile = GetActorGoingToBeAt(position);
+
+            if (onThisTile != null)
+            {
+                Debug.LogWarning($"Gonna hit this guy with an AOE: {onThisTile.GridPosition}");
+                _toHitWithAoe.Add(new AoeTarget(onThisTile, damage));
             }
         }
         
