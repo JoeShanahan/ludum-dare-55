@@ -27,7 +27,7 @@ MonoBehaviour:
     HealthPoints: 3
     Attack: 3
     Description: Technically a wyrm. Sometimes wishes it had legs.
-    ActionQueue: 0100000003000000
+    ActionQueue: 01000000
     AttackArea: 0
     AttackMode: 1
   - Name: Brodvar the Dwarf
@@ -69,6 +69,6 @@ MonoBehaviour:
     Description: Unluckiest wizard in the world. Somehow always ends up in mortal
       danger right before saving the world. At least he's become very good at staying
       alive.
-    ActionQueue: 01000000
+    ActionQueue: 0100000003000000
     AttackArea: 2
     AttackMode: 2
