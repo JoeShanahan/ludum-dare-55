@@ -7,6 +7,7 @@ namespace LudumDare55
     {
         public string PersonName;
         public BookData ChosenBook;
+        public AudioClip ThemeSong;
 
         public Sprite Sprite;
         
