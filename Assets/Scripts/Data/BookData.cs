@@ -11,6 +11,11 @@ namespace LudumDare55
 
         public string Genre;
 
+        public Color BookColor;
+        public Color TitleColor;
+        public Color GenreColor;
+        public Sprite CoverImage;
+        
         [TextArea(3, 10)]
         public string LongDescription;
 

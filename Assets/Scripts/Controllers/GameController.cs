@@ -12,6 +12,9 @@ namespace LudumDare55
         [SerializeField] private ActiveGameState _gameState;
         [SerializeField] private Transform _startBanner;
         
+        [SerializeField] private BookCover _leftBookCover;
+        [SerializeField] private BookCover _rightBookCover;
+        
         private InputSystem_Actions _input;
         private bool _isMoving;
 
@@ -57,6 +60,9 @@ namespace LudumDare55
 
         private void StartGame()
         {
+            _leftBookCover.SetBook(_gameState.PlayerBook);
+            _rightBookCover.SetBook(_gameState.Opponent.ChosenBook);
+            
             _board.InitBoard(9, 5, _gameState.PlayerBook, _gameState.Opponent.ChosenBook);
             _cards.Player = _board.PlayerAvatar;
             _startBanner.gameObject.SetActive(true);
