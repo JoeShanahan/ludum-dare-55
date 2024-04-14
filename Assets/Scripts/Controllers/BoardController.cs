@@ -12,9 +12,8 @@ namespace LudumDare55
         [SerializeField] private GameObject _summonPrefab;
         [SerializeField] private GameObject _pagePrefab;
         [SerializeField] private GameObject _squarePrefab;
-        [SerializeField] private Color _colorA;
-        [SerializeField] private Color _colorB;
-
+        [SerializeField] private ActiveGameState _gameState;
+        
         [SerializeField] private Sprite _leftPlayerSprite;
         [SerializeField] private Sprite _rightPlayerSprite;
         
@@ -29,12 +28,28 @@ namespace LudumDare55
         private bool _areConflicts;
 
         private List<SummonAvatar> _summonsToReset = new();
-
+        private List<SummonAvatar> _summonsToKill = new();
         private int _turnsUntilPage;
         
         public void ReturnToSender(SummonAvatar summon)
         {
             _summonsToReset.Add(summon);
+        }
+        
+        public void OopsIDied(SummonAvatar summon)
+        {
+            _summonsToKill.Add(summon);
+        }
+
+        public BoardActor GetActorAt(Vector2Int pos)
+        {
+            foreach (BoardActor actor in _allActors)
+            {
+                if (actor.GridPosition == pos)
+                    return actor;
+            }
+
+            return null;
         }
         
         public bool IsSpaceTaken(Vector3 pos)
@@ -111,7 +126,8 @@ namespace LudumDare55
                     bool isOdd = (x + y) % 2 == 0;
 
                     GameObject newObj = Instantiate(_squarePrefab, transform);
-                    newObj.GetComponent<SpriteRenderer>().color = isOdd ? _colorA : _colorB;
+                    OpponentData opp = _gameState.Opponent;
+                    newObj.GetComponent<SpriteRenderer>().color = isOdd ? opp._tileColA : opp._tileColB;
                     newObj.transform.localPosition = new Vector3(x, y, 0);
 
                     float distFromCenter = Vector3.Distance(midpoint, newObj.transform.localPosition);
@@ -177,17 +193,24 @@ namespace LudumDare55
                 }
             }
 
+            foreach (SummonAvatar summon in _summonsToKill)
+            {
+                _allActors.Remove(summon);
+            }
+            
             _turnsUntilPage -= 1;
             if (_turnsUntilPage == 0) { SpawnPage(); }
         }
 
         private void ResolveCollisions()
         {
+            // This is some hella inefficient code but who cares it's a gamejam
             for (int i = 0; i < 16; i++)
             {
                 ResolveDirectBumps();
                 ResolveSpaceDispute();
                 CheckForAllyBlocking();
+                ResolveWaiting();
                 CheckForRemainingConflicts();
 
                 if (_areConflicts == false)
@@ -218,6 +241,67 @@ namespace LudumDare55
                         // If not, half bump
                         actorA.OverrideNextAction(BoardAction.HalfBounce, actorA.GridPosition);
                         actorB.OverrideNextAction(BoardAction.HalfBounce, actorB.GridPosition);
+                        actorA.CollideWith(actorB);
+                    }
+                }
+            }
+        }
+        
+        private void ResolveWaiting()
+        {
+            foreach (BoardActor actorA in _allActors)
+            {
+                foreach (BoardActor actorB in _allActors)
+                {
+                    if (actorA == actorB)
+                        continue;
+
+                    bool AtoB = actorA.NextPosition == actorB.GridPosition;
+                    bool BtoA = actorB.NextPosition == actorA.GridPosition;
+
+                    bool potential = AtoB || BtoA;
+
+                    if (!potential)
+                        continue;
+                    
+                    bool isAWaiting = actorA.NextAction == BoardAction.Wait;
+                    bool isBWaiting = actorB.NextAction == BoardAction.Wait;
+                    
+                    bool isAMoving = actorA.NextAction == BoardAction.Move;
+                    bool isBMoving = actorB.NextAction == BoardAction.Move;
+
+                    bool aAttackB = isAMoving && isBWaiting;
+                    bool bAttackA = isBMoving && isAWaiting;
+
+                    potential = aAttackB || bAttackA;
+
+                    if (!potential)
+                        continue;
+
+                    bool areEnemies = actorA.IsRight != actorB.IsRight;
+                    actorA.CollideWith(actorB);
+
+                    if (areEnemies)
+                    {
+                        if (AtoB)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
+                        }
+                        if (BtoA)
+                        {
+                            actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                        }
+                    }
+                    else
+                    {
+                        if (AtoB)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Wait, actorA.GridPosition);
+                        }
+                        if (BtoA)
+                        {
+                            actorB.OverrideNextAction(BoardAction.Wait, actorA.GridPosition);
+                        }
                     }
                 }
             }
@@ -243,6 +327,7 @@ namespace LudumDare55
                         // If not, bump
                         actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
                         actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                        actorA.CollideWith(actorB);
                     }
                 }
             }
@@ -290,6 +375,7 @@ namespace LudumDare55
 
                     if (bothSamePos)
                     {
+                        Debug.LogWarning($"{actorA.NextAction}, {actorB.NextAction}");
                         _areConflicts = true;
                         return;
                     }

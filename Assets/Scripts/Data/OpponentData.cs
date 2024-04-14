@@ -14,6 +14,8 @@ namespace LudumDare55
         public Color _bgColA;
         public Color _bgColB;
 
+        public Texture2D BackgroundTex;
+
         [TextArea(3, 10)] public string FirstLine;
         [TextArea(3, 10)] public string YourResponse;
         [TextArea(3, 10)] public string SecondLine;

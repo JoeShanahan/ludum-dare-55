@@ -12,14 +12,29 @@ namespace LudumDare55
 
         public bool IsPlayer => IsRight;
         
+        public int HealthPoints { get; protected set; }
+        public int AttackDamage { get; protected set; }
+        
         public BoardAction NextAction { get; protected set; }
         public Vector2Int NextPosition { get; protected set; }
         public Vector2Int NextDirection { get; protected set; }
-
+        public BoardActor CollidingActor { get; protected set; }
+        
         protected BoardController _board;
         
         // TODO this is dumb
         public Vector2Int GridPosition => Vector2Int.RoundToInt(transform.localPosition);
+
+        public void CollideWith(BoardActor other)
+        {
+            other.CollidingActor = this;
+            CollidingActor = other;
+        }
+        
+        public virtual void Attack(int damage)
+        {
+            
+        }
         
         public void Init(BoardController board)
         {
@@ -79,13 +94,29 @@ namespace LudumDare55
             float halfTime = time / 2f;
 
             transform.DOLocalMoveX(newPos.x, halfTime).SetEase(Ease.Linear);
-            transform.DOLocalMoveY(newPos.y, halfTime).SetEase(Ease.Linear);
+            transform.DOLocalMoveY(newPos.y, halfTime).SetEase(Ease.Linear).OnComplete(OnBounceMiddle);
             
             transform.DOLocalMoveX(NextPosition.x, halfTime).SetDelay(halfTime).SetEase(Ease.Linear);
             transform.DOLocalMoveY(NextPosition.y, halfTime).SetDelay(halfTime).SetEase(Ease.Linear);
 
             transform.DOLocalMoveZ(newPos.z - 0.5f, halfTime).SetEase(Ease.OutSine);
             transform.DOLocalMoveZ(newPos.z, halfTime).SetDelay(halfTime).SetEase(Ease.InSine);
+        }
+
+        private void OnBounceMiddle()
+        {
+            if (CollidingActor == null)
+            {
+                Debug.LogError("Bounced against nothing???!");
+                return;
+            }
+
+            bool isEnemy = CollidingActor.IsPlayer != IsPlayer;
+
+            if (isEnemy)
+            {
+                CollidingActor.Attack(AttackDamage);
+            }
         }
 
         protected void DoMove(Vector2Int localPos, float time)

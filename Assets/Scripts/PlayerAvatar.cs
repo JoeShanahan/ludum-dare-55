@@ -26,9 +26,15 @@ namespace LudumDare55
 
         public bool TrySummon(SummonData data)
         {
-            if (_board.IsSpaceTaken(SummonPosition)) { return false; }
+
+            if (_board.IsSpaceTaken(SummonPosition)) 
+            { 
+                return false; 
+            }
+            
             _board.CreateNewSummon(this, data);
             return true;
+
         }
 
         public override void OnMoveComplete()
@@ -54,6 +60,8 @@ namespace LudumDare55
                 int i = Random.Range(0, 4);
                 TrySummon(Book.Summons[i]);
             }
+            
+            CollidingActor = null;
         }
         
         public Vector3 SummonPosition

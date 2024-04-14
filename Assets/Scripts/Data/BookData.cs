@@ -39,6 +39,12 @@ namespace LudumDare55
         public Sprite Sprite;
         public int Count = 1;
         public bool DoesStartWith;
+
+        [Range(0, 4)]
+        public int HealthPoints = 2;
+        
+        [Range(0, 4)]
+        public int Attack = 1;
         
         [TextArea(3, 10)]
         public string Description;
