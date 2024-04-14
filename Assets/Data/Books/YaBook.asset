@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29beef7a0df3643ed9c124dda796b8b5, type: 3}
+  m_Name: YaBook
+  m_EditorClassIdentifier: 
+  BookName: Defiance
+  Genre: Young Adult Dystopian
+  LongDescription: Dariangeline always felt she was different, despite being put
+    in a box like everyone under the Conservative Government. When her life is saved
+    by Darius and the Resibelliance, she discovers something new to fight for. But
+    will the reappearrance of her childhood friend Darren divert he from the just
+    cause?
+  Summons:
+  - Name: Specialest girl in the world
+    Sprite: {fileID: 21300000, guid: 5795adb1da46f2143a86de8b08aab2db, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    HealthPoints: 2
+    Attack: 1
+    Description: Surprisingly, she only has the physical capabilities of a regular
+      teenage girl.
+    ActionQueue: 01000000
+    AttackArea: 0
+    AttackMode: 1
+  - Name: Blonde love interest
+    Sprite: {fileID: 21300000, guid: ba5c0685ad906e246af9e14b08f73014, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    HealthPoints: 3
+    Attack: 2
+    Description: Beefy and dependable
+    ActionQueue: 0100000003000000
+    AttackArea: 0
+    AttackMode: 0
+  - Name: Dark love interest
+    Sprite: {fileID: 21300000, guid: bb2902e58b6ce4142a89ac69b494bb35, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    HealthPoints: 1
+    Attack: 3
+    Description: Edgy and brooding.
+    ActionQueue: 0100000003000000
+    AttackArea: 3
+    AttackMode: 0
+  - Name: Evil Government
+    Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    HealthPoints: 4
+    Attack: 4
+    Description: The State, dedicated to nothing other than its own survival at any
+      cost.
+    ActionQueue: 0100000003000000
+    AttackArea: 5
+    AttackMode: 2
+  - Name: The Resibelliance
+    Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    HealthPoints: 2
+    Attack: 4
+    Description: The last few willing to stand up to tyranny. No one know how they
+      manage to stay so groomed while supposedly living off grid.
+    ActionQueue: 02000000
+    AttackArea: 5
+    AttackMode: 2

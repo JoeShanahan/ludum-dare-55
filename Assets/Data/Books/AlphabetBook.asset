@@ -27,7 +27,7 @@ MonoBehaviour:
     HealthPoints: 2
     Attack: 1
     Description: Just a derpy darcy
-    ActionQueue: 01000000
+    ActionQueue: 0100000000000000
     AttackArea: 0
     AoePrefab: {fileID: 0}
   - Name: B
