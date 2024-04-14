@@ -33,8 +33,20 @@ namespace LudumDare55
 
         public override void OnMoveComplete()
         {
+            foreach (BoardActor a in _board._pageActors)
+            {
+                if (a.GridPosition == this.GridPosition)
+                {
+                    if (_isAi) { break; }
+                    _board._pageActors.Remove(a);
+                    Destroy(a.gameObject);
+                    _board.GameController.GetNewCard();
+                    break;
+                }
+            }
+
             if (_isAi == false) { return; }
-            
+
             int ypos = Mathf.RoundToInt(transform.localPosition.y);
 
             if (ypos is 4 or 0)

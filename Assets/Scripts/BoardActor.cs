@@ -8,6 +8,7 @@ namespace LudumDare55
         [SerializeField] protected SpriteRenderer _renderer;
 
         public bool IsRight { get; private set; }
+        public bool IsPage;
 
         public bool IsPlayer => IsRight;
         
