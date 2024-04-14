@@ -150,13 +150,21 @@ namespace LudumDare55
             
             for (int x = 0; x < width; x++)
             {
+                bool isEndTile = x == 0 || x == width - 1;
+                
                 for (int y = 0; y < height; y++)
                 {
                     bool isOdd = (x + y) % 2 == 0;
 
                     GameObject newObj = Instantiate(_squarePrefab, transform);
                     OpponentData opp = _gameState.Opponent;
-                    newObj.GetComponent<SpriteRenderer>().color = isOdd ? opp._tileColA : opp._tileColB;
+                    
+                    Color col = isOdd ? opp._tileColA : opp._tileColB;
+
+                    if (isEndTile)
+                        col = Color.Lerp(col, Color.red, 0.15f);
+
+                    newObj.GetComponent<SpriteRenderer>().color = col;
                     newObj.transform.localPosition = new Vector3(x, y, 0);
 
                     float distFromCenter = Vector3.Distance(midpoint, newObj.transform.localPosition);
