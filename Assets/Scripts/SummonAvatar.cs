@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -41,15 +42,22 @@ namespace LudumDare55
             if (HealthPoints == 0)
             {
                 _board.OopsIDied(this);
-
-                Vector2Int deathDirection = -NextDirection;
-                Vector3 deathPosition = transform.localPosition + new Vector3(deathDirection.x, deathDirection.y, 0);
-                
-                DOTween.Kill(transform);
-                transform.DOLocalRotate(new Vector3(0, 0, 160), 0.3f).SetEase(Ease.Linear);
-                transform.DOScale(0, 0.3f).SetEase(Ease.Linear).OnComplete(() => Destroy(gameObject));
-                transform.DOLocalMove(deathPosition, 0.3f).SetEase(Ease.OutSine);
+                StartCoroutine(DeathRoutine());
             }
+        }
+
+        private IEnumerator DeathRoutine()
+        {
+            // Need to delay until end of frame before killing tween
+            yield return null;
+            
+            Vector2Int deathDirection = -NextDirection;
+            Vector3 deathPosition = transform.localPosition + new Vector3(deathDirection.x, deathDirection.y, 0);
+                
+            DOTween.Kill(transform);
+            transform.DOLocalRotate(new Vector3(0, 0, 160), 0.3f).SetEase(Ease.Linear);
+            transform.DOScale(0, 0.3f).SetEase(Ease.Linear).OnComplete(() => Destroy(gameObject));
+            transform.DOLocalMove(deathPosition, 0.3f).SetEase(Ease.OutSine);
         }
 
         private void OnEnable()
