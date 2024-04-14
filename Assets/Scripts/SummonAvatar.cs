@@ -17,6 +17,27 @@ namespace LudumDare55
             SummonData = data;
             _actionQueue = data.ActionQueue;
             SetSprite(data.Sprite, isRight);
+            HealthPoints = data.HealthPoints;
+            AttackDamage = data.Attack;
+        }
+
+        public override void Attack(int damage)
+        {
+            HealthPoints -= damage;
+            HealthPoints = Mathf.Max(HealthPoints, 0);
+
+            if (HealthPoints == 0)
+            {
+                _board.OopsIDied(this);
+
+                Vector2Int deathDirection = -NextDirection;
+                Vector3 deathPosition = transform.localPosition + new Vector3(deathDirection.x, deathDirection.y, 0);
+                
+                DOTween.Kill(transform);
+                transform.DOLocalRotate(new Vector3(0, 0, 160), 0.3f).SetEase(Ease.Linear);
+                transform.DOScale(0, 0.3f).SetEase(Ease.Linear).OnComplete(() => Destroy(gameObject));
+                transform.DOLocalMove(deathPosition, 0.3f).SetEase(Ease.OutSine);
+            }
         }
 
         private void OnEnable()
@@ -34,6 +55,8 @@ namespace LudumDare55
             {
                 _board.ReturnToSender(this);
             }
+
+            CollidingActor = null;
         }
 
         public override void DoAction(float time)

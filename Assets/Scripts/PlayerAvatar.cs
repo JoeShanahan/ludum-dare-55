@@ -48,6 +48,8 @@ namespace LudumDare55
                 int i = Random.Range(0, 4);
                 TrySummon(Book.Summons[i]);
             }
+            
+            CollidingActor = null;
         }
         
         public Vector3 SummonPosition

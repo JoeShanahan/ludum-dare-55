@@ -26,10 +26,27 @@ namespace LudumDare55
         private bool _areConflicts;
 
         private List<SummonAvatar> _summonsToReset = new();
+        private List<SummonAvatar> _summonsToKill = new();
         
         public void ReturnToSender(SummonAvatar summon)
         {
             _summonsToReset.Add(summon);
+        }
+        
+        public void OopsIDied(SummonAvatar summon)
+        {
+            _summonsToKill.Add(summon);
+        }
+
+        public BoardActor GetActorAt(Vector2Int pos)
+        {
+            foreach (BoardActor actor in _allActors)
+            {
+                if (actor.GridPosition == pos)
+                    return actor;
+            }
+
+            return null;
         }
         
         public bool IsSpaceTaken(Vector3 pos)
@@ -171,10 +188,16 @@ namespace LudumDare55
                     // TODO add to opponent hand
                 }
             }
+
+            foreach (SummonAvatar summon in _summonsToKill)
+            {
+                _allActors.Remove(summon);
+            }
         }
 
         private void ResolveCollisions()
         {
+            // This is some hella inefficient code but who cares it's a gamejam
             for (int i = 0; i < 16; i++)
             {
                 ResolveDirectBumps();
@@ -211,6 +234,7 @@ namespace LudumDare55
                         // If not, half bump
                         actorA.OverrideNextAction(BoardAction.HalfBounce, actorA.GridPosition);
                         actorB.OverrideNextAction(BoardAction.HalfBounce, actorB.GridPosition);
+                        actorA.CollideWith(actorB);
                     }
                 }
             }
@@ -248,6 +272,7 @@ namespace LudumDare55
                         continue;
 
                     bool areEnemies = actorA.IsRight != actorB.IsRight;
+                    actorA.CollideWith(actorB);
 
                     if (areEnemies)
                     {
@@ -295,6 +320,7 @@ namespace LudumDare55
                         // If not, bump
                         actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
                         actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                        actorA.CollideWith(actorB);
                     }
                 }
             }
