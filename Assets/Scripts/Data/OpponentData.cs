@@ -8,6 +8,8 @@ namespace LudumDare55
         public string PersonName;
         public BookData ChosenBook;
 
+        public Sprite Sprite;
+        
         public Color _tileColA;
         public Color _tileColB;
         

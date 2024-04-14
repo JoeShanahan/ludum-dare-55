@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 8289012383374969851}
+  IsPage: 0
+  _sprite: {fileID: 0}
+  _gameState: {fileID: 11400000, guid: 151646503f3a44d1ea16ecf871a79bf4, type: 2}
 --- !u!1 &8504695475435559640
 GameObject:
   m_ObjectHideFlags: 0

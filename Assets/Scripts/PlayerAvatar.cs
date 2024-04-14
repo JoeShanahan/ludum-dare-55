@@ -8,15 +8,15 @@ namespace LudumDare55
     public class PlayerAvatar : BoardActor
     {
         public BookData Book { get; private set; }
-        
+
+        [SerializeField] private ActiveGameState _gameState;
         private Vector3 _desiredDirection;
         private bool _isAi;
-
-
-
+        
         public void EnableAI()
         {
             _isAi = true;
+            _renderer.sprite = _gameState.Opponent.Sprite;
         }
 
         public void SetDesiredDirection(Vector3 dir)
