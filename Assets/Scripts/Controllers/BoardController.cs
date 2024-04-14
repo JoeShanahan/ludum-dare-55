@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -98,9 +99,26 @@ namespace LudumDare55
             
             foreach (BoardActor actor in _allActors)
             {
-                // TODO just prepare to do the action, because it might have to change if there are collisions
                 actor.DoAction(moveTime);
             }
+
+            StartCoroutine(CheckForAoeKills(moveTime));
+        }
+
+        private IEnumerator CheckForAoeKills(float moveTime)
+        {
+            yield return new WaitForSeconds(moveTime / 2);
+
+            foreach (var hitInfo in _toHitWithAoe)
+            {
+                // TODO different thing for person and page
+                if (hitInfo.Actor is SummonAvatar)
+                {
+                    hitInfo.Actor.Attack(hitInfo.Damage);
+                }
+            }
+            
+            _toHitWithAoe.Clear();
         }
         
         public void CreateNewSummon(PlayerAvatar avatar, SummonData data)
