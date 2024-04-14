@@ -10,6 +10,7 @@ namespace LudumDare55
         [SerializeField] private CardController _cards;
         [SerializeField] private float _moveTime = 0.5f;
         [SerializeField] private ActiveGameState _gameState;
+        [SerializeField] private Transform _startBanner;
         
         private InputSystem_Actions _input;
         private bool _isMoving;
@@ -58,6 +59,7 @@ namespace LudumDare55
         {
             _board.InitBoard(9, 5, _gameState.PlayerBook, _gameState.Opponent.ChosenBook);
             _cards.Player = _board.PlayerAvatar;
+            _startBanner.gameObject.SetActive(true);
         }
 
         /*private void OnSummonPressed(InputAction.CallbackContext ctx)

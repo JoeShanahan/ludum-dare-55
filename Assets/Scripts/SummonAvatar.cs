@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -8,7 +9,10 @@ namespace LudumDare55
     public class SummonAvatar : BoardActor
     {
         public SummonData SummonData { get; private set; }
-        
+
+        [SerializeField] private GameObject _healthPrefab;
+
+        private SummonHealthUI _spawnedUI;
         private int _queueIdx;
         private List<BoardAction> _actionQueue;    // TODO be able to overwrite if charmed, etc
         
@@ -19,6 +23,14 @@ namespace LudumDare55
             SetSprite(data.Sprite, isRight);
             HealthPoints = data.HealthPoints;
             AttackDamage = data.Attack;
+            
+            _spawnedUI = W2C.InstantiateAs<SummonHealthUI>(_healthPrefab);
+            _spawnedUI.Init(this); 
+        }
+
+        private void OnDestroy()
+        {
+            _spawnedUI.StopFollowing();
         }
 
         public override void Attack(int damage)

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 8289012383374969851}
+  _healthPrefab: {fileID: 4191587927686584217, guid: bddad444df8be487fb6fbf25f145c219, type: 3}
 --- !u!1 &8504695475435559640
 GameObject:
   m_ObjectHideFlags: 0

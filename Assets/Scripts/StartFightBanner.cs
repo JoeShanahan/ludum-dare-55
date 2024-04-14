@@ -41,7 +41,7 @@ namespace LudumDare55
             _topText.transform.DOScale(1, 0.5f).SetEase(Ease.OutBack, 3).SetDelay(0.1f);
             _bottomText.transform.DOScale(1, 0.5f).SetEase(Ease.OutBack, 2).SetDelay(0.15f);
             
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1.7f);
 
             _mask.enabled = true;
 
