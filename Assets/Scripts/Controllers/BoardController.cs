@@ -246,17 +246,31 @@ namespace LudumDare55
 
                     if (!potential)
                         continue;
-                    
-                    Debug.Log("Yeah this has pontench");
-                    /*
-                    if (bothMoving && AtoB && BtoA)
+
+                    bool areEnemies = actorA.IsRight != actorB.IsRight;
+
+                    if (areEnemies)
                     {
-                        // If can kill, do that and then move
-                        // If not, half bump
-                        actorA.OverrideNextAction(BoardAction.HalfBounce, actorA.GridPosition);
-                        actorB.OverrideNextAction(BoardAction.HalfBounce, actorB.GridPosition);
+                        if (AtoB)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
+                        }
+                        if (BtoA)
+                        {
+                            actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                        }
                     }
-                    */
+                    else
+                    {
+                        if (AtoB)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Wait, actorA.GridPosition);
+                        }
+                        if (BtoA)
+                        {
+                            actorB.OverrideNextAction(BoardAction.Wait, actorA.GridPosition);
+                        }
+                    }
                 }
             }
         }
