@@ -29,7 +29,7 @@ namespace LudumDare55
         public void BtnPressPlay()
         {
             _gameState.InitGame(_selectedBook, _selectedOpponent);
-            SceneManager.LoadScene(1);
+            FindFirstObjectByType<TransitionManager>().GoToGame();
         }
     }
 }

@@ -1432,9 +1432,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957511622}
-        m_TargetAssemblyTypeName: LudumDare55.TransitionManager, Assembly-CSharp
-        m_MethodName: GoToGame
+      - m_Target: {fileID: 1272063196}
+        m_TargetAssemblyTypeName: LudumDare55.MainMenuController, Assembly-CSharp
+        m_MethodName: BtnPressPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
