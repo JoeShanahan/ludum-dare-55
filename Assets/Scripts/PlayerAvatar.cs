@@ -27,7 +27,7 @@ namespace LudumDare55
             if (_board.IsSpaceTaken(SummonPosition))
                 return;
 
-            int idx = Random.Range(0, 5);
+            int idx = Random.Range(0, Book.Summons.Count);
             _board.CreateNewSummon(this, Book.Summons[idx]);
         }
 

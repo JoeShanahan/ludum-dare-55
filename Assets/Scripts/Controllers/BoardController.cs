@@ -10,9 +10,8 @@ namespace LudumDare55
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private GameObject _summonPrefab;
         [SerializeField] private GameObject _squarePrefab;
-        [SerializeField] private Color _colorA;
-        [SerializeField] private Color _colorB;
-
+        [SerializeField] private ActiveGameState _gameState;
+        
         [SerializeField] private Sprite _leftPlayerSprite;
         [SerializeField] private Sprite _rightPlayerSprite;
         
@@ -104,7 +103,8 @@ namespace LudumDare55
                     bool isOdd = (x + y) % 2 == 0;
 
                     GameObject newObj = Instantiate(_squarePrefab, transform);
-                    newObj.GetComponent<SpriteRenderer>().color = isOdd ? _colorA : _colorB;
+                    OpponentData opp = _gameState.Opponent;
+                    newObj.GetComponent<SpriteRenderer>().color = isOdd ? opp._tileColA : opp._tileColB;
                     newObj.transform.localPosition = new Vector3(x, y, 0);
 
                     float distFromCenter = Vector3.Distance(midpoint, newObj.transform.localPosition);
@@ -177,6 +177,7 @@ namespace LudumDare55
                 ResolveDirectBumps();
                 ResolveSpaceDispute();
                 CheckForAllyBlocking();
+                ResolveWaiting();
                 CheckForRemainingConflicts();
 
                 if (_areConflicts == false)
@@ -208,6 +209,51 @@ namespace LudumDare55
                         actorA.OverrideNextAction(BoardAction.HalfBounce, actorA.GridPosition);
                         actorB.OverrideNextAction(BoardAction.HalfBounce, actorB.GridPosition);
                     }
+                }
+            }
+        }
+        
+        private void ResolveWaiting()
+        {
+            foreach (BoardActor actorA in _allActors)
+            {
+                foreach (BoardActor actorB in _allActors)
+                {
+                    if (actorA == actorB)
+                        continue;
+
+                    bool AtoB = actorA.NextPosition == actorB.GridPosition;
+                    bool BtoA = actorB.NextPosition == actorA.GridPosition;
+
+                    bool potential = AtoB || BtoA;
+
+                    if (!potential)
+                        continue;
+                    
+                    bool isAWaiting = actorA.NextAction == BoardAction.Wait;
+                    bool isBWaiting = actorB.NextAction == BoardAction.Wait;
+                    
+                    bool isAMoving = actorA.NextAction == BoardAction.Move;
+                    bool isBMoving = actorB.NextAction == BoardAction.Move;
+
+                    bool aAttackB = isAMoving && isBWaiting;
+                    bool bAttackA = isBMoving && isAWaiting;
+
+                    potential = aAttackB || bAttackA;
+
+                    if (!potential)
+                        continue;
+                    
+                    Debug.Log("Yeah this has pontench");
+                    /*
+                    if (bothMoving && AtoB && BtoA)
+                    {
+                        // If can kill, do that and then move
+                        // If not, half bump
+                        actorA.OverrideNextAction(BoardAction.HalfBounce, actorA.GridPosition);
+                        actorB.OverrideNextAction(BoardAction.HalfBounce, actorB.GridPosition);
+                    }
+                    */
                 }
             }
         }
@@ -279,6 +325,7 @@ namespace LudumDare55
 
                     if (bothSamePos)
                     {
+                        Debug.LogWarning($"{actorA.NextAction}, {actorB.NextAction}");
                         _areConflicts = true;
                         return;
                     }
