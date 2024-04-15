@@ -42,6 +42,11 @@ namespace LudumDare55
                 PlayerPrefs.Save();
             }
         }
+        
+        public void OnBtnPress()
+        {
+            FindFirstObjectByType<NewMainMenuController>().BtnPressOpponent(_opponent);
+        }
 
         // Update is called once per frame
         void Update()
