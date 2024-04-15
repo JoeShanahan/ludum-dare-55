@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Song of the Kingdom of Crimson Embers
   Genre: Fantasy
-  BookColor: {r: 0, g: 0, b: 0, a: 0}
-  TitleColor: {r: 0, g: 0, b: 0, a: 0}
-  GenreColor: {r: 0, g: 0, b: 0, a: 0}
+  BookColor: {r: 0.39730823, g: 0.5754717, b: 0.28502136, a: 1}
+  TitleColor: {r: 0.1009256, g: 0.19634466, b: 0.7924528, a: 1}
+  GenreColor: {r: 1, g: 0, b: 0, a: 1}
   CoverImage: {fileID: 0}
   LongDescription: Yezzik the Unlucky has been plagued by strange dreams of a Tomb.
     The eastern wind brings the sounds of distant screams to Brodvar's ears. And
@@ -30,6 +30,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 3
     Attack: 3
+    Shield: 0
     Description: Technically a wyrm. Sometimes wishes it had legs.
     ActionQueue: 0100000003000000
     AttackArea: 5
@@ -40,6 +41,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 4
     Attack: 1
+    Shield: 0
     Description: Stout and frequently full of stout.
     ActionQueue: 01000000
     AttackArea: 0
@@ -50,6 +52,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
+    Shield: 0
     Description: Eyes so sharp he can see around the horizon.
     ActionQueue: 01000000
     AttackArea: 3
@@ -60,6 +63,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 3
+    Shield: 0
     Description: Also wishes it had legs.
     ActionQueue: 01000000
     AttackArea: 0
@@ -70,6 +74,7 @@ MonoBehaviour:
     DoesStartWith: 0
     HealthPoints: 4
     Attack: 2
+    Shield: 0
     Description: Unluckiest wizard in the world. Somehow always ends up in mortal
       danger right before saving the world. At least he's become very good at staying
       alive.
