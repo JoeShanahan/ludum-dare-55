@@ -13,6 +13,7 @@ namespace LudumDare55
         [SerializeField] private GameObject _summonPrefab;
         [SerializeField] private GameObject _pagePrefab;
         [SerializeField] private GameObject _squarePrefab;
+        [SerializeField] private GameObject _basePrefab;
         [SerializeField] private ActiveGameState _gameState;
         
         [SerializeField] private Sprite _leftPlayerSprite;
@@ -22,7 +23,8 @@ namespace LudumDare55
         public PlayerAvatar OpponentAvatar { get; private set; }
         public GameController GameController;
 
-        private List<BoardActor> _allActors = new();
+        public List<BoardActor> _allActors = new();
+        public List<BoardActor> _summonActors { get; private set; } = new();
         public List<BoardActor> _pageActors { get; private set; } = new();
         private int _width;
         private int _height;
@@ -130,6 +132,7 @@ namespace LudumDare55
             summon.SetSummonData(data, avatar.IsRight);
             summon.Init(this);
             _allActors.Add(summon);
+            _summonActors.Add(summon);
         }
 
         public void InitBoard(int width, int height, BookData playerBook, BookData NpcBook)
@@ -147,7 +150,15 @@ namespace LudumDare55
             _height = height;
 
             Vector3 midpoint = new Vector3((width-1) / 2f, (height-1) / 2f, 0);
-            
+
+            OpponentData ply = _gameState.Player;
+            OpponentData opp = _gameState.Opponent;
+
+            GameObject baseObj = Instantiate(_basePrefab, transform);
+            /*baseObj.transform.eulerAngles = new Vector3(0, 0, 90);
+            baseObj.transform.DOScale(1, 0.4f).SetEase(Ease.OutQuad).SetDelay(0f);
+            baseObj.transform.DOLocalRotate(Vector3.zero, 0.4f).SetEase(Ease.OutQuad).SetDelay(0f);*/
+
             for (int x = 0; x < width; x++)
             {
                 bool isEndTile = x == 0 || x == width - 1;
@@ -157,14 +168,9 @@ namespace LudumDare55
                     bool isOdd = (x + y) % 2 == 0;
 
                     GameObject newObj = Instantiate(_squarePrefab, transform);
-                    OpponentData opp = _gameState.Opponent;
-                    
-                    Color col = isOdd ? opp._tileColA : opp._tileColB;
-
-                    if (isEndTile)
-                        col = Color.Lerp(col, Color.red, 0.15f);
-
-                    newObj.GetComponent<SpriteRenderer>().color = col;
+                    if (x == 0) { newObj.GetComponent<SpriteRenderer>().color = isOdd ? ply._tileColC : ply._tileColD; }
+                    else if (x == 8) { newObj.GetComponent<SpriteRenderer>().color = isOdd ? opp._tileColC : opp._tileColD; }
+                    else { newObj.GetComponent<SpriteRenderer>().color = isOdd ? opp._tileColA : opp._tileColB; }
                     newObj.transform.localPosition = new Vector3(x, y, 0);
 
                     float distFromCenter = Vector3.Distance(midpoint, newObj.transform.localPosition);
@@ -184,7 +190,9 @@ namespace LudumDare55
 
             PlayerAvatar = playerLeft.GetComponent<PlayerAvatar>();
             OpponentAvatar = playerRight.GetComponent<PlayerAvatar>();
-            
+
+            _leftPlayerSprite = ply.sprite;
+            _rightPlayerSprite = opp.sprite;
             PlayerAvatar.SetSprite(_leftPlayerSprite, true);
             OpponentAvatar.SetSprite(_rightPlayerSprite, false);
             
@@ -212,6 +220,7 @@ namespace LudumDare55
             foreach (SummonAvatar summon in _summonsToReset)
             {
                 _allActors.Remove(summon);
+                _summonActors.Remove(summon);
                 summon.transform.DOLocalRotate(new Vector3(0, 0, 160), 0.5f).SetEase(Ease.InSine);
                 summon.transform.DOScale(0, 0.5f).SetEase(Ease.InSine).OnComplete(() =>
                 {
@@ -233,6 +242,7 @@ namespace LudumDare55
             foreach (SummonAvatar summon in _summonsToKill)
             {
                 _allActors.Remove(summon);
+                _summonActors.Remove(summon);
             }
             
             _turnsUntilPage -= 1;
@@ -268,9 +278,34 @@ namespace LudumDare55
                     if (actorA == actorB)
                         continue;
 
-                    bool bothMoving = actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move;
-                    bool AtoB = actorA.NextPosition == actorB.GridPosition;
-                    bool BtoA = actorB.NextPosition == actorA.GridPosition;
+                    bool AtoB = false;
+                    bool BtoA = false;
+
+                    bool bothMoving = (actorA.NextAction == BoardAction.Move || actorA.NextAction == BoardAction.DoubleMove)  && (actorB.NextAction == BoardAction.Move || actorB.NextAction == BoardAction.DoubleMove);
+                    if (actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move)
+                    {
+                        AtoB = actorA.NextPosition == actorB.GridPosition;
+                        BtoA = actorB.NextPosition == actorA.GridPosition;
+                    }
+                    else if (actorA.NextAction == BoardAction.DoubleMove && actorB.NextAction == BoardAction.DoubleMove)
+                    {
+                        Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        AtoB = actorA.NextPosition - forwardA == actorB.GridPosition;
+                        BtoA = actorB.NextPosition - forwardB == actorA.GridPosition;
+                    }
+                    else if (actorA.NextAction == BoardAction.DoubleMove && actorB.NextAction == BoardAction.Move)
+                    {
+                        Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        AtoB = actorA.NextPosition - forwardA == actorB.GridPosition;
+                        BtoA = actorB.NextPosition == actorA.GridPosition;
+                    }
+                    else if (actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.DoubleMove)
+                    {
+                        Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        AtoB = actorA.NextPosition == actorB.GridPosition;
+                        BtoA = actorB.NextPosition - forwardB == actorA.GridPosition;
+                    }
 
                     if (bothMoving && AtoB && BtoA)
                     {
@@ -387,17 +422,41 @@ namespace LudumDare55
                     if (actorA == actorB)
                         continue;
 
-                    bool bothMoving = actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move;
+                    bool bothMoving = (actorA.NextAction == BoardAction.Move || actorA.NextAction == BoardAction.DoubleMove) && (actorB.NextAction == BoardAction.Move || actorB.NextAction == BoardAction.DoubleMove);
                     bool bothSamePos = actorA.NextPosition == actorB.NextPosition;
 
-                    if (bothMoving && bothSamePos)
+                    if (actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move)
                     {
-                        // If can kill, do that and then move
-                        // If being killed, move and die
-                        // If not, bump
-                        actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
-                        actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
-                        actorA.CollideWith(actorB);
+                        if (bothMoving && bothSamePos)
+                        {
+                            // If can kill, do that and then move
+                            // If being killed, move and die
+                            // If not, bump
+                            actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
+                            actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
+                            actorA.CollideWith(actorB);
+                        }
+                    }
+                    else if (actorA.NextAction == BoardAction.DoubleMove && actorB.NextAction == BoardAction.DoubleMove)
+                    {
+                        Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        if (bothMoving && bothSamePos)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Move, actorA.NextPosition - forwardA);
+                            actorB.OverrideNextAction(BoardAction.Move, actorB.NextPosition - forwardB);
+                        }
+
+                    }
+                    else if (actorA.NextAction == BoardAction.DoubleMove && actorB.NextAction == BoardAction.Move)
+                    {
+                        Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        if (bothMoving && bothSamePos) { actorA.OverrideNextAction(BoardAction.Move, actorA.NextPosition - forwardA); }
+                    }
+                    else if (actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.DoubleMove)
+                    {
+                        Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        if (bothMoving && bothSamePos) { actorB.OverrideNextAction(BoardAction.Move, actorB.NextPosition - forwardB); }
                     }
                 }
             }
@@ -414,7 +473,10 @@ namespace LudumDare55
 
                     bool bothSamePos = actorA.NextPosition == actorB.NextPosition;
                     bool bothSameSide = actorA.IsRight == actorB.IsRight;
-                    
+
+                    Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                    Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+
                     if (bothSamePos && bothSameSide)
                     {
                         if (actorA.NextAction == BoardAction.Move)
@@ -425,6 +487,14 @@ namespace LudumDare55
                         {
                             actorB.OverrideNextAction(BoardAction.Wait, actorB.GridPosition);
                         }
+                        if (actorA.NextAction == BoardAction.DoubleMove)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Move, actorA.NextPosition - forwardA);
+                        }
+                        if (actorB.NextAction == BoardAction.DoubleMove)
+                        {
+                            actorB.OverrideNextAction(BoardAction.Move, actorB.NextPosition - forwardB);
+                        }
                     }
                 }
             }
@@ -433,7 +503,7 @@ namespace LudumDare55
         private void CheckForRemainingConflicts()
         {
             _areConflicts = false;
-            
+
             foreach (BoardActor actorA in _allActors)
             {
                 foreach (BoardActor actorB in _allActors)
@@ -462,6 +532,7 @@ namespace LudumDare55
             {
                 i++;
                 validPos = true;
+                Random.InitState(System.DateTime.Now.Millisecond);
                 rPos = new Vector2Int(Random.Range(1, 8), Random.Range(0, 5));
                 foreach (BoardActor a in _allActors)
                 {
@@ -481,6 +552,8 @@ namespace LudumDare55
             _pageActors.Add(page);
             _turnsUntilPage = 10;
         }
+
+        public ActiveGameState GetState() { return _gameState; }
 
         // Update is called once per frame
         void Update()

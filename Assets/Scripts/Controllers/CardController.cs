@@ -28,8 +28,6 @@ namespace LudumDare55
 
             for (int i = 0; i < _gameState.PlayerHand.Count; i++)
             {
-                Debug.Log(i + ":" + _gameState.PlayerHand[i].Name);
-                // TODO make sure if the current index changes, you stay on the same page
                 _spawnedCards[i].SetSummonData(_gameState.PlayerHand[i]);
                 _spawnedCards[i].HandPos = i;
                 _spawnedCards[i].CardController = this;
@@ -40,7 +38,7 @@ namespace LudumDare55
         {
             int x = card.HandPos;
             _spawnedCards.RemoveAt(x);
-            _gameController.RemoveCard(x);
+            _gameController.RemovePlayerCard(x);
             Destroy(card.gameObject);
 
         }

@@ -11,12 +11,15 @@ namespace LudumDare55
 
         [SerializeField] private ActiveGameState _gameState;
         private Vector3 _desiredDirection;
+        private AIController _aiController;
         private bool _isAi;
-        
+
         public void EnableAI()
         {
             _isAi = true;
             _renderer.sprite = _gameState.Opponent.Sprite;
+            _aiController = this.gameObject.AddComponent<AIController>();
+            _aiController.Init(this, _board);     
         }
 
         public void SetDesiredDirection(Vector3 dir)
@@ -43,25 +46,15 @@ namespace LudumDare55
             {
                 if (a.GridPosition == this.GridPosition)
                 {
-                    if (_isAi) { break; }
                     _board._pageActors.Remove(a);
                     Destroy(a.gameObject);
-                    _board.GameController.GetNewCard();
+                    if (_isAi) { _aiController.PagePickup(); }
+                    else { _board.GameController.GetNewCard(); }
                     break;
                 }
+                if (_isAi) { _aiController.AttemptSummon(); }
+                CollidingActor = null;
             }
-
-            if (_isAi == false) { return; }
-
-            int ypos = Mathf.RoundToInt(transform.localPosition.y);
-
-            if (ypos is 4 or 0)
-            {
-                int i = Random.Range(0, 4);
-                TrySummon(Book.Summons[i]);
-            }
-            
-            CollidingActor = null;
         }
         
         public Vector3 SummonPosition
@@ -85,32 +78,13 @@ namespace LudumDare55
         public void SetBook(BookData book)
         {
             Book = book;
-        }
-
-        
-        private bool _isMovingUp = true;
-
-        private void DetermineAIAction()
-        {
-            Vector3 newPos = transform.localPosition;
-            newPos += _isMovingUp ? Vector3.up : Vector3.down;
-
-            if (_board.IsSpaceValid(newPos) == false)
-            {
-                _isMovingUp = !_isMovingUp;
-                newPos = transform.localPosition;
-                newPos += _isMovingUp ? Vector3.up : Vector3.down;
-            }
-
-            _desiredDirection = newPos - transform.localPosition;
-        }
-        
-        
+        }     
+              
         public override void CommitToAction()
         {
             // Probably could be simplified
             if (_isAi)
-                DetermineAIAction();
+                _desiredDirection = _aiController.DetermineAIAction();
 
             if (_desiredDirection == Vector3.zero)
             {

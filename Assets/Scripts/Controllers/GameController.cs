@@ -40,12 +40,22 @@ namespace LudumDare55
             _cards.Refresh();
         }
 
-        public void RemoveCard(int pos)
+        public void RemovePlayerCard(int pos)
         {
             _gameState.PlayerHand.RemoveAt(pos);
             _cards.Refresh();
         }
-        
+
+        public void ReturnToOpponentHand(SummonData s)
+        {
+            _gameState.OpponentHand.Add(s);
+        }
+
+        public void RemoveOpponentCard(SummonData s)
+        {
+            _gameState.OpponentHand.Remove(s);
+        }
+
         private void Start()
         {
             _input = new InputSystem_Actions();
@@ -121,6 +131,8 @@ namespace LudumDare55
                 return;
 
             bool valid = _board.IsSpaceValid(_board.PlayerAvatar.transform.localPosition + moveDir);
+            //Debug.Log(moveDir);
+            if (_board.PlayerAvatar.transform.localPosition.x + moveDir.x >= 8) { valid = false; }
 
             if (valid)
                 TriggerBoardUpdate(moveDir);

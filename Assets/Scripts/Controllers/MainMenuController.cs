@@ -7,6 +7,7 @@ namespace LudumDare55
     {
         [SerializeField] private BookData _selectedBook;
 
+        [SerializeField] private OpponentData _selectedPlayer;
         [SerializeField] private OpponentData _selectedOpponent;
 
         [SerializeField] private ActiveGameState _gameState;
@@ -22,14 +23,19 @@ namespace LudumDare55
             _selectedOpponent = data;
         }
 
-        public void BtnPressBook(BookData data)
+        public void BtnPressBookData(BookData data)
         {
             _selectedBook = data;
         }
 
+        public void BtnPressBookPlayer(OpponentData player)
+        {
+            _selectedPlayer = player;
+        }
+
         public void BtnPressPlay()
         {
-            _gameState.InitGame(_selectedBook, _selectedOpponent);
+            _gameState.InitGame(_selectedBook, _selectedPlayer, _selectedOpponent);
             FindFirstObjectByType<TransitionManager>().GoToGame();
             FindFirstObjectByType<MusicController>().SwapToGameMusic();
         }

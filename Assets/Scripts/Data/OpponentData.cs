@@ -13,9 +13,13 @@ namespace LudumDare55
         
         public Color _tileColA;
         public Color _tileColB;
+        public Color _tileColC;
+        public Color _tileColD;
         
         public Color _bgColA;
         public Color _bgColB;
+
+        public Sprite sprite;
 
         public Texture2D BackgroundTex;
 

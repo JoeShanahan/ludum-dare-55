@@ -18,8 +18,11 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 5f72fdb6500d9494aa19e788849a9791, type: 3}
   _tileColA: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   _tileColB: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  _tileColC: {r: 0.69411767, g: 0.43137258, b: 0.79215693, a: 1}
+  _tileColD: {r: 0.60784316, g: 0.21568629, b: 0.75294125, a: 1}
   _bgColA: {r: 0.69606954, g: 0.42986828, b: 0.7924528, a: 1}
   _bgColB: {r: 0.67058825, g: 0.39215687, b: 0.7490196, a: 1}
+  sprite: {fileID: 21300000, guid: 5f72fdb6500d9494aa19e788849a9791, type: 3}
   BackgroundTex: {fileID: 2800000, guid: 5173073cda2054354ab25d74ebc1a89e, type: 3}
   FirstLine: Hey you! I don't like the look of your face
   YourResponse: What's wrong with my face?
