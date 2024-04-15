@@ -26,9 +26,9 @@ Transform:
   m_GameObject: {fileID: 5032905790186646307}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1884, y: -0.1894, z: -0.043}
-  m_LocalScale: {x: 0.61294764, y: 0.61294764, z: 0.61294764}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -0.0944, y: -0.1044, z: -0.043}
+  m_LocalScale: {x: 0.71531624, y: 0.71531624, z: 0.71531624}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6650327315005508263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b97c906730f1d74f9e9631185af6d32, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c487b628e127994bb972b7d29777e9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6650327315005508263}
   - component: {fileID: 4256444855185314354}
   m_Layer: 0
-  m_Name: AOE_Hearts
+  m_Name: AOE_Fists
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

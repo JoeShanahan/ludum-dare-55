@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHP: 20
   PlayerSummonsInPlay: 3
-  OpponentSummonsInPlay: 4
-  PlayerHealth: -17
-  OpponentHealth: -23
+  OpponentSummonsInPlay: 3
+  PlayerHealth: 0
+  OpponentHealth: 6
   _playerBook: {fileID: 11400000, guid: 5a8514d8163b3449f9596bde96aeed5b, type: 2}
-  _player: {fileID: 11400000, guid: 9a630115921c8e849912c9c4fca097d4, type: 2}
-  _opponent: {fileID: 11400000, guid: 80d6396657ff945deb4bc95d0a6117ed, type: 2}
+  _player: {fileID: 11400000, guid: 0c18514f00d6e447bb40fb8892ecb3a2, type: 2}
+  _opponent: {fileID: 11400000, guid: 9a630115921c8e849912c9c4fca097d4, type: 2}
