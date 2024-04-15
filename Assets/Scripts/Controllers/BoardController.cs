@@ -193,7 +193,7 @@ namespace LudumDare55
             PlayerAvatar = playerLeft.GetComponent<PlayerAvatar>();
             OpponentAvatar = playerRight.GetComponent<PlayerAvatar>();
 
-            _leftPlayerSprite = ply.sprite;
+            // _leftPlayerSprite = ply.sprite;
             _rightPlayerSprite = opp.sprite;
             PlayerAvatar.SetSprite(_leftPlayerSprite, true);
             OpponentAvatar.SetSprite(_rightPlayerSprite, false);

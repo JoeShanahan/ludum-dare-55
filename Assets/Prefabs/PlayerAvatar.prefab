@@ -47,7 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 8289012383374969851}
   IsPage: 0
-  _sprite: {fileID: 0}
   _gameState: {fileID: 11400000, guid: 151646503f3a44d1ea16ecf871a79bf4, type: 2}
 --- !u!1 &8504695475435559640
 GameObject:
@@ -125,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f72fdb6500d9494aa19e788849a9791, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e93159f72a0524da08d6eb1918bcd139, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
