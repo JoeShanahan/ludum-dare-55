@@ -15,7 +15,7 @@ MonoBehaviour:
   PersonName: Lou Landrunner
   GenreDescription: Sci Fi Boffin
   ChosenBook: {fileID: 11400000, guid: b43291133760a4e0db234b869652391c, type: 2}
-  ThemeSong: {fileID: 0}
+  ThemeSong: {fileID: 8300000, guid: df726cde74ee346c0873fb534a114d9f, type: 3}
   Sprite: {fileID: 21300000, guid: 33672e667e0084660bf87d0df25837e1, type: 3}
   _tileColA: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   _tileColB: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
