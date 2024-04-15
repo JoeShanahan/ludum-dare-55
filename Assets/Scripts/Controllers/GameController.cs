@@ -22,6 +22,9 @@ namespace LudumDare55
 
         [SerializeField] private TextMeshProUGUI PlayerHP;
         [SerializeField] private TextMeshProUGUI OpponentHP;
+
+        [SerializeField] private StartFightBanner WinBanner;
+        [SerializeField] private StartFightBanner LoseBanner;
         
         private InputSystem_Actions _input;
         private bool _isMoving;
@@ -102,7 +105,7 @@ namespace LudumDare55
             _input.Player.SkipMove.performed += OnSkipPressed;
             _input.Player.Menu.performed += OnMenuPressed;
 
-            _gameState.InitUI(PlayerHP, OpponentHP);
+            _gameState.InitUI(PlayerHP, OpponentHP, WinBanner, LoseBanner);
             _gameState.InitHands();
             _cards.Refresh();
             
