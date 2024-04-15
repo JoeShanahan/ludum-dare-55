@@ -77,4 +77,4 @@ MonoBehaviour:
     Description: Better informed and more feared than the police.
     ActionQueue: 0100000003000000
     AttackArea: 8
-    AoePrefab: {fileID: 0}
+    AoePrefab: {fileID: 6997704321720672169, guid: aa832e8578e07f043a67e101ee9f9f28, type: 3}
