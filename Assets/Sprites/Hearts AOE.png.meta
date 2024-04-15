@@ -1,0 +1,609 @@
+fileFormatVersion: 2
+guid: 8b97c906730f1d74f9e9631185af6d32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7509095663354973648
+    second: Hearts AOE_0
+  - first:
+      213: -6755679523686664723
+    second: Hearts AOE_1
+  - first:
+      213: 9199361292547130310
+    second: Hearts AOE_2
+  - first:
+      213: 5973182729809015689
+    second: Hearts AOE_3
+  - first:
+      213: 7855274333685952071
+    second: Hearts AOE_4
+  - first:
+      213: 6521857829214894861
+    second: Hearts AOE_5
+  - first:
+      213: 327328953720493987
+    second: Hearts AOE_6
+  - first:
+      213: 2388037584725384402
+    second: Hearts AOE_7
+  - first:
+      213: -3136128301129553918
+    second: Hearts AOE_8
+  - first:
+      213: 1325903664775008077
+    second: Hearts AOE_9
+  - first:
+      213: -5242712030869774049
+    second: Hearts AOE_10
+  - first:
+      213: -5094818248817173808
+    second: Hearts AOE_11
+  - first:
+      213: -3617833473612459381
+    second: Hearts AOE_12
+  - first:
+      213: 4365360433449642150
+    second: Hearts AOE_13
+  - first:
+      213: -5167709207988739540
+    second: Hearts AOE_14
+  - first:
+      213: 7491403030476750149
+    second: Hearts AOE_15
+  - first:
+      213: -6807827316590273967
+    second: Hearts AOE_16
+  - first:
+      213: 6992105796900675649
+    second: Hearts AOE_17
+  - first:
+      213: 1428028769355106237
+    second: Hearts AOE_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hearts AOE_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 191
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032fc4177455ac790800000000000000
+      internalID: -7509095663354973648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 176
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5b64e24410f32a0800000000000000
+      internalID: -6755679523686664723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 216
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c300c2fa52baaf70800000000000000
+      internalID: 9199361292547130310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_3
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 217
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983b3c4ab0205e250800000000000000
+      internalID: 5973182729809015689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_4
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 136
+        width: 53
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74e2890336a830d60800000000000000
+      internalID: 7855274333685952071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_5
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 130
+        width: 92
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b34f1342b428a50800000000000000
+      internalID: 6521857829214894861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_6
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 183
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a7d53bf2f7ea8400800000000000000
+      internalID: 327328953720493987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 136
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc96dbe783042120800000000000000
+      internalID: 2388037584725384402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 102
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 208af111deb3a74d0800000000000000
+      internalID: -3136128301129553918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_9
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 41
+        width: 92
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f8d41bb5e866210800000000000000
+      internalID: 1325903664775008077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_10
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 90
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11275c5f252e37b0800000000000000
+      internalID: -5242712030869774049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_11
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 85
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da1314dbc19b49b0800000000000000
+      internalID: -5094818248817173808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 49
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b82dfc4bf9fdacdc0800000000000000
+      internalID: -3617833473612459381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 42
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8af408f20e49c30800000000000000
+      internalID: 4365360433449642150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_14
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 60
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c22e053eadb9848b0800000000000000
+      internalID: -5167709207988739540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_15
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 45
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54df9d47d5fc6f760800000000000000
+      internalID: 7491403030476750149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_16
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 15
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a9f6eff1db581a0800000000000000
+      internalID: -6807827316590273967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_17
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 8
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 140e6303d23f80160800000000000000
+      internalID: 6992105796900675649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts AOE_18
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 5
+        width: 53
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db70376899061d310800000000000000
+      internalID: 1428028769355106237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hearts AOE_0: -7509095663354973648
+      Hearts AOE_1: -6755679523686664723
+      Hearts AOE_10: -5242712030869774049
+      Hearts AOE_11: -5094818248817173808
+      Hearts AOE_12: -3617833473612459381
+      Hearts AOE_13: 4365360433449642150
+      Hearts AOE_14: -5167709207988739540
+      Hearts AOE_15: 7491403030476750149
+      Hearts AOE_16: -6807827316590273967
+      Hearts AOE_17: 6992105796900675649
+      Hearts AOE_18: 1428028769355106237
+      Hearts AOE_2: 9199361292547130310
+      Hearts AOE_3: 5973182729809015689
+      Hearts AOE_4: 7855274333685952071
+      Hearts AOE_5: 6521857829214894861
+      Hearts AOE_6: 327328953720493987
+      Hearts AOE_7: 2388037584725384402
+      Hearts AOE_8: -3136128301129553918
+      Hearts AOE_9: 1325903664775008077
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
