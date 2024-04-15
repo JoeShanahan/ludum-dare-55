@@ -17,7 +17,7 @@ MonoBehaviour:
   BookColor: {r: 0.39730823, g: 0.5754717, b: 0.28502136, a: 1}
   TitleColor: {r: 0.1009256, g: 0.19634466, b: 0.7924528, a: 1}
   GenreColor: {r: 1, g: 0, b: 0, a: 1}
-  CoverImage: {fileID: 0}
+  CoverImage: {fileID: 21300000, guid: 65875c2d59f2bfa4c945ea9654ac46ff, type: 3}
   LongDescription: Yezzik the Unlucky has been plagued by strange dreams of a Tomb.
     The eastern wind brings the sounds of distant screams to Brodvar's ears. And
     Forbell has sensed dark stirrings in the Fens. These unlikely heroes must find

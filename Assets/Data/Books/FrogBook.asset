@@ -17,7 +17,7 @@ MonoBehaviour:
   BookColor: {r: 0.36078432, g: 0.20392157, b: 0.18039216, a: 1}
   TitleColor: {r: 0.6509804, g: 0.5921569, b: 0, a: 1}
   GenreColor: {r: 0.99607843, g: 0.7254902, b: 0.4745098, a: 1}
-  CoverImage: {fileID: 21300000, guid: bc2fc27e99bb6424f807e50235d4cbe5, type: 3}
+  CoverImage: {fileID: 21300000, guid: bd5bedfaa7b66ce48947c532a72baef6, type: 3}
   LongDescription: Contains everything you ever wanted to know about frogs, as well
     as many things you could've lived your whole life without knowing and probably
     been the better for it.
