@@ -24,6 +24,7 @@ namespace LudumDare55
             SetSprite(data.Sprite, isRight);
             HealthPoints = data.HealthPoints;
             AttackDamage = data.Attack;
+            ShieldPoints = data.Shield;
             
             _spawnedUI = W2C.InstantiateAs<SummonHealthUI>(_healthPrefab);
             _spawnedUI.Init(this); 
@@ -36,6 +37,8 @@ namespace LudumDare55
 
         public override void Attack(int damage)
         {
+            damage = Mathf.Max(damage - ShieldPoints, 1);
+            
             HealthPoints -= damage;
             HealthPoints = Mathf.Max(HealthPoints, 0);
 

@@ -49,7 +49,7 @@ MonoBehaviour:
     HealthPoints: 1
     Attack: 1
     Description: Flyest of all the frogs!
-    ActionQueue: 02000000
+    ActionQueue: 01000000
     AttackArea: 3
     AoePrefab: {fileID: 0}
   - Name: Dart Frog

@@ -14,6 +14,7 @@ namespace LudumDare55
         
         public int HealthPoints { get; protected set; }
         public int AttackDamage { get; protected set; }
+        public int ShieldPoints { get; protected set; }
         
         public BoardAction NextAction { get; protected set; }
         public Vector2Int NextPosition { get; protected set; }

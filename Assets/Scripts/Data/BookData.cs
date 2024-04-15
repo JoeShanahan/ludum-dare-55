@@ -50,6 +50,9 @@ namespace LudumDare55
         
         [Range(0, 4)]
         public int Attack = 1;
+
+        [Range(0, 1)] 
+        public int Shield;
         
         [TextArea(3, 10)]
         public string Description;
