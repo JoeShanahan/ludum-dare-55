@@ -21,7 +21,7 @@ namespace LudumDare55
 
         public List<SummonData> Summons;
 
-        public int PageCount
+        /*public int PageCount
         {
             get
             {
@@ -34,7 +34,7 @@ namespace LudumDare55
 
                 return total;
             }
-        }
+        }*/
     }
 
     [Serializable]
@@ -42,7 +42,8 @@ namespace LudumDare55
     {
         public string Name;
         public Sprite Sprite;
-        public int Count = 1;
+        //public int Count = 1;
+        public int Weight = 1;
         public bool DoesStartWith;
 
         [Range(0, 4)]

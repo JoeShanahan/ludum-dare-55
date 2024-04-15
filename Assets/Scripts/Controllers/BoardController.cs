@@ -32,7 +32,9 @@ namespace LudumDare55
 
         private List<SummonAvatar> _summonsToReset = new();
         private List<SummonAvatar> _summonsToKill = new();
-        private int _turnsUntilPage;
+
+        private int _turnsUntilPlayerPage;
+        private int _turnsUntilOpponentPage;
         
         public void ReturnToSender(SummonAvatar summon)
         {
@@ -140,7 +142,8 @@ namespace LudumDare55
             CreateBoard(width, height);
             PlayerAvatar.SetBook(playerBook);
             OpponentAvatar.SetBook(NpcBook);
-            _turnsUntilPage = 10;
+            _turnsUntilPlayerPage = 10;
+            _turnsUntilOpponentPage = 10;
         }
         
         private void CreateBoard(int width, int height)
@@ -161,15 +164,14 @@ namespace LudumDare55
 
             for (int x = 0; x < width; x++)
             {
-                bool isEndTile = x == 0 || x == width - 1;
+                //bool isEndTile = x == 0 || x == width - 1;
                 
                 for (int y = 0; y < height; y++)
                 {
                     bool isOdd = (x + y) % 2 == 0;
 
                     GameObject newObj = Instantiate(_squarePrefab, transform);
-                    if (x == 0) { newObj.GetComponent<SpriteRenderer>().color = isOdd ? ply._tileColC : ply._tileColD; }
-                    else if (x == 8) { newObj.GetComponent<SpriteRenderer>().color = isOdd ? opp._tileColC : opp._tileColD; }
+                    if (x == 4) { newObj.GetComponent<SpriteRenderer>().color = isOdd ? opp._tileColC : opp._tileColD; }
                     else { newObj.GetComponent<SpriteRenderer>().color = isOdd ? opp._tileColA : opp._tileColB; }
                     newObj.transform.localPosition = new Vector3(x, y, 0);
 
@@ -228,25 +230,33 @@ namespace LudumDare55
                     Destroy(toRemove);
                 });
 
+                _gameState.DamagePlayer(!summon.IsPlayer);
                 if (summon.IsPlayer)
                 {
                     GameController.ReturnToPlayerHand(summon.SummonData);
-                    Debug.Log("is returning");
+                    Debug.Log("is returning to ply");
                 }
                 else
                 {
-                    // TODO add to opponent hand
+                    GameController.ReturnToOpponentHand(summon.SummonData);
+                    Debug.Log("is returning to opp");
                 }
             }
 
             foreach (SummonAvatar summon in _summonsToKill)
             {
+                //Debug.Log("summontokill:" + summon.SummonData.Name + ",isplayer:" + summon.IsPlayer + ",summonkillssthisround:" + _summonsToKill.Count);
+                if (summon.IsPlayer) { _gameState.PlayerSummonsInPlay -= 1; }
+                else { _gameState.OpponentSummonsInPlay -= 1; }
                 _allActors.Remove(summon);
                 _summonActors.Remove(summon);
             }
-            
-            _turnsUntilPage -= 1;
-            if (_turnsUntilPage == 0) { SpawnPage(); }
+
+            _summonsToKill.Clear();
+            _turnsUntilPlayerPage -= 1;
+            _turnsUntilOpponentPage -= 1;
+            if (_turnsUntilPlayerPage == 0) { SpawnPage(true); }
+            if (_turnsUntilOpponentPage == 0) { SpawnPage(false); }
         }
 
         private void ResolveCollisions()
@@ -372,8 +382,8 @@ namespace LudumDare55
                     bool isAWaiting = actorA.NextAction is BoardAction.Wait or BoardAction.AOEAttack;
                     bool isBWaiting = actorB.NextAction is BoardAction.Wait or BoardAction.AOEAttack;
                     
-                    bool isAMoving = actorA.NextAction == BoardAction.Move;
-                    bool isBMoving = actorB.NextAction == BoardAction.Move;
+                    bool isAMoving = actorA.NextAction == BoardAction.Move || actorA.NextAction == BoardAction.DoubleMove;
+                    bool isBMoving = actorB.NextAction == BoardAction.Move || actorB.NextAction == BoardAction.DoubleMove;
 
                     bool aAttackB = isAMoving && isBWaiting;
                     bool bAttackA = isBMoving && isAWaiting;
@@ -390,22 +400,38 @@ namespace LudumDare55
                     {
                         if (AtoB)
                         {
-                            actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
+                            if (actorA.NextAction == BoardAction.DoubleMove)
+                            {
+                                Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                                actorA.OverrideNextAction(BoardAction.Move, actorA.NextPosition - forwardA);
+                            } else { actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition); }
                         }
                         if (BtoA)
                         {
-                            actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
+                            if (actorB.NextAction == BoardAction.DoubleMove)
+                            {
+                                Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                                actorB.OverrideNextAction(BoardAction.Move, actorB.NextPosition - forwardB);
+                            } else { actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition); }
                         }
                     }
                     else
                     {
                         if (AtoB)
-                        {
-                            actorA.OverrideNextAction(BoardAction.Wait, actorA.GridPosition);
+                        {                            
+                            if (actorA.NextAction == BoardAction.DoubleMove)
+                            {
+                                Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                                actorA.OverrideNextAction(BoardAction.Move, actorA.NextPosition - forwardA);
+                            } else { actorA.OverrideNextAction(BoardAction.Wait, actorA.GridPosition); }
                         }
                         if (BtoA)
                         {
-                            actorB.OverrideNextAction(BoardAction.Wait, actorA.GridPosition);
+                            if (actorB.NextAction == BoardAction.DoubleMove)
+                            {
+                                Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                                actorA.OverrideNextAction(BoardAction.Move, actorB.NextPosition - forwardB);
+                            } else { actorB.OverrideNextAction(BoardAction.Wait, actorB.GridPosition); }
                         }
                     }
                 }
@@ -523,34 +549,73 @@ namespace LudumDare55
             }
         }
 
-        private void SpawnPage()
+        private void SpawnPage(bool isPlayer)
         {
-            Vector2Int rPos = new Vector2Int();
-            bool validPos = false;
-            int i = 0;
-            while (validPos == false)
+            int plyPages = 0;
+            int oppPages = 0;
+            foreach (PageAvatar p in _pageActors) { if (p.IsPlayerPage) { plyPages += 1; } else { oppPages += 1; } }
+            Debug.Log("plyPages:" + plyPages + ",oppPages:" + oppPages);
+            if (plyPages < 2 && isPlayer == true)
             {
-                i++;
-                validPos = true;
-                Random.InitState(System.DateTime.Now.Millisecond);
-                rPos = new Vector2Int(Random.Range(1, 8), Random.Range(0, 5));
-                foreach (BoardActor a in _allActors)
+                Vector2Int rPos = new Vector2Int();
+                bool validPos = false;
+                int i = 0;
+                while (validPos == false)
                 {
-                    if (a.GridPosition == rPos) { validPos = false; }
+                    i++;
+                    validPos = true;
+                    Random.InitState(System.DateTime.Now.Millisecond);
+                    rPos = new Vector2Int(Random.Range(0, 4), Random.Range(0, 5));
+                    foreach (BoardActor a in _allActors)
+                    {
+                        if (a.GridPosition == rPos) { validPos = false; }
+                    }
+                    if (i > 50)
+                    {
+                        _turnsUntilPlayerPage = 5;
+                        return;
+                    }
                 }
-                if (i > 50)
-                {
-                    _turnsUntilPage = 5;
-                    return;
-                }
+                GameObject newObj = Instantiate(_pagePrefab, transform);
+                newObj.transform.localPosition = new Vector3(rPos.x, rPos.y, 0f);
+                PageAvatar page = newObj.GetComponent<PageAvatar>();
+                page.IsPage = true;
+                page.IsPlayerPage = true;
+                page.Init(this);
+                _pageActors.Add(page);
+                _turnsUntilPlayerPage = 10;
             }
-            GameObject newObj = Instantiate(_pagePrefab, transform);
-            newObj.transform.localPosition = new Vector3(rPos.x, rPos.y, 0f);
-            PageAvatar page = newObj.GetComponent<PageAvatar>();
-            page.IsPage = true;
-            page.Init(this);
-            _pageActors.Add(page);
-            _turnsUntilPage = 10;
+
+            if (oppPages < 2 && isPlayer == false)
+            {
+                Vector2Int rPos = new Vector2Int();
+                bool validPos = false;
+                int i = 0;
+                while (validPos == false)
+                {
+                    i++;
+                    validPos = true;
+                    Random.InitState(System.DateTime.Now.Millisecond * 2);
+                    rPos = new Vector2Int(Random.Range(5, 9), Random.Range(0, 5));
+                    foreach (BoardActor a in _allActors)
+                    {
+                        if (a.GridPosition == rPos) { validPos = false; }
+                    }
+                    if (i > 50)
+                    {
+                        _turnsUntilOpponentPage = 5;
+                        return;
+                    }
+                }
+                GameObject newObj = Instantiate(_pagePrefab, transform);
+                newObj.transform.localPosition = new Vector3(rPos.x, rPos.y, 0f);
+                PageAvatar page = newObj.GetComponent<PageAvatar>();
+                page.IsPage = true;
+                page.IsPlayerPage = false;
+                page.Init(this);
+                _pageActors.Add(page);
+                _turnsUntilOpponentPage = 10;
+            }
         }
 
         public ActiveGameState GetState() { return _gameState; }

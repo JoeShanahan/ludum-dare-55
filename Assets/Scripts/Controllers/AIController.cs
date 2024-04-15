@@ -21,6 +21,7 @@ namespace LudumDare55
         private bool _isMovingUp = true;
         private int[,] _grid;
         private List<Vector2Int> _pages;
+        private int _turnsSinceLastSummon;
 
         public void Init(PlayerAvatar p, BoardController b)
         {
@@ -28,17 +29,22 @@ namespace LudumDare55
             _board = b;
             _gameState = b.GetState();
             _aiState = AIState.NORMAL;
+            _turnsSinceLastSummon = 0;
         }
 
         public SummonData GetHandCard()
         {
             List<SummonData> hand = _gameState.OpponentHand;
+            if (hand.Count == 0) { return null; }
             Random.InitState(System.DateTime.Now.Millisecond);
             int i = Random.Range(0, hand.Count);
             return hand[i];
         }
 
-        public void PagePickup() { }
+        public void PagePickup()
+        {
+            _board.GameController.GetNewOpponentCard();
+        }
 
         public Vector3 DetermineAIAction() //Returning a vector3 zero indicates a summoning
         {
@@ -70,19 +76,35 @@ namespace LudumDare55
         {
             Random.InitState(System.DateTime.Now.Millisecond);
             int i = Random.Range(0, 100);
-            if (i > 40) { _playerAvatar.TrySummon(GetHandCard()); }
+            i += (_turnsSinceLastSummon * 10);
+            if (i > 30 && _gameState.OpponentHand.Count > 1)
+            {
+                SummonData s = GetHandCard();
+                if (_playerAvatar.TrySummon(s))
+                {
+                    RemoveCard(s);
+                    _turnsSinceLastSummon = 0;
+                }
+            }
+            else { _turnsSinceLastSummon += 1; }
+        }
+
+        private void RemoveCard(SummonData s)
+        {
+            _board.GameController.RemoveOpponentCard(s);
         }
 
         private int[,] CheckGrid()
         {
             int[,] gridArr = new int[9, 5];
-            gridArr[0, 0] = 1000;
-            gridArr[1, 0] = 1000;
-            gridArr[2, 0] = 1000;
-            gridArr[3, 0] = 1000;
-            gridArr[4, 0] = 1000;
+            gridArr[0, 4] = 1000;
+            gridArr[1, 4] = 1000;
+            gridArr[2, 4] = 1000;
+            gridArr[3, 4] = 1000;
+            gridArr[4, 4] = 1000;
             foreach (BoardActor a in _board._summonActors)
             {
+                if (a.GridPosition.x > 8 || a.GridPosition.x < 0) { continue; }
                 Vector2Int aPos = a.GridPosition;
                 //Debug.Log("aPos:"  + aPos.x + "," + aPos.y);
                 gridArr[aPos.x, aPos.y] = 1000;
@@ -99,7 +121,7 @@ namespace LudumDare55
         private List<Vector2Int> CheckPages()
         {
             List<Vector2Int> pList = new List<Vector2Int>();
-            foreach (BoardActor p in _board._pageActors) { pList.Add(p.GridPosition); }
+            foreach (PageAvatar p in _board._pageActors) { if (!p.IsPlayerPage) { pList.Add(p.GridPosition); } }
             return pList;
         }
 
@@ -202,5 +224,10 @@ namespace LudumDare55
 
             return newPos;
         }
+
+        /*private void FixedUpdate()
+        {
+            Debug.Log("OppHealth:" + _gameState.OpponentHealth + "OppHand:" + _gameState.OpponentHand.Count + ",OppDeck:" + _gameState.OpponentDeck.Count);
+        }*/
     }
 }

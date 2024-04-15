@@ -25,29 +25,29 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 46f61de30bbf7c146aa947785ef2b507, type: 3}
     Count: 3
     DoesStartWith: 1
-    HealthPoints: 2
+    HealthPoints: 3
     Attack: 1
     Shield: 1
     Description: Greatest hero in the Galaxy. Mainly because he shoots anyone who
       doesn't agree.
-    ActionQueue: 01000000
-    AttackArea: 3
-    AoePrefab: {fileID: 0}
+    ActionQueue: 0100000003000000
+    AttackArea: 7
+    AoePrefab: {fileID: 6997704321720672169, guid: e4eb1dd78d1cb408db15c64e9504579e, type: 3}
   - Name: Charge-Bot
     Sprite: {fileID: 21300000, guid: fabec9b89f9248b44840c9d0baf7e490, type: 3}
-    Count: 3
+    Count: 4
     DoesStartWith: 1
     HealthPoints: 2
-    Attack: 2
+    Attack: 1
     Shield: 0
     Description: Just a zippy little guy.
-    ActionQueue: 01000000
+    ActionQueue: 0200000000000000
     AttackArea: 0
     AoePrefab: {fileID: 0}
   - Name: Laser Cannon
     Sprite: {fileID: 21300000, guid: ece606eda7928764794040cf0a377f3b, type: 3}
-    Count: 3
-    DoesStartWith: 1
+    Count: 1
+    DoesStartWith: 0
     HealthPoints: 1
     Attack: 2
     Shield: 0
@@ -58,10 +58,10 @@ MonoBehaviour:
   - Name: Medical Droid
     Sprite: {fileID: 21300000, guid: de4fe4e0705332e469403274c819f27c, type: 3}
     Count: 3
-    DoesStartWith: 1
-    HealthPoints: 1
-    Attack: 3
-    Shield: 0
+    DoesStartWith: 0
+    HealthPoints: 2
+    Attack: 2
+    Shield: 1
     Description: A malpractise suit just waiting to happen on account of his doctorate
       being in poetry. Dab hand with a scalpel though.
     ActionQueue: 01000000
@@ -69,12 +69,12 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Torment Nexus
     Sprite: {fileID: 21300000, guid: e364387586b565844b534181b97b2401, type: 3}
-    Count: 3
-    DoesStartWith: 1
+    Count: 1
+    DoesStartWith: 0
     HealthPoints: 4
-    Attack: 3
-    Shield: 0
+    Attack: 1
+    Shield: 1
     Description: What is the ONE thing we told you not to do?
-    ActionQueue: 0100000003000000
-    AttackArea: 4
+    ActionQueue: 010000000300000003000000
+    AttackArea: 8
     AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
