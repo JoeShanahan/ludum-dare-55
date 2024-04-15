@@ -72,7 +72,7 @@ namespace LudumDare55
         Row,
         Column,
         ThreeByOne,
-        OneByTwo,
+        TwoByOne,
         OneByThree,
         Cardinals
     }

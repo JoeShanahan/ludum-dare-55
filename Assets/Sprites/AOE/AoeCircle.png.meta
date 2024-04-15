@@ -1,0 +1,778 @@
+fileFormatVersion: 2
+guid: 02b9ff317a31148408280eeaac98b59c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2920398420387681220
+    second: AoeCircle_0
+  - first:
+      213: 8269059762920218370
+    second: AoeCircle_1
+  - first:
+      213: 1364209544930447539
+    second: AoeCircle_2
+  - first:
+      213: -34889145099788526
+    second: AoeCircle_3
+  - first:
+      213: 2765311226575663240
+    second: AoeCircle_4
+  - first:
+      213: 7580722406519024690
+    second: AoeCircle_5
+  - first:
+      213: 1523295853193362221
+    second: AoeCircle_6
+  - first:
+      213: 3215537526386920149
+    second: AoeCircle_7
+  - first:
+      213: 8440202600394504612
+    second: AoeCircle_8
+  - first:
+      213: -7210248959061517162
+    second: AoeCircle_9
+  - first:
+      213: 9041233407136051461
+    second: AoeCircle_10
+  - first:
+      213: 9157345802887555922
+    second: AoeCircle_11
+  - first:
+      213: -5618698689187463710
+    second: AoeCircle_12
+  - first:
+      213: -8633013818010278065
+    second: AoeCircle_13
+  - first:
+      213: 8076532372356217391
+    second: AoeCircle_14
+  - first:
+      213: 8985343961234120566
+    second: AoeCircle_15
+  - first:
+      213: -2755224482249121874
+    second: AoeCircle_16
+  - first:
+      213: 8285795048385300115
+    second: AoeCircle_17
+  - first:
+      213: 4957916043113681397
+    second: AoeCircle_18
+  - first:
+      213: -1869153058034652057
+    second: AoeCircle_19
+  - first:
+      213: -4655840843595691362
+    second: AoeCircle_20
+  - first:
+      213: -3643260312626344382
+    second: AoeCircle_21
+  - first:
+      213: -2894027002570019252
+    second: AoeCircle_22
+  - first:
+      213: -3571588409447094534
+    second: AoeCircle_23
+  - first:
+      213: 4682486229115950752
+    second: AoeCircle_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AoeCircle_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3d1d1f3e6578820800000000000000
+      internalID: 2920398420387681220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20fd5530b0a91c270800000000000000
+      internalID: 8269059762920218370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b0d6cc6a55aee210800000000000000
+      internalID: 1364209544930447539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f5fc3e18c048ff0800000000000000
+      internalID: -34889145099788526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8803179c8eb506620800000000000000
+      internalID: 2765311226575663240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c29654dd2243960800000000000000
+      internalID: 7580722406519024690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b7a69f185d32510800000000000000
+      internalID: 1523295853193362221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_7
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da0b36f752ef9c20800000000000000
+      internalID: 3215537526386920149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_8
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9b7d40c8f912570800000000000000
+      internalID: 8440202600394504612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_9
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c1205f5cc00fb90800000000000000
+      internalID: -7210248959061517162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5013dbb91e9e87d70800000000000000
+      internalID: 9041233407136051461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_11
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25be6827d7d651f70800000000000000
+      internalID: 9157345802887555922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed3703bf4f5602b0800000000000000
+      internalID: -5618698689187463710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4765741caf513880800000000000000
+      internalID: -8633013818010278065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a3c3fb66b951070800000000000000
+      internalID: 8076532372356217391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f9f02f9ba52bc70800000000000000
+      internalID: 8985343961234120566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eafd4136ee973c9d0800000000000000
+      internalID: -2755224482249121874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_17
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39642bc42be0df270800000000000000
+      internalID: 8285795048385300115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f150008f5e0ec440800000000000000
+      internalID: 4957916043113681397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_19
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c6209623f6f06e0800000000000000
+      internalID: -1869153058034652057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9a49b2ab61236fb0800000000000000
+      internalID: -4655840843595691362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_21
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ec0a96c0a807dc0800000000000000
+      internalID: -3643260312626344382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_22
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4eec6d36c956d7d0800000000000000
+      internalID: -2894027002570019252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_23
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6e003c34b2f6ec0800000000000000
+      internalID: -3571588409447094534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCircle_24
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a65d10aa688bf040800000000000000
+      internalID: 4682486229115950752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AoeCircle_0: 2920398420387681220
+      AoeCircle_1: 8269059762920218370
+      AoeCircle_10: 9041233407136051461
+      AoeCircle_11: 9157345802887555922
+      AoeCircle_12: -5618698689187463710
+      AoeCircle_13: -8633013818010278065
+      AoeCircle_14: 8076532372356217391
+      AoeCircle_15: 8985343961234120566
+      AoeCircle_16: -2755224482249121874
+      AoeCircle_17: 8285795048385300115
+      AoeCircle_18: 4957916043113681397
+      AoeCircle_19: -1869153058034652057
+      AoeCircle_2: 1364209544930447539
+      AoeCircle_20: -4655840843595691362
+      AoeCircle_21: -3643260312626344382
+      AoeCircle_22: -2894027002570019252
+      AoeCircle_23: -3571588409447094534
+      AoeCircle_24: 4682486229115950752
+      AoeCircle_3: -34889145099788526
+      AoeCircle_4: 2765311226575663240
+      AoeCircle_5: 7580722406519024690
+      AoeCircle_6: 1523295853193362221
+      AoeCircle_7: 3215537526386920149
+      AoeCircle_8: 8440202600394504612
+      AoeCircle_9: -7210248959061517162
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

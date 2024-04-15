@@ -1,0 +1,778 @@
+fileFormatVersion: 2
+guid: d45c6f96ba4374410938e3aa56dbb77c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 899993971320546489
+    second: Aoe1x2_0
+  - first:
+      213: 6525680983848663233
+    second: Aoe1x2_1
+  - first:
+      213: -3359466298695023973
+    second: Aoe1x2_2
+  - first:
+      213: 7998975941347156475
+    second: Aoe1x2_3
+  - first:
+      213: -8463916858683326121
+    second: Aoe1x2_4
+  - first:
+      213: -6323651234448205067
+    second: Aoe1x2_5
+  - first:
+      213: -5133365949821770471
+    second: Aoe1x2_6
+  - first:
+      213: 7158033580178869142
+    second: Aoe1x2_7
+  - first:
+      213: -3865968035134396870
+    second: Aoe1x2_8
+  - first:
+      213: -4270495621021391188
+    second: Aoe1x2_9
+  - first:
+      213: 8884134189298285383
+    second: Aoe1x2_10
+  - first:
+      213: 3683078039463817634
+    second: Aoe1x2_11
+  - first:
+      213: 843562207945256286
+    second: Aoe1x2_12
+  - first:
+      213: 1981564782712923342
+    second: Aoe1x2_13
+  - first:
+      213: -1846029923115990181
+    second: Aoe1x2_14
+  - first:
+      213: 7754267150978022592
+    second: Aoe1x2_15
+  - first:
+      213: 6685497040107094369
+    second: Aoe1x2_16
+  - first:
+      213: 4719757968456941928
+    second: Aoe1x2_17
+  - first:
+      213: 2723256078364389684
+    second: Aoe1x2_18
+  - first:
+      213: 6747367555510615426
+    second: Aoe1x2_19
+  - first:
+      213: -2942095507698912716
+    second: Aoe1x2_20
+  - first:
+      213: -2413233144386019286
+    second: Aoe1x2_21
+  - first:
+      213: -4858562416945954338
+    second: Aoe1x2_22
+  - first:
+      213: -6001624379959321456
+    second: Aoe1x2_23
+  - first:
+      213: -9122545556301286803
+    second: Aoe1x2_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aoe1x2_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b4ed80afbb6d7c00800000000000000
+      internalID: 899993971320546489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c832dfb740ef8a50800000000000000
+      internalID: 6525680983848663233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9203675337c061d0800000000000000
+      internalID: -3359466298695023973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1a4eefc32120f60800000000000000
+      internalID: 7998975941347156475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7518db5f5702a8a80800000000000000
+      internalID: -8463916858683326121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa1147d4b0ed38a0800000000000000
+      internalID: -6323651234448205067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915a9cacdde92c8b0800000000000000
+      internalID: -5133365949821770471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_7
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b01e4cd91765360800000000000000
+      internalID: 7158033580178869142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_8
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a36acc80e82595ac0800000000000000
+      internalID: -3865968035134396870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_9
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6a826dbd62cb4c0800000000000000
+      internalID: -4270495621021391188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74bf60a99f8ca4b70800000000000000
+      internalID: 8884134189298285383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_11
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1784e86fbec1330800000000000000
+      internalID: 3683078039463817634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d6586db5fe4bb00800000000000000
+      internalID: 843562207945256286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec4270dcbaeef7b10800000000000000
+      internalID: 1981564782712923342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b530eebc0959166e0800000000000000
+      internalID: -1846029923115990181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc7683d3e0bc9b60800000000000000
+      internalID: 7754267150978022592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161428ef228a7cc50800000000000000
+      internalID: 6685497040107094369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_17
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86102bfadd2ff7140800000000000000
+      internalID: 4719757968456941928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431355f89f2fac520800000000000000
+      internalID: 2723256078364389684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_19
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28db43bea0773ad50800000000000000
+      internalID: 6747367555510615426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432755049b39b27d0800000000000000
+      internalID: -2942095507698912716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_21
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a202ca4bd39728ed0800000000000000
+      internalID: -2413233144386019286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_22
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed18fda393be29cb0800000000000000
+      internalID: -4858562416945954338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_23
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c5335ac62f5bca0800000000000000
+      internalID: -6001624379959321456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aoe1x2_24
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62f75d5625366180800000000000000
+      internalID: -9122545556301286803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Aoe1x2_0: 899993971320546489
+      Aoe1x2_1: 6525680983848663233
+      Aoe1x2_10: 8884134189298285383
+      Aoe1x2_11: 3683078039463817634
+      Aoe1x2_12: 843562207945256286
+      Aoe1x2_13: 1981564782712923342
+      Aoe1x2_14: -1846029923115990181
+      Aoe1x2_15: 7754267150978022592
+      Aoe1x2_16: 6685497040107094369
+      Aoe1x2_17: 4719757968456941928
+      Aoe1x2_18: 2723256078364389684
+      Aoe1x2_19: 6747367555510615426
+      Aoe1x2_2: -3359466298695023973
+      Aoe1x2_20: -2942095507698912716
+      Aoe1x2_21: -2413233144386019286
+      Aoe1x2_22: -4858562416945954338
+      Aoe1x2_23: -6001624379959321456
+      Aoe1x2_24: -9122545556301286803
+      Aoe1x2_3: 7998975941347156475
+      Aoe1x2_4: -8463916858683326121
+      Aoe1x2_5: -6323651234448205067
+      Aoe1x2_6: -5133365949821770471
+      Aoe1x2_7: 7158033580178869142
+      Aoe1x2_8: -3865968035134396870
+      Aoe1x2_9: -4270495621021391188
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,778 @@
+fileFormatVersion: 2
+guid: d397036e5f22d424db95f575c74dff7e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5085289940225027349
+    second: AoeCardinals_0
+  - first:
+      213: -6309516115926035874
+    second: AoeCardinals_1
+  - first:
+      213: 2663793926548303151
+    second: AoeCardinals_2
+  - first:
+      213: 2539853435732400397
+    second: AoeCardinals_3
+  - first:
+      213: -7101780455958691619
+    second: AoeCardinals_4
+  - first:
+      213: 668660295311955664
+    second: AoeCardinals_5
+  - first:
+      213: 7501338860098392355
+    second: AoeCardinals_6
+  - first:
+      213: 2831999405498620379
+    second: AoeCardinals_7
+  - first:
+      213: -8644979600053916499
+    second: AoeCardinals_8
+  - first:
+      213: -4690779690565426379
+    second: AoeCardinals_9
+  - first:
+      213: 3179313175916378933
+    second: AoeCardinals_10
+  - first:
+      213: -8455425440323753080
+    second: AoeCardinals_11
+  - first:
+      213: 607649848129870678
+    second: AoeCardinals_12
+  - first:
+      213: 2974260253312735293
+    second: AoeCardinals_13
+  - first:
+      213: -4680419632253654026
+    second: AoeCardinals_14
+  - first:
+      213: 5586222342540320875
+    second: AoeCardinals_15
+  - first:
+      213: 7285683282372246348
+    second: AoeCardinals_16
+  - first:
+      213: -8136241211056192049
+    second: AoeCardinals_17
+  - first:
+      213: -5444514488923356515
+    second: AoeCardinals_18
+  - first:
+      213: -4714674240284099651
+    second: AoeCardinals_19
+  - first:
+      213: 5676563397479103165
+    second: AoeCardinals_20
+  - first:
+      213: 5670340741775817333
+    second: AoeCardinals_21
+  - first:
+      213: 5318200344423227239
+    second: AoeCardinals_22
+  - first:
+      213: 1044459384358613100
+    second: AoeCardinals_23
+  - first:
+      213: -2970381096229900960
+    second: AoeCardinals_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AoeCardinals_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2150d0ebb6d69b0800000000000000
+      internalID: -5085289940225027349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5250a595881078a0800000000000000
+      internalID: -6309516115926035874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d21ca7672b7f420800000000000000
+      internalID: 2663793926548303151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09926a3e3f5f3320800000000000000
+      internalID: 2539853435732400397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd045c95d48617d90800000000000000
+      internalID: -7101780455958691619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d61a71fefe874900800000000000000
+      internalID: 668660295311955664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3219fff03fb1a1860800000000000000
+      internalID: 7501338860098392355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_7
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd9dcd864784d4720800000000000000
+      internalID: 2831999405498620379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_8
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daca9485bdcd60880800000000000000
+      internalID: -8644979600053916499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_9
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 78
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5332b3869b007eeb0800000000000000
+      internalID: -4690779690565426379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53bf6302d703f1c20800000000000000
+      internalID: 3179313175916378933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_11
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ba3bc5c5b48aa80800000000000000
+      internalID: -8455425440323753080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65bd991415ece6800800000000000000
+      internalID: 607649848129870678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d38d44c21f1b64920800000000000000
+      internalID: 2974260253312735293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 54
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fba1c3742fcb0fb0800000000000000
+      internalID: -4680419632253654026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60677b9f9f368d40800000000000000
+      internalID: 5586222342540320875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4bbcc71852fb1560800000000000000
+      internalID: 7285683282372246348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_17
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc50a18e9b3461f80800000000000000
+      internalID: -8136241211056192049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9281492be23174b0800000000000000
+      internalID: -5444514488923356515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_19
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 30
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb7e2402cc129eb0800000000000000
+      internalID: -4714674240284099651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbaf9b3955437ce40800000000000000
+      internalID: 5676563397479103165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_21
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57af8f4acd811be40800000000000000
+      internalID: 5670340741775817333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_22
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fd4b5490b0ec940800000000000000
+      internalID: 5318200344423227239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_23
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60b40bb64aae7e00800000000000000
+      internalID: 1044459384358613100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AoeCardinals_24
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d6ea7712617c6d0800000000000000
+      internalID: -2970381096229900960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AoeCardinals_0: -5085289940225027349
+      AoeCardinals_1: -6309516115926035874
+      AoeCardinals_10: 3179313175916378933
+      AoeCardinals_11: -8455425440323753080
+      AoeCardinals_12: 607649848129870678
+      AoeCardinals_13: 2974260253312735293
+      AoeCardinals_14: -4680419632253654026
+      AoeCardinals_15: 5586222342540320875
+      AoeCardinals_16: 7285683282372246348
+      AoeCardinals_17: -8136241211056192049
+      AoeCardinals_18: -5444514488923356515
+      AoeCardinals_19: -4714674240284099651
+      AoeCardinals_2: 2663793926548303151
+      AoeCardinals_20: 5676563397479103165
+      AoeCardinals_21: 5670340741775817333
+      AoeCardinals_22: 5318200344423227239
+      AoeCardinals_23: 1044459384358613100
+      AoeCardinals_24: -2970381096229900960
+      AoeCardinals_3: 2539853435732400397
+      AoeCardinals_4: -7101780455958691619
+      AoeCardinals_5: 668660295311955664
+      AoeCardinals_6: 7501338860098392355
+      AoeCardinals_7: 2831999405498620379
+      AoeCardinals_8: -8644979600053916499
+      AoeCardinals_9: -4690779690565426379
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

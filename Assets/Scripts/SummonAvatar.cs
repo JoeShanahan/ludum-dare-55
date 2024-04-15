@@ -120,11 +120,11 @@ namespace LudumDare55
             }
             
             // In front
-            if (aoeMode is AttackArea.OneByOne or AttackArea.OneByTwo or AttackArea.OneByThree or AttackArea.ThreeByOne)
+            if (aoeMode is AttackArea.OneByOne or AttackArea.TwoByOne or AttackArea.OneByThree or AttackArea.ThreeByOne)
             {
                 positions.Add(currentPos + new Vector2Int(one, 0));
             }
-            if (aoeMode is AttackArea.OneByTwo)
+            if (aoeMode is AttackArea.TwoByOne)
             {
                 positions.Add(currentPos + new Vector2Int(one + one, 0));
             }
