@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Song of the Kingdom of Crimson Embers
   Genre: Fantasy
-  BookColor: {r: 0.39730823, g: 0.5754717, b: 0.28502136, a: 1}
-  TitleColor: {r: 0.1009256, g: 0.19634466, b: 0.7924528, a: 1}
-  GenreColor: {r: 1, g: 0, b: 0, a: 1}
-  CoverImage: {fileID: 0}
+  BookColor: {r: 0, g: 0, b: 0, a: 1}
+  TitleColor: {r: 1, g: 0.8220674, b: 0, a: 1}
+  GenreColor: {r: 1, g: 1, b: 1, a: 1}
+  CoverImage: {fileID: 21300000, guid: 65875c2d59f2bfa4c945ea9654ac46ff, type: 3}
   LongDescription: Yezzik the Unlucky has been plagued by strange dreams of a Tomb.
     The eastern wind brings the sounds of distant screams to Brodvar's ears. And
     Forbell has sensed dark stirrings in the Fens. These unlikely heroes must find
@@ -26,7 +26,7 @@ MonoBehaviour:
   Summons:
   - Name: Dragon
     Sprite: {fileID: 21300000, guid: a0bead0390f5da64db86cd1b4c224930, type: 3}
-    Count: 2
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 2
     Attack: 2
@@ -37,7 +37,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
   - Name: Brodvar the Dwarf
     Sprite: {fileID: 21300000, guid: 4d489933f5243c4459fc5894e4a31781, type: 3}
-    Count: 3
+    Weight: 1
     DoesStartWith: 1
     HealthPoints: 4
     Attack: 1
@@ -48,7 +48,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Forbell the Elf
     Sprite: {fileID: 21300000, guid: 5e5ec34e0cad17d49a14a6f6a50652bd, type: 3}
-    Count: 3
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 2
     Attack: 1
@@ -59,7 +59,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: 9826c60817a6d0549a310678685031c5, type: 3}
   - Name: Mimic chest
     Sprite: {fileID: 21300000, guid: 78a9b914982ef1949ab450f761fb120a, type: 3}
-    Count: 3
+    Weight: 1
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 2
@@ -70,7 +70,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Yezzik the Unlucky
     Sprite: {fileID: 21300000, guid: 20c38504d21c399468ca26bca8d2795e, type: 3}
-    Count: 1
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 4
     Attack: 2

@@ -17,13 +17,13 @@ MonoBehaviour:
   BookColor: {r: 0.23137255, g: 0.28627452, b: 0.33333334, a: 1}
   TitleColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
   GenreColor: {r: 0.99607843, g: 0.99607843, b: 0.99607843, a: 1}
-  CoverImage: {fileID: 0}
+  CoverImage: {fileID: 21300000, guid: fe8e9e8a29dfd6b40acf215af71b7ec4, type: 3}
   LongDescription: A cautionary tale that definitely will not be used as an instruction
     manual for people who have more venture capitalist money than sense.
   Summons:
   - Name: Bzorp Jacksonian
     Sprite: {fileID: 21300000, guid: 46f61de30bbf7c146aa947785ef2b507, type: 3}
-    Count: 3
+    Weight: 1
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: e4eb1dd78d1cb408db15c64e9504579e, type: 3}
   - Name: Charge-Bot
     Sprite: {fileID: 21300000, guid: fabec9b89f9248b44840c9d0baf7e490, type: 3}
-    Count: 4
+    Weight: 1
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Laser Cannon
     Sprite: {fileID: 21300000, guid: ece606eda7928764794040cf0a377f3b, type: 3}
-    Count: 1
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 1
     Attack: 2
@@ -57,7 +57,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: e4eb1dd78d1cb408db15c64e9504579e, type: 3}
   - Name: Medical Droid
     Sprite: {fileID: 21300000, guid: de4fe4e0705332e469403274c819f27c, type: 3}
-    Count: 3
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 2
     Attack: 2
@@ -69,7 +69,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Torment Nexus
     Sprite: {fileID: 21300000, guid: e364387586b565844b534181b97b2401, type: 3}
-    Count: 1
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 4
     Attack: 1
