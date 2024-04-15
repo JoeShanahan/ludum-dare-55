@@ -13,6 +13,9 @@ namespace LudumDare55
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            if (_gameState == null)
+                return;
+            
             _image.texture = _gameState.Opponent.BackgroundTex;
             _bgImage.color = _gameState.Opponent._bgColA;
             _image.color = _gameState.Opponent._bgColB;
