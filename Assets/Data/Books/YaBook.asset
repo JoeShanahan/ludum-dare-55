@@ -46,7 +46,7 @@ MonoBehaviour:
     Description: Beefy and dependable
     ActionQueue: 0100000003000000
     AttackArea: 8
-    AoePrefab: {fileID: 0}
+    AoePrefab: {fileID: 6997704321720672169, guid: d8f260838cb5d0e4f9b6fc7199aa35fe, type: 3}
   - Name: Dark love interest
     Sprite: {fileID: 21300000, guid: bb2902e58b6ce4142a89ac69b494bb35, type: 3}
     Weight: 1
