@@ -81,6 +81,10 @@ namespace LudumDare55
             {
                 DoAoeAttack();
             }
+            else if (NextAction == BoardAction.DoubleMove)
+            {
+                DoDoubleMove(NextPosition, time);
+            }
         }
 
         protected virtual void DoAoeAttack()
@@ -138,7 +142,18 @@ namespace LudumDare55
             transform.DOLocalMoveZ(newPos.z - 0.5f, time / 2f).SetEase(Ease.OutSine);
             transform.DOLocalMoveZ(newPos.z, time / 2f).SetDelay(time / 2f).SetEase(Ease.InSine);
         }
-        
+
+        protected void DoDoubleMove(Vector2Int localPos, float time)
+        {
+            Vector3 newPos = new(localPos.x, localPos.y, transform.localPosition.z);
+
+            transform.DOLocalMoveX(newPos.x, time).SetEase(Ease.Linear);
+            transform.DOLocalMoveY(newPos.y, time).SetEase(Ease.Linear);
+
+            transform.DOLocalMoveZ(newPos.z - 0.5f, time / 2f).SetEase(Ease.OutSine);
+            transform.DOLocalMoveZ(newPos.z, time / 2f).SetDelay(time / 2f).SetEase(Ease.InSine);
+        }
+
         protected void SkipTurnAnimation(float time)
         {
             transform.DOScale(new Vector3(1.2f, 0.8f, 1f), time / 2f).SetEase(Ease.OutSine);

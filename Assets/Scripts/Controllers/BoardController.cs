@@ -242,6 +242,7 @@ namespace LudumDare55
             foreach (SummonAvatar summon in _summonsToKill)
             {
                 _allActors.Remove(summon);
+                _summonActors.Remove(summon);
             }
             
             _turnsUntilPage -= 1;
@@ -277,9 +278,34 @@ namespace LudumDare55
                     if (actorA == actorB)
                         continue;
 
-                    bool bothMoving = actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move;
-                    bool AtoB = actorA.NextPosition == actorB.GridPosition;
-                    bool BtoA = actorB.NextPosition == actorA.GridPosition;
+                    bool AtoB = false;
+                    bool BtoA = false;
+
+                    bool bothMoving = (actorA.NextAction == BoardAction.Move || actorA.NextAction == BoardAction.DoubleMove)  && (actorB.NextAction == BoardAction.Move || actorB.NextAction == BoardAction.DoubleMove);
+                    if (actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move)
+                    {
+                        AtoB = actorA.NextPosition == actorB.GridPosition;
+                        BtoA = actorB.NextPosition == actorA.GridPosition;
+                    }
+                    else if (actorA.NextAction == BoardAction.DoubleMove && actorB.NextAction == BoardAction.DoubleMove)
+                    {
+                        Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        AtoB = actorA.NextPosition - forwardA == actorB.GridPosition;
+                        BtoA = actorB.NextPosition - forwardB == actorA.GridPosition;
+                    }
+                    else if (actorA.NextAction == BoardAction.DoubleMove && actorB.NextAction == BoardAction.Move)
+                    {
+                        Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        AtoB = actorA.NextPosition - forwardA == actorB.GridPosition;
+                        BtoA = actorB.NextPosition == actorA.GridPosition;
+                    }
+                    else if (actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.DoubleMove)
+                    {
+                        Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        AtoB = actorA.NextPosition == actorB.GridPosition;
+                        BtoA = actorB.NextPosition - forwardB == actorA.GridPosition;
+                    }
 
                     if (bothMoving && AtoB && BtoA)
                     {
@@ -396,17 +422,41 @@ namespace LudumDare55
                     if (actorA == actorB)
                         continue;
 
-                    bool bothMoving = actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move;
+                    bool bothMoving = (actorA.NextAction == BoardAction.Move || actorA.NextAction == BoardAction.DoubleMove) && (actorB.NextAction == BoardAction.Move || actorB.NextAction == BoardAction.DoubleMove);
                     bool bothSamePos = actorA.NextPosition == actorB.NextPosition;
 
-                    if (bothMoving && bothSamePos)
+                    if (actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.Move)
                     {
-                        // If can kill, do that and then move
-                        // If being killed, move and die
-                        // If not, bump
-                        actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
-                        actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
-                        actorA.CollideWith(actorB);
+                        if (bothMoving && bothSamePos)
+                        {
+                            // If can kill, do that and then move
+                            // If being killed, move and die
+                            // If not, bump
+                            actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
+                            actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
+                            actorA.CollideWith(actorB);
+                        }
+                    }
+                    else if (actorA.NextAction == BoardAction.DoubleMove && actorB.NextAction == BoardAction.DoubleMove)
+                    {
+                        Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        if (bothMoving && bothSamePos)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Move, actorA.NextPosition - forwardA);
+                            actorB.OverrideNextAction(BoardAction.Move, actorB.NextPosition - forwardB);
+                        }
+
+                    }
+                    else if (actorA.NextAction == BoardAction.DoubleMove && actorB.NextAction == BoardAction.Move)
+                    {
+                        Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        if (bothMoving && bothSamePos) { actorA.OverrideNextAction(BoardAction.Move, actorA.NextPosition - forwardA); }
+                    }
+                    else if (actorA.NextAction == BoardAction.Move && actorB.NextAction == BoardAction.DoubleMove)
+                    {
+                        Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                        if (bothMoving && bothSamePos) { actorB.OverrideNextAction(BoardAction.Move, actorB.NextPosition - forwardB); }
                     }
                 }
             }
@@ -423,7 +473,10 @@ namespace LudumDare55
 
                     bool bothSamePos = actorA.NextPosition == actorB.NextPosition;
                     bool bothSameSide = actorA.IsRight == actorB.IsRight;
-                    
+
+                    Vector2Int forwardA = actorA.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+                    Vector2Int forwardB = actorB.IsRight ? new Vector2Int(1, 0) : new Vector2Int(-1, 0);
+
                     if (bothSamePos && bothSameSide)
                     {
                         if (actorA.NextAction == BoardAction.Move)
@@ -434,6 +487,14 @@ namespace LudumDare55
                         {
                             actorB.OverrideNextAction(BoardAction.Wait, actorB.GridPosition);
                         }
+                        if (actorA.NextAction == BoardAction.DoubleMove)
+                        {
+                            actorA.OverrideNextAction(BoardAction.Move, actorA.NextPosition - forwardA);
+                        }
+                        if (actorB.NextAction == BoardAction.DoubleMove)
+                        {
+                            actorB.OverrideNextAction(BoardAction.Move, actorB.NextPosition - forwardB);
+                        }
                     }
                 }
             }
@@ -442,7 +503,7 @@ namespace LudumDare55
         private void CheckForRemainingConflicts()
         {
             _areConflicts = false;
-            
+
             foreach (BoardActor actorA in _allActors)
             {
                 foreach (BoardActor actorB in _allActors)
