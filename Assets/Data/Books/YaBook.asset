@@ -21,7 +21,7 @@ MonoBehaviour:
   LongDescription: Dariangeline always felt she was different, despite being put
     in a box like everyone under the Conservative Government. When her life is saved
     by Darius and the Resibelliance, she discovers something new to fight for. But
-    will the reappearrance of her childhood friend Darren divert he from the just
+    will the reappearrance of her childhood friend Darren divert her from the just
     cause?
   Summons:
   - Name: Specialest girl in the world
@@ -77,8 +77,8 @@ MonoBehaviour:
     HealthPoints: 1
     Attack: 4
     Shield: 0
-    Description: The last few willing to stand up to tyranny. No one know how they
-      manage to stay so groomed while supposedly living off grid.
+    Description: The last few willing to stand up to tyranny. It's unknown how they
+      manage to stay so groomed while living off grid.
     ActionQueue: 0200000003000000
     AttackArea: 2
     AoePrefab: {fileID: 6997704321720672169, guid: 2ee087eb6f3b94c48891e5a172ee6d9a, type: 3}

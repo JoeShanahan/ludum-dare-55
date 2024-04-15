@@ -75,9 +75,8 @@ MonoBehaviour:
     HealthPoints: 4
     Attack: 2
     Shield: 0
-    Description: Unluckiest wizard in the world. Somehow always ends up in mortal
-      danger right before saving the world. At least he's become very good at staying
-      alive.
+    Description: Somehow always ends up in mortal danger, but at least he's become
+      very good at staying alive.
     ActionQueue: 010000000100000003000000
     AttackArea: 2
     AoePrefab: {fileID: 6997704321720672169, guid: ff2e122dd86c89547a27fbbec4a3d357, type: 3}
