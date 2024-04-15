@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Winter with the Duke
   Genre: Romance
-  BookColor: {r: 0.39730823, g: 0.5754717, b: 0.28502136, a: 1}
-  TitleColor: {r: 0.1009256, g: 0.19634466, b: 0.7924528, a: 1}
-  GenreColor: {r: 1, g: 0, b: 0, a: 1}
-  CoverImage: {fileID: 0}
+  BookColor: {r: 0.78867924, g: 0, b: 0.009514987, a: 1}
+  TitleColor: {r: 1, g: 1, b: 1, a: 1}
+  GenreColor: {r: 1, g: 1, b: 1, a: 1}
+  CoverImage: {fileID: 21300000, guid: 903927308b9404042a3c110257865fc5, type: 3}
   LongDescription: She never expected to be trapped in a remote castle with the Duke
     de Maldenberg. But as winter rolled around she had no choice but to accept his
     icy hospitality. Little did she know that she would find warmth in the most unlikely
@@ -27,7 +27,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 6a70aff9d0a1cbd4584b3e4ba2737c23, type: 3}
     Weight: 2
     DoesStartWith: 0
-    HealthPoints: 2
+    HealthPoints: 1
     Attack: 3
     Shield: 0
     Description: 'He''s obsessed with the love he threw away. '
@@ -77,4 +77,4 @@ MonoBehaviour:
     Description: Better informed and more feared than the police.
     ActionQueue: 0100000003000000
     AttackArea: 8
-    AoePrefab: {fileID: 0}
+    AoePrefab: {fileID: 6997704321720672169, guid: aa832e8578e07f043a67e101ee9f9f28, type: 3}

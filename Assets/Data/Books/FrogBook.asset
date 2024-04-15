@@ -16,8 +16,8 @@ MonoBehaviour:
   Genre: Non Fiction
   BookColor: {r: 0.36078432, g: 0.20392157, b: 0.18039216, a: 1}
   TitleColor: {r: 0.6509804, g: 0.5921569, b: 0, a: 1}
-  GenreColor: {r: 0.99607843, g: 0.7254902, b: 0.4745098, a: 1}
-  CoverImage: {fileID: 21300000, guid: bc2fc27e99bb6424f807e50235d4cbe5, type: 3}
+  GenreColor: {r: 1, g: 1, b: 1, a: 1}
+  CoverImage: {fileID: 21300000, guid: bd5bedfaa7b66ce48947c532a72baef6, type: 3}
   LongDescription: Contains everything you ever wanted to know about frogs, as well
     as many things you could've lived your whole life without knowing and probably
     been the better for it.
@@ -43,7 +43,7 @@ MonoBehaviour:
     Description: He's still banned from Australia. He knows what he did.
     ActionQueue: 01000000030000000000000003000000
     AttackArea: 2
-    AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
+    AoePrefab: {fileID: 6997704321720672169, guid: 813889e75394cf7499c1c8cc2e1df13a, type: 3}
   - Name: Flying Frog
     Sprite: {fileID: 21300000, guid: 2e719cd83e9714e519c0ccb8c579679d, type: 3}
     Weight: 2

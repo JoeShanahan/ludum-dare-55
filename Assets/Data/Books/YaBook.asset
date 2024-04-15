@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Defiance
   Genre: Young Adult Dystopian
-  BookColor: {r: 0.39730823, g: 0.5754717, b: 0.28502136, a: 1}
-  TitleColor: {r: 0.1009256, g: 0.19634466, b: 0.7924528, a: 1}
-  GenreColor: {r: 1, g: 0, b: 0, a: 1}
-  CoverImage: {fileID: 0}
+  BookColor: {r: 1, g: 0.39257425, b: 0, a: 1}
+  TitleColor: {r: 0, g: 0, b: 0, a: 1}
+  GenreColor: {r: 0, g: 0, b: 0, a: 1}
+  CoverImage: {fileID: 21300000, guid: 21e27678dfedac04eb1d963ce7067ebc, type: 3}
   LongDescription: Dariangeline always felt she was different, despite being put
     in a box like everyone under the Conservative Government. When her life is saved
     by Darius and the Resibelliance, she discovers something new to fight for. But
@@ -57,7 +57,7 @@ MonoBehaviour:
     Description: Edgy and brooding.
     ActionQueue: 010000000300000003000000
     AttackArea: 5
-    AoePrefab: {fileID: 0}
+    AoePrefab: {fileID: 6997704321720672169, guid: 2ee087eb6f3b94c48891e5a172ee6d9a, type: 3}
   - Name: Evil Government
     Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
     Weight: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
       cost.
     ActionQueue: 0100000003000000
     AttackArea: 5
-    AoePrefab: {fileID: 0}
+    AoePrefab: {fileID: 6997704321720672169, guid: 597032b5cb8b3fa4ab4f89761ac09c9e, type: 3}
   - Name: The Resibelliance
     Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
     Weight: 2
@@ -81,4 +81,4 @@ MonoBehaviour:
       manage to stay so groomed while supposedly living off grid.
     ActionQueue: 0200000003000000
     AttackArea: 2
-    AoePrefab: {fileID: 0}
+    AoePrefab: {fileID: 6997704321720672169, guid: 2ee087eb6f3b94c48891e5a172ee6d9a, type: 3}
