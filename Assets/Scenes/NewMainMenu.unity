@@ -4250,6 +4250,16 @@ MonoBehaviour:
   _titleScreen: {fileID: 754608993}
   _opponentScreen: {fileID: 178660523}
   _bookScreen: {fileID: 1984548910}
+  _opps:
+  - {fileID: 1806480786}
+  - {fileID: 1513018270}
+  - {fileID: 906332094}
+  _boops:
+  - {fileID: 178180525}
+  - {fileID: 1814490496}
+  - {fileID: 140632908}
+  - {fileID: 1907008204}
+  - {fileID: 1351698323}
   _currentScreen: 0
   _bgBlue: {fileID: 277597169}
 --- !u!1 &1278231447
