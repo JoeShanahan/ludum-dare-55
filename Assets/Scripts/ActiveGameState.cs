@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace LudumDare55
 {
     public class ActiveGameState : ScriptableObject
     {
+        public int StartHP;
+
         public BookData PlayerBook => _playerBook;
         public OpponentData Player => _player;
         public OpponentData Opponent => _opponent;
@@ -14,16 +17,43 @@ namespace LudumDare55
         
         public List<SummonData> PlayerDeck { get; private set; } = new();
         public List<SummonData> OpponentDeck { get; private set; } = new();
+
+        public int PlayerSummonsInPlay;
+        public int OpponentSummonsInPlay;
+
+        public int PlayerHealth = new();
+        public int OpponentHealth = new();
+
+        private TextMeshProUGUI _playerHPUI;
+        private TextMeshProUGUI _opponentHPUI;
         
         [SerializeField] private BookData _playerBook;
         [SerializeField] private OpponentData _player;
         [SerializeField] private OpponentData _opponent;
+
+        private bool _gameDone;
         
         public void InitGame(BookData playerBook, OpponentData player, OpponentData opponent)
         {
             _playerBook = playerBook;
             _player = player;
             _opponent = opponent;
+
+            PlayerHealth = StartHP;
+            OpponentHealth = StartHP;
+
+            PlayerSummonsInPlay = 0;
+            OpponentSummonsInPlay = 0;
+
+            _gameDone = false;
+        }
+
+        public void InitUI(TextMeshProUGUI pHP, TextMeshProUGUI oHP)
+        {
+            _playerHPUI = pHP;
+            _opponentHPUI = oHP;
+            RefreshUI();
+
         }
 
         public void InitHands()
@@ -31,6 +61,35 @@ namespace LudumDare55
             Debug.Log($"Populating player with {_playerBook.name}");
             PopulateHandAndDeck(_playerBook, PlayerHand, PlayerDeck);
             PopulateHandAndDeck(_opponent.ChosenBook, OpponentHand, OpponentDeck);
+            PlayerSummonsInPlay = PlayerHand.Count;
+            OpponentSummonsInPlay = OpponentHand.Count;
+        }
+
+        public void DamagePlayer(bool isPlayer)
+        {
+            if (_gameDone) { return; }
+            if (isPlayer)
+            {
+                PlayerHealth -= 1;
+                RefreshUI();
+                if (PlayerHealth == 0)
+                {
+                    _gameDone = true;
+                    Debug.Log("Player lose!"); /*DO lose.*/
+                }
+            }
+            else
+            {
+                OpponentHealth -= 1;
+                RefreshUI();
+                if (OpponentHealth == 0)
+                {
+                    _gameDone = true;
+                    Debug.Log("Player win!"); /*DO win.*/
+                }
+            }
+
+            Debug.LogWarning("DAMAGE DETECTED! pH:" + PlayerHealth + ", oH:" + OpponentHealth);
         }
 
         private void PopulateHandAndDeck(BookData book, List<SummonData> hand, List<SummonData> deck)
@@ -40,19 +99,15 @@ namespace LudumDare55
 
             foreach (SummonData dat in book.Summons)
             {
-                int count = dat.Count;
-
-                if (dat.DoesStartWith)
-                {
-                    hand.Add(dat);
-                    count--;
-                }
-
-                for (int i = 0; i < count; i++)
-                {
-                    deck.Add(dat);
-                }
+                if (dat.DoesStartWith) { hand.Add(dat); }
+                deck.Add(dat);
             }
+        }
+
+        private void RefreshUI()
+        {
+            _playerHPUI.text = PlayerHealth.ToString();
+            _opponentHPUI.text = OpponentHealth.ToString();
         }
     }
 }

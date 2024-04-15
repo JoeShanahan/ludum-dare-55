@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 using Random = UnityEngine.Random;
 
 namespace LudumDare55
@@ -17,21 +18,36 @@ namespace LudumDare55
         [SerializeField] private BookCover _leftBookCover;
         [SerializeField] private BookCover _rightBookCover;
         [SerializeField] private Transform _pauseMenu;
+
+        [SerializeField] private TextMeshProUGUI PlayerHP;
+        [SerializeField] private TextMeshProUGUI OpponentHP;
         
         private InputSystem_Actions _input;
         private bool _isMoving;
 
         public void GetNewCard()
         {
-            if (_gameState.PlayerDeck.Count == 0)
-                return;
-            
+            if (_gameState.PlayerSummonsInPlay >= 8) { return; }
+
+            Random.InitState(System.DateTime.Now.Millisecond);
             int randomIndex = Random.Range(0, _gameState.PlayerDeck.Count);
+            Debug.Log("rdmInd: " + randomIndex);
             SummonData newSummon = _gameState.PlayerDeck[randomIndex];
-            _gameState.PlayerDeck.RemoveAt(randomIndex);
             _gameState.PlayerHand.Add(newSummon);
-            
+            _gameState.PlayerSummonsInPlay += 1;
             _cards.Refresh();
+        }
+
+        public void GetNewOpponentCard()
+        {
+            if (_gameState.OpponentSummonsInPlay >= 8) { return; }
+
+            Random.InitState(System.DateTime.Now.Millisecond);
+            int randomIndex = Random.Range(0, _gameState.OpponentDeck.Count);
+            Debug.Log("rdmInd: " + randomIndex);
+            SummonData newSummon = _gameState.PlayerDeck[randomIndex];
+            _gameState.OpponentHand.Add(newSummon);
+            _gameState.OpponentSummonsInPlay += 1;
         }
 
         public void ReturnToPlayerHand(SummonData s)
@@ -65,6 +81,7 @@ namespace LudumDare55
             _input.Player.SkipMove.performed += OnSkipPressed;
             _input.Player.Menu.performed += OnMenuPressed;
 
+            _gameState.InitUI(PlayerHP, OpponentHP);
             _gameState.InitHands();
             _cards.Refresh();
             
@@ -132,7 +149,7 @@ namespace LudumDare55
 
             bool valid = _board.IsSpaceValid(_board.PlayerAvatar.transform.localPosition + moveDir);
             //Debug.Log(moveDir);
-            if (_board.PlayerAvatar.transform.localPosition.x + moveDir.x >= 8) { valid = false; }
+            if (_board.PlayerAvatar.transform.localPosition.x + moveDir.x >= 4) { valid = false; }
 
             if (valid)
                 TriggerBoardUpdate(moveDir);
