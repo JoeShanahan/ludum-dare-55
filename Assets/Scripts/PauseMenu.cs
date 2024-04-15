@@ -49,6 +49,7 @@ namespace LudumDare55
         public void BtnPressMenu()
         {
             FindFirstObjectByType<TransitionManager>().GoToMenu();
+            FindFirstObjectByType<MusicController>().SwapToMenuMusic();
         }
     }
 }
