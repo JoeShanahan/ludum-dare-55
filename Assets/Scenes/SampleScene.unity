@@ -1541,6 +1541,7 @@ MonoBehaviour:
   _summonPrefab: {fileID: 4264037330470395817, guid: 1d57d88567b7440948ff9f566ad4d6eb, type: 3}
   _pagePrefab: {fileID: 4264037330470395817, guid: b731b91e9b5411a4abbde60a90940f75, type: 3}
   _squarePrefab: {fileID: 648056366039275500, guid: 29776b6ad760947c185005860026abfc, type: 3}
+  _basePrefab: {fileID: 648056366039275500, guid: d5cd37a9c69b4f149932c5c97b07aca5, type: 3}
   _gameState: {fileID: 11400000, guid: 151646503f3a44d1ea16ecf871a79bf4, type: 2}
   _leftPlayerSprite: {fileID: 21300000, guid: 33672e667e0084660bf87d0df25837e1, type: 3}
   _rightPlayerSprite: {fileID: 21300000, guid: e9322b44cacbf497d86219051f4c6eb6, type: 3}

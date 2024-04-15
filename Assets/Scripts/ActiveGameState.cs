@@ -6,6 +6,7 @@ namespace LudumDare55
     public class ActiveGameState : ScriptableObject
     {
         public BookData PlayerBook => _playerBook;
+        public OpponentData Player => _player;
         public OpponentData Opponent => _opponent;
 
         public List<SummonData> PlayerHand { get; private set; } = new();
@@ -15,11 +16,13 @@ namespace LudumDare55
         public List<SummonData> OpponentDeck { get; private set; } = new();
         
         [SerializeField] private BookData _playerBook;
+        [SerializeField] private OpponentData _player;
         [SerializeField] private OpponentData _opponent;
         
-        public void InitGame(BookData playerBook, OpponentData opponent)
+        public void InitGame(BookData playerBook, OpponentData player, OpponentData opponent)
         {
             _playerBook = playerBook;
+            _player = player;
             _opponent = opponent;
         }
 
