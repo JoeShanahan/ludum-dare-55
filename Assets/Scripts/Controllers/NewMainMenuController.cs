@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -19,6 +20,9 @@ namespace LudumDare55
         [SerializeField] private List<OpponentSelectItem> _opps;
         [SerializeField] private List<BookSelectItem> _boops;
 
+        [SerializeField] private TMP_Text _bookBlurb;
+        [SerializeField] private List<SummonCard> _cards;
+        
         private int _opIdx;
         private int _bookIdx;
         
@@ -33,6 +37,22 @@ namespace LudumDare55
         private RectTransform _bgBlue;
 
         private InputSystem_Actions _input;
+
+        public void OnBookSelected(BookSelectItem itm)
+        {
+            _bookIdx = _boops.IndexOf(itm);
+            _bookBlurb.text = itm.BookData.LongDescription;
+            
+            for (int i = 0; i < 5; i++)
+            {
+                _cards[i].SetSummonData(itm.BookData.Summons[i]);
+            }
+        }
+        
+        public void OnOpponentSelected(OpponentSelectItem itm)
+        {
+            _opIdx = _opps.IndexOf(itm);
+        }
         
         private void OnEnable()
         {

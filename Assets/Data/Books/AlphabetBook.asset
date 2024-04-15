@@ -22,7 +22,7 @@ MonoBehaviour:
   Summons:
   - Name: A
     Sprite: {fileID: 21300000, guid: 8227d4cf44ccf47f8b5bfd1fa8dccf2f, type: 3}
-    Count: 3
+    Weight: 1
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: B
     Sprite: {fileID: 21300000, guid: 517ed9e2fb6a24d119930421562c3f9a, type: 3}
-    Count: 3
+    Weight: 1
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
@@ -44,7 +44,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: C
     Sprite: {fileID: 21300000, guid: d482d195f57914f829c38b3187cb3a80, type: 3}
-    Count: 3
+    Weight: 1
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
   - Name: D
     Sprite: {fileID: 21300000, guid: 12c93648aa445420caf6ae06b47a156d, type: 3}
-    Count: 2
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 2
     Attack: 1
@@ -66,7 +66,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: E
     Sprite: {fileID: 21300000, guid: 6bdbbedca67f1424d84473302d0c767b, type: 3}
-    Count: 1
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 2
     Attack: 1

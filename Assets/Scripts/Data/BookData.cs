@@ -21,6 +21,25 @@ namespace LudumDare55
 
         public List<SummonData> Summons;
 
+        
+        [ContextMenu("Check!")]
+        public void CheckForInvalid()
+        {
+            foreach (SummonData dat in Summons)
+            {
+                foreach (var itm in dat.ActionQueue)
+                {
+                    if (itm == BoardAction.AOEAttack)
+                    {
+                        if (dat.AoePrefab == null)
+                        {
+                            Debug.LogWarning($"Missing AOE prefab on {dat.Name}");
+                        }
+                    }
+                }
+            }
+        }
+        
         /*public int PageCount
         {
             get
@@ -36,6 +55,8 @@ namespace LudumDare55
             }
         }*/
     }
+    
+    
 
     [Serializable]
     public class SummonData
