@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20af8399013d641bd9132768eb5013f6, type: 3}
   m_Name: ActiveGameState
   m_EditorClassIdentifier: 
-  _playerBook: {fileID: 11400000, guid: 4645faffca808fb4ca77faf4c022a8c1, type: 2}
-  _opponent: {fileID: 11400000, guid: be2e688e35003417eb7bb73c87dda2ca, type: 2}
+  _playerBook: {fileID: 11400000, guid: e275779773a4b9940bf7df87e504cd69, type: 2}
+  _player: {fileID: 11400000, guid: 80d6396657ff945deb4bc95d0a6117ed, type: 2}
+  _opponent: {fileID: 11400000, guid: 20abb618fd1eced4986d2ccb6194212f, type: 2}

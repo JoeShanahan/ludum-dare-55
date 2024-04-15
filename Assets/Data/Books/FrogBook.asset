@@ -36,12 +36,12 @@ MonoBehaviour:
   - Name: Cane Toad
     Sprite: {fileID: 21300000, guid: 07debec054ece48b8ac2b094f8bde788, type: 3}
     Count: 3
-    DoesStartWith: 1
+    DoesStartWith: 0
     HealthPoints: 2
     Attack: 1
     Shield: 0
     Description: He's still banned from Australia. He knows what he did.
-    ActionQueue: 0100000003000000
+    ActionQueue: 01000000030000000000000003000000
     AttackArea: 2
     AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
   - Name: Flying Frog
@@ -52,19 +52,19 @@ MonoBehaviour:
     Attack: 1
     Shield: 0
     Description: Flyest of all the frogs!
-    ActionQueue: 01000000
-    AttackArea: 3
+    ActionQueue: 02000000
+    AttackArea: 0
     AoePrefab: {fileID: 0}
   - Name: Dart Frog
     Sprite: {fileID: 21300000, guid: 361f949f8b7424504af90949331eafe1, type: 3}
     Count: 2
     DoesStartWith: 0
     HealthPoints: 1
-    Attack: 2
+    Attack: 4
     Shield: 0
     Description: Not poisonous, but lethally accurate.
     ActionQueue: 01000000
-    AttackArea: 3
+    AttackArea: 0
     AoePrefab: {fileID: 0}
   - Name: Peruvian Fighting Frog
     Sprite: {fileID: 21300000, guid: 051d5740b2093486ca06db969c5ba6d5, type: 3}
@@ -72,7 +72,7 @@ MonoBehaviour:
     DoesStartWith: 0
     HealthPoints: 3
     Attack: 4
-    Shield: 0
+    Shield: 1
     Description: Upon spotting another Peruvian Fighting Frog (or anything else for
       that matter) they will commence battle until nightfall.
     ActionQueue: 02000000

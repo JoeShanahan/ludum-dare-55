@@ -395,7 +395,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ldjam-site (1)_0: 9076812412307771541
+      ldjam-site (1)_1: -6930673098395501261
+      ldjam-site (1)_10: 5540023071339951260
+      ldjam-site (1)_2: 8706834054091499153
+      ldjam-site (1)_3: 8596401954727450340
+      ldjam-site (1)_4: 8705204733667150188
+      ldjam-site (1)_5: -5116807973502360170
+      ldjam-site (1)_6: 8836849521167826732
+      ldjam-site (1)_7: -5793987228432081120
+      ldjam-site (1)_8: 8460284077515094652
+      ldjam-site (1)_9: 5966108974962614909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
