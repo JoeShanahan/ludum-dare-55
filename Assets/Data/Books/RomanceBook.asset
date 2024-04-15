@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Winter with the Duke
   Genre: Romance
-  BookColor: {r: 0.39730823, g: 0.5754717, b: 0.28502136, a: 1}
-  TitleColor: {r: 0.1009256, g: 0.19634466, b: 0.7924528, a: 1}
-  GenreColor: {r: 1, g: 0, b: 0, a: 1}
+  BookColor: {r: 0.78867924, g: 0, b: 0.009514987, a: 1}
+  TitleColor: {r: 1, g: 1, b: 1, a: 1}
+  GenreColor: {r: 1, g: 1, b: 1, a: 1}
   CoverImage: {fileID: 21300000, guid: 903927308b9404042a3c110257865fc5, type: 3}
   LongDescription: She never expected to be trapped in a remote castle with the Duke
     de Maldenberg. But as winter rolled around she had no choice but to accept his
@@ -25,7 +25,7 @@ MonoBehaviour:
   Summons:
   - Name: Jilted lover
     Sprite: {fileID: 21300000, guid: 6a70aff9d0a1cbd4584b3e4ba2737c23, type: 3}
-    Count: 2
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 1
     Attack: 3
@@ -36,7 +36,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Mr. Darcy
     Sprite: {fileID: 21300000, guid: 23a05620bf9d8534eba4926cf2ee4e4e, type: 3}
-    Count: 2
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 3
     Attack: 3
@@ -47,7 +47,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: c9659e5dc1d7d7248b7baa88a77c12ef, type: 3}
   - Name: Lady in a very loose dress
     Sprite: {fileID: 21300000, guid: 6efe05bcf30493d4390bac9d12f7aba0, type: 3}
-    Count: 4
+    Weight: 1
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 2
@@ -58,7 +58,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Strapping stablehand
     Sprite: {fileID: 21300000, guid: 02a8fa6dff3bf0c4189569ca972c0dfd, type: 3}
-    Count: 2
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 4
     Attack: 3
@@ -69,7 +69,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Town gossip
     Sprite: {fileID: 21300000, guid: 08aa62661f0209c4a89cd74f99556472, type: 3}
-    Count: 2
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 1
     Attack: 2
