@@ -26,7 +26,7 @@ MonoBehaviour:
   Summons:
   - Name: Specialest girl in the world
     Sprite: {fileID: 21300000, guid: 5795adb1da46f2143a86de8b08aab2db, type: 3}
-    Count: 3
+    Weight: 3
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Blonde love interest
     Sprite: {fileID: 21300000, guid: ba5c0685ad906e246af9e14b08f73014, type: 3}
-    Count: 3
+    Weight: 3
     DoesStartWith: 1
     HealthPoints: 3
     Attack: 2
@@ -49,7 +49,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Dark love interest
     Sprite: {fileID: 21300000, guid: bb2902e58b6ce4142a89ac69b494bb35, type: 3}
-    Count: 3
+    Weight: 2
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 3
@@ -60,7 +60,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Evil Government
     Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
-    Count: 1
+    Weight: 1
     DoesStartWith: 0
     HealthPoints: 4
     Attack: 4
@@ -72,7 +72,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: The Resibelliance
     Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
-    Count: 2
+    Weight: 2
     DoesStartWith: 0
     HealthPoints: 1
     Attack: 4

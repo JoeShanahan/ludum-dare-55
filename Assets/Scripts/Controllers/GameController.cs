@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -30,7 +31,17 @@ namespace LudumDare55
             if (_gameState.PlayerSummonsInPlay >= 8) { return; }
 
             Random.InitState(System.DateTime.Now.Millisecond);
-            int randomIndex = Random.Range(0, _gameState.PlayerDeck.Count);
+            List<SummonData> weightedList = new List<SummonData>();
+            foreach (SummonData s in _gameState.PlayerDeck)
+            {
+                int count = s.Weight;
+                while (count > 0)
+                {
+                    weightedList.Add(s);
+                    count--;
+                }
+            }
+            int randomIndex = Random.Range(0, weightedList.Count);
             Debug.Log("rdmInd: " + randomIndex);
             SummonData newSummon = _gameState.PlayerDeck[randomIndex];
             _gameState.PlayerHand.Add(newSummon);
@@ -43,7 +54,17 @@ namespace LudumDare55
             if (_gameState.OpponentSummonsInPlay >= 8) { return; }
 
             Random.InitState(System.DateTime.Now.Millisecond);
-            int randomIndex = Random.Range(0, _gameState.OpponentDeck.Count);
+            List<SummonData> weightedList = new List<SummonData>();
+            foreach (SummonData s in _gameState.OpponentDeck)
+            {
+                int count = s.Weight;
+                while (count > 0)
+                {
+                    weightedList.Add(s);
+                    count--;
+                }
+            }
+            int randomIndex = Random.Range(0, weightedList.Count);
             Debug.Log("rdmInd: " + randomIndex);
             SummonData newSummon = _gameState.PlayerDeck[randomIndex];
             _gameState.OpponentHand.Add(newSummon);
