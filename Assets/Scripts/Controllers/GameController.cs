@@ -43,7 +43,7 @@ namespace LudumDare55
             }
             int randomIndex = Random.Range(0, weightedList.Count);
             Debug.Log("rdmInd: " + randomIndex);
-            SummonData newSummon = _gameState.PlayerDeck[randomIndex];
+            SummonData newSummon = weightedList[randomIndex];
             _gameState.PlayerHand.Add(newSummon);
             _gameState.PlayerSummonsInPlay += 1;
             _cards.Refresh();
@@ -66,7 +66,7 @@ namespace LudumDare55
             }
             int randomIndex = Random.Range(0, weightedList.Count);
             Debug.Log("rdmInd: " + randomIndex);
-            SummonData newSummon = _gameState.PlayerDeck[randomIndex];
+            SummonData newSummon = weightedList[randomIndex];
             _gameState.OpponentHand.Add(newSummon);
             _gameState.OpponentSummonsInPlay += 1;
         }
