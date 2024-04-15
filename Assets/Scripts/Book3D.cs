@@ -27,7 +27,7 @@ namespace LudumDare55
         {
             _title.text = book.BookName;
             _spineText.text = book.BookName;
-            _genre.text = book.Genre;
+            _genre.text = book.Genre.ToUpper();
             
             _title.color = book.TitleColor;
             _spineText.color = book.TitleColor;
