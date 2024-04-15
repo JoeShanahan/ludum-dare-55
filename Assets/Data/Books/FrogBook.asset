@@ -43,7 +43,7 @@ MonoBehaviour:
     Description: He's still banned from Australia. He knows what he did.
     ActionQueue: 01000000030000000000000003000000
     AttackArea: 2
-    AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
+    AoePrefab: {fileID: 6997704321720672169, guid: 813889e75394cf7499c1c8cc2e1df13a, type: 3}
   - Name: Flying Frog
     Sprite: {fileID: 21300000, guid: 2e719cd83e9714e519c0ccb8c579679d, type: 3}
     Count: 3

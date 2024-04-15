@@ -80,4 +80,4 @@ MonoBehaviour:
       alive.
     ActionQueue: 010000000100000003000000
     AttackArea: 2
-    AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
+    AoePrefab: {fileID: 6997704321720672169, guid: ff2e122dd86c89547a27fbbec4a3d357, type: 3}
