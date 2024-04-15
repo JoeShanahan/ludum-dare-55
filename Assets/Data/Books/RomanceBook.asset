@@ -60,7 +60,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 02a8fa6dff3bf0c4189569ca972c0dfd, type: 3}
     Weight: 2
     DoesStartWith: 0
-    HealthPoints: 4
+    HealthPoints: 2
     Attack: 3
     Shield: 1
     Description: Can shred any shirt with just a twitch of his pectorals.

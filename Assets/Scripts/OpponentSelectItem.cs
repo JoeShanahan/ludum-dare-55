@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace LudumDare55
 {
-    public class OpponentSelectItem : MonoBehaviour
+    public class OpponentSelectItem : MonoBehaviour, ISelectHandler
     {
+        public OpponentData OpponentData => _opponent;
         [SerializeField] private OpponentData _opponent;
         
         [SerializeField] private Image _personSprite;
@@ -17,6 +19,12 @@ namespace LudumDare55
         void Start()
         {
             SetPersonData(_opponent);
+        }
+        
+        //Do this when the selectable UI object is selected.
+        public void OnSelect(BaseEventData eventData)
+        {
+            FindFirstObjectByType<NewMainMenuController>().OnOpponentSelected(this);
         }
 
         private void SetPersonData(OpponentData data)

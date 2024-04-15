@@ -11,7 +11,7 @@ namespace LudumDare55
         [SerializeField] private TMP_Text _titleText;
         [SerializeField] private TMP_Text _bodyText;
         [SerializeField] private Image _icon;
-
+        [SerializeField] private bool _isInMenuScene;
 
         private SummonData _data;
         private RectTransform _childRect;
@@ -21,9 +21,11 @@ namespace LudumDare55
         public SummonData Data { get; private set; }
         public int HandPos;
 
-
         private void Start()
         {
+            if (_isInMenuScene)
+                return;
+            
             _childRect = transform.GetChild(0) as RectTransform;
             _childRect.anchoredPosition = new Vector2(0, -25);
             _statsUi = FindFirstObjectByType<CardStatsUI>();
@@ -39,17 +41,26 @@ namespace LudumDare55
 
         public void OnCardPress()
         {
+            if (_isInMenuScene)
+                return;
+            
             if (CardController.Player.TrySummon(Data)) { CardController.RemoveCard(this); }
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (_isInMenuScene)
+                return;
+            
             _childRect.DOAnchorPosY(0, 0.5f).SetEase(Ease.OutExpo);
             _statsUi.SetSummon(_data);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (_isInMenuScene)
+                return;
+            
             _childRect.DOAnchorPosY(-25, 0.5f).SetEase(Ease.OutExpo);
             _statsUi.SetSummon(null);
         }

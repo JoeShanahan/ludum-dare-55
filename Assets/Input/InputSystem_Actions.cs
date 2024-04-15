@@ -893,6 +893,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""ad193451-a4ee-41cc-9299-ff7442a312cb"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c52c8e0b-8179-41d3-b8a1-d149033bbe86"",
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",

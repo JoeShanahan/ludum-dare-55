@@ -70,7 +70,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 051d5740b2093486ca06db969c5ba6d5, type: 3}
     Weight: 1
     DoesStartWith: 0
-    HealthPoints: 3
+    HealthPoints: 1
     Attack: 4
     Shield: 1
     Description: Upon spotting another Peruvian Fighting Frog (or anything else for

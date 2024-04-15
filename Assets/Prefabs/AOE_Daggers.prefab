@@ -134,3 +134,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animMode: 1
   _lifetime: 0.3
+  _randomRot: 1
