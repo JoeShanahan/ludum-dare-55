@@ -17,7 +17,7 @@ MonoBehaviour:
   BookColor: {r: 0.39730823, g: 0.5754717, b: 0.28502136, a: 1}
   TitleColor: {r: 0.1009256, g: 0.19634466, b: 0.7924528, a: 1}
   GenreColor: {r: 1, g: 0, b: 0, a: 1}
-  CoverImage: {fileID: 0}
+  CoverImage: {fileID: 21300000, guid: 903927308b9404042a3c110257865fc5, type: 3}
   LongDescription: She never expected to be trapped in a remote castle with the Duke
     de Maldenberg. But as winter rolled around she had no choice but to accept his
     icy hospitality. Little did she know that she would find warmth in the most unlikely
