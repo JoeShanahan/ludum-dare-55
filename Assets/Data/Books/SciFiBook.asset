@@ -30,7 +30,7 @@ MonoBehaviour:
     Shield: 1
     Description: Greatest hero in the Galaxy. Mainly because he shoots anyone who
       doesn't agree.
-    ActionQueue: 0100000003000000
+    ActionQueue: 01000000030000000300000003000000
     AttackArea: 7
     AoePrefab: {fileID: 6997704321720672169, guid: e4eb1dd78d1cb408db15c64e9504579e, type: 3}
   - Name: Charge-Bot
@@ -71,10 +71,10 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: e364387586b565844b534181b97b2401, type: 3}
     Weight: 1
     DoesStartWith: 0
-    HealthPoints: 4
+    HealthPoints: 2
     Attack: 1
     Shield: 1
     Description: What is the ONE thing we told you not to do?
-    ActionQueue: 010000000300000003000000
+    ActionQueue: 0100000003000000
     AttackArea: 8
     AoePrefab: {fileID: 6997704321720672169, guid: ed0829644af99d54887d8f7b37f1b0f3, type: 3}
