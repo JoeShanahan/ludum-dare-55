@@ -23,9 +23,9 @@ MonoBehaviour:
   Summons:
   - Name: Bzorp Jacksonian
     Sprite: {fileID: 21300000, guid: 46f61de30bbf7c146aa947785ef2b507, type: 3}
-    Weight: 1
+    Weight: 3
     DoesStartWith: 1
-    HealthPoints: 1
+    HealthPoints: 2
     Attack: 1
     Shield: 1
     Description: Greatest hero in the Galaxy. Mainly because he shoots anyone who
@@ -35,7 +35,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: e4eb1dd78d1cb408db15c64e9504579e, type: 3}
   - Name: Charge-Bot
     Sprite: {fileID: 21300000, guid: fabec9b89f9248b44840c9d0baf7e490, type: 3}
-    Weight: 1
+    Weight: 3
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Laser Cannon
     Sprite: {fileID: 21300000, guid: ece606eda7928764794040cf0a377f3b, type: 3}
-    Weight: 1
+    Weight: 2
     DoesStartWith: 0
     HealthPoints: 1
     Attack: 2
@@ -57,8 +57,8 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: e4eb1dd78d1cb408db15c64e9504579e, type: 3}
   - Name: Medical Droid
     Sprite: {fileID: 21300000, guid: de4fe4e0705332e469403274c819f27c, type: 3}
-    Weight: 1
-    DoesStartWith: 0
+    Weight: 2
+    DoesStartWith: 1
     HealthPoints: 2
     Attack: 2
     Shield: 1

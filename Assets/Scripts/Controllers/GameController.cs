@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -21,6 +22,9 @@ namespace LudumDare55
 
         [SerializeField] private TextMeshProUGUI PlayerHP;
         [SerializeField] private TextMeshProUGUI OpponentHP;
+
+        [SerializeField] private StartFightBanner WinBanner;
+        [SerializeField] private StartFightBanner LoseBanner;
         
         private InputSystem_Actions _input;
         private bool _isMoving;
@@ -30,9 +34,19 @@ namespace LudumDare55
             if (_gameState.PlayerSummonsInPlay >= 8) { return; }
 
             Random.InitState(System.DateTime.Now.Millisecond);
-            int randomIndex = Random.Range(0, _gameState.PlayerDeck.Count);
+            List<SummonData> weightedList = new List<SummonData>();
+            foreach (SummonData s in _gameState.PlayerDeck)
+            {
+                int count = s.Weight;
+                while (count > 0)
+                {
+                    weightedList.Add(s);
+                    count--;
+                }
+            }
+            int randomIndex = Random.Range(0, weightedList.Count);
             Debug.Log("rdmInd: " + randomIndex);
-            SummonData newSummon = _gameState.PlayerDeck[randomIndex];
+            SummonData newSummon = weightedList[randomIndex];
             _gameState.PlayerHand.Add(newSummon);
             _gameState.PlayerSummonsInPlay += 1;
             _cards.Refresh();
@@ -43,9 +57,19 @@ namespace LudumDare55
             if (_gameState.OpponentSummonsInPlay >= 8) { return; }
 
             Random.InitState(System.DateTime.Now.Millisecond);
-            int randomIndex = Random.Range(0, _gameState.OpponentDeck.Count);
+            List<SummonData> weightedList = new List<SummonData>();
+            foreach (SummonData s in _gameState.OpponentDeck)
+            {
+                int count = s.Weight;
+                while (count > 0)
+                {
+                    weightedList.Add(s);
+                    count--;
+                }
+            }
+            int randomIndex = Random.Range(0, weightedList.Count);
             Debug.Log("rdmInd: " + randomIndex);
-            SummonData newSummon = _gameState.PlayerDeck[randomIndex];
+            SummonData newSummon = weightedList[randomIndex];
             _gameState.OpponentHand.Add(newSummon);
             _gameState.OpponentSummonsInPlay += 1;
         }
@@ -81,7 +105,7 @@ namespace LudumDare55
             _input.Player.SkipMove.performed += OnSkipPressed;
             _input.Player.Menu.performed += OnMenuPressed;
 
-            _gameState.InitUI(PlayerHP, OpponentHP);
+            _gameState.InitUI(PlayerHP, OpponentHP, WinBanner, LoseBanner);
             _gameState.InitHands();
             _cards.Refresh();
             

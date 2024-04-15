@@ -26,6 +26,9 @@ namespace LudumDare55
 
         private TextMeshProUGUI _playerHPUI;
         private TextMeshProUGUI _opponentHPUI;
+
+        private StartFightBanner _winBan;
+        private StartFightBanner _loseBan;
         
         [SerializeField] private BookData _playerBook;
         [SerializeField] private OpponentData _player;
@@ -48,10 +51,13 @@ namespace LudumDare55
             _gameDone = false;
         }
 
-        public void InitUI(TextMeshProUGUI pHP, TextMeshProUGUI oHP)
+        public void InitUI(TextMeshProUGUI pHP, TextMeshProUGUI oHP, StartFightBanner wBan, StartFightBanner lBan)
         {
             _playerHPUI = pHP;
             _opponentHPUI = oHP;
+            _winBan = wBan;
+            _loseBan = lBan;
+
             RefreshUI();
 
         }
@@ -76,6 +82,7 @@ namespace LudumDare55
                 {
                     _gameDone = true;
                     Debug.Log("Player lose!"); /*DO lose.*/
+                    _loseBan.gameObject.SetActive(true);
                 }
             }
             else
@@ -86,6 +93,7 @@ namespace LudumDare55
                 {
                     _gameDone = true;
                     Debug.Log("Player win!"); /*DO win.*/
+                    _winBan.gameObject.SetActive(true);
                 }
             }
 

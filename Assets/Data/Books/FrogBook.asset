@@ -24,7 +24,7 @@ MonoBehaviour:
   Summons:
   - Name: Common Frog
     Sprite: {fileID: 21300000, guid: bc2fc27e99bb6424f807e50235d4cbe5, type: 3}
-    Weight: 1
+    Weight: 3
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Cane Toad
     Sprite: {fileID: 21300000, guid: 07debec054ece48b8ac2b094f8bde788, type: 3}
-    Weight: 1
+    Weight: 3
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: 813889e75394cf7499c1c8cc2e1df13a, type: 3}
   - Name: Flying Frog
     Sprite: {fileID: 21300000, guid: 2e719cd83e9714e519c0ccb8c579679d, type: 3}
-    Weight: 1
+    Weight: 2
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 1
@@ -57,7 +57,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Dart Frog
     Sprite: {fileID: 21300000, guid: 361f949f8b7424504af90949331eafe1, type: 3}
-    Weight: 1
+    Weight: 2
     DoesStartWith: 0
     HealthPoints: 1
     Attack: 4

@@ -25,7 +25,7 @@ MonoBehaviour:
   Summons:
   - Name: Jilted lover
     Sprite: {fileID: 21300000, guid: 6a70aff9d0a1cbd4584b3e4ba2737c23, type: 3}
-    Weight: 1
+    Weight: 2
     DoesStartWith: 0
     HealthPoints: 1
     Attack: 3
@@ -47,7 +47,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 6997704321720672169, guid: c9659e5dc1d7d7248b7baa88a77c12ef, type: 3}
   - Name: Lady in a very loose dress
     Sprite: {fileID: 21300000, guid: 6efe05bcf30493d4390bac9d12f7aba0, type: 3}
-    Weight: 1
+    Weight: 3
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 2
@@ -58,7 +58,7 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Strapping stablehand
     Sprite: {fileID: 21300000, guid: 02a8fa6dff3bf0c4189569ca972c0dfd, type: 3}
-    Weight: 1
+    Weight: 2
     DoesStartWith: 0
     HealthPoints: 4
     Attack: 3
@@ -69,8 +69,8 @@ MonoBehaviour:
     AoePrefab: {fileID: 0}
   - Name: Town gossip
     Sprite: {fileID: 21300000, guid: 08aa62661f0209c4a89cd74f99556472, type: 3}
-    Weight: 1
-    DoesStartWith: 0
+    Weight: 3
+    DoesStartWith: 1
     HealthPoints: 1
     Attack: 2
     Shield: 0
