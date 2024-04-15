@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -54,6 +55,17 @@ namespace LudumDare55
             return null;
         }
         
+        public BoardActor GetActorGoingToBeAt(Vector2Int pos)
+        {
+            foreach (BoardActor actor in _allActors)
+            {
+                if (actor.NextPosition == pos)
+                    return actor;
+            }
+
+            return null;
+        }
+        
         public bool IsSpaceTaken(Vector3 pos)
         {
             Vector2Int intPos = new Vector2Int(Mathf.RoundToInt(pos.x), Mathf.RoundToInt(pos.y));
@@ -89,9 +101,26 @@ namespace LudumDare55
             
             foreach (BoardActor actor in _allActors)
             {
-                // TODO just prepare to do the action, because it might have to change if there are collisions
                 actor.DoAction(moveTime);
             }
+
+            StartCoroutine(CheckForAoeKills(moveTime));
+        }
+
+        private IEnumerator CheckForAoeKills(float moveTime)
+        {
+            yield return new WaitForSeconds(moveTime / 2);
+
+            foreach (var hitInfo in _toHitWithAoe)
+            {
+                // TODO different thing for person and page
+                if (hitInfo.Actor is SummonAvatar)
+                {
+                    hitInfo.Actor.Attack(hitInfo.Damage);
+                }
+            }
+            
+            _toHitWithAoe.Clear();
         }
         
         public void CreateNewSummon(PlayerAvatar avatar, SummonData data)
@@ -132,6 +161,8 @@ namespace LudumDare55
 
             for (int x = 0; x < width; x++)
             {
+                bool isEndTile = x == 0 || x == width - 1;
+                
                 for (int y = 0; y < height; y++)
                 {
                     bool isOdd = (x + y) % 2 == 0;
@@ -254,11 +285,44 @@ namespace LudumDare55
                     {
                         // If can kill, do that and then move
                         // If not, half bump
-                        actorA.OverrideNextAction(BoardAction.HalfBounce, actorA.GridPosition);
-                        actorB.OverrideNextAction(BoardAction.HalfBounce, actorB.GridPosition);
+                        actorA.OverrideNextAction(BoardAction.X_HalfBounce, actorA.GridPosition);
+                        actorB.OverrideNextAction(BoardAction.X_HalfBounce, actorB.GridPosition);
                         actorA.CollideWith(actorB);
                     }
                 }
+            }
+        }
+
+        private List<AoeTarget> _toHitWithAoe = new();
+
+        private class AoeTarget
+        {
+            public BoardActor Actor;
+            public int Damage;
+
+            public AoeTarget(BoardActor actor, int damage)
+            {
+                Actor = actor;
+                Damage = damage;
+            }
+        }
+
+        public void DoAoeAttack(Vector2Int position, int damage, GameObject prefab)
+        {
+            Vector3 pos = new Vector3(position.x, position.y);
+            
+            if (IsSpaceValid(pos) == false)
+                return;
+            
+            GameObject newObj = Instantiate(prefab, transform);
+            newObj.transform.localPosition = pos;
+            
+            BoardActor onThisTile = GetActorGoingToBeAt(position);
+
+            if (onThisTile != null)
+            {
+                Debug.LogWarning($"Gonna hit this guy with an AOE: {onThisTile.GridPosition}");
+                _toHitWithAoe.Add(new AoeTarget(onThisTile, damage));
             }
         }
         
@@ -279,8 +343,8 @@ namespace LudumDare55
                     if (!potential)
                         continue;
                     
-                    bool isAWaiting = actorA.NextAction == BoardAction.Wait;
-                    bool isBWaiting = actorB.NextAction == BoardAction.Wait;
+                    bool isAWaiting = actorA.NextAction is BoardAction.Wait or BoardAction.AOEAttack;
+                    bool isBWaiting = actorB.NextAction is BoardAction.Wait or BoardAction.AOEAttack;
                     
                     bool isAMoving = actorA.NextAction == BoardAction.Move;
                     bool isBMoving = actorB.NextAction == BoardAction.Move;
@@ -300,11 +364,11 @@ namespace LudumDare55
                     {
                         if (AtoB)
                         {
-                            actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
+                            actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
                         }
                         if (BtoA)
                         {
-                            actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                            actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
                         }
                     }
                     else
@@ -340,8 +404,8 @@ namespace LudumDare55
                         // If can kill, do that and then move
                         // If being killed, move and die
                         // If not, bump
-                        actorA.OverrideNextAction(BoardAction.Bounce, actorA.GridPosition);
-                        actorB.OverrideNextAction(BoardAction.Bounce, actorB.GridPosition);
+                        actorA.OverrideNextAction(BoardAction.X_Bounce, actorA.GridPosition);
+                        actorB.OverrideNextAction(BoardAction.X_Bounce, actorB.GridPosition);
                         actorA.CollideWith(actorB);
                     }
                 }

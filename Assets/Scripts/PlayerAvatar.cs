@@ -8,7 +8,8 @@ namespace LudumDare55
     public class PlayerAvatar : BoardActor
     {
         public BookData Book { get; private set; }
-        
+
+        [SerializeField] private ActiveGameState _gameState;
         private Vector3 _desiredDirection;
         private AIController _aiController;
         private bool _isAi;
@@ -16,6 +17,7 @@ namespace LudumDare55
         public void EnableAI()
         {
             _isAi = true;
+            _renderer.sprite = _gameState.Opponent.Sprite;
             _aiController = this.gameObject.AddComponent<AIController>();
             _aiController.Init(this, _board);     
         }

@@ -58,7 +58,7 @@ namespace LudumDare55
             {
                 BoardAction.Move => _icoMove,
                 BoardAction.Wait => _icoWait,
-                BoardAction.Attack => _icoAttack,
+                BoardAction.AOEAttack => _icoAttack,
                 _ => null
             };
         }

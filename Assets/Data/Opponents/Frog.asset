@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PersonName: Hippity Hoppity Hoop
   ChosenBook: {fileID: 11400000, guid: dbaa59942a47e4ff7a41e831227afe4b, type: 2}
+  ThemeSong: {fileID: 8300000, guid: a2a8bedf035f5436db3f3b104c7be2dd, type: 3}
+  Sprite: {fileID: 21300000, guid: e9322b44cacbf497d86219051f4c6eb6, type: 3}
   _tileColA: {r: 0.64705884, g: 0.8509804, b: 0.75686276, a: 1}
   _tileColB: {r: 0.58431375, g: 0.8039216, b: 0.7058824, a: 1}
   _tileColC: {r: 0.5294118, g: 0.86666673, b: 0.52156866, a: 1}

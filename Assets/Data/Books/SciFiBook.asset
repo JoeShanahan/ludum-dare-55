@@ -14,36 +14,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Don't Create the Torment Nexus
   Genre: SciFi
+  BookColor: {r: 0, g: 0, b: 0, a: 0}
+  TitleColor: {r: 0, g: 0, b: 0, a: 0}
+  GenreColor: {r: 0, g: 0, b: 0, a: 0}
+  CoverImage: {fileID: 0}
   LongDescription: A cautionary tale that definitely will not be used as an instruction
-    manual with people who have more venture capatalist money than sense.
+    manual with people who have more venture capitalist money than sense.
   Summons:
-  - Name: Bumper
-    Sprite: {fileID: 21300000, guid: 571c4c685b3664ee381e20fb9daac5d7, type: 3}
+  - Name: Bzorp Jacksonian
+    Sprite: {fileID: 21300000, guid: 46f61de30bbf7c146aa947785ef2b507, type: 3}
     Count: 3
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
-    Description: Bump
+    Description: Greatest hero in the Galaxy. Mainly because he shoots anyone who
+      doesn't agree.
     ActionQueue: 01000000
-    AttackArea: 0
-    AttackMode: 1
-  - Name: Move-Attack
-    Sprite: {fileID: 21300000, guid: 517ed9e2fb6a24d119930421562c3f9a, type: 3}
+    AttackArea: 3
+    AoePrefab: {fileID: 0}
+  - Name: Charge-Bot
+    Sprite: {fileID: 21300000, guid: fabec9b89f9248b44840c9d0baf7e490, type: 3}
     Count: 3
     DoesStartWith: 1
-    HealthPoints: 3
+    HealthPoints: 2
     Attack: 2
-    Description: Hey you!
-    ActionQueue: 0100000003000000
-    AttackArea: 1
-    AttackMode: 0
-  - Name: Archer
-    Sprite: {fileID: 21300000, guid: d482d195f57914f829c38b3187cb3a80, type: 3}
+    Description: Just a zippy little guy.
+    ActionQueue: 02000000
+    AttackArea: 0
+    AoePrefab: {fileID: 0}
+  - Name: Laser Cannon
+    Sprite: {fileID: 21300000, guid: ece606eda7928764794040cf0a377f3b, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    HealthPoints: 1
+    Attack: 2
+    Description: You'll want to get out of the way before this guy lets loose.
+    ActionQueue: 00000000000000000000000003000000
+    AttackArea: 3
+    AoePrefab: {fileID: 6997704321720672169, guid: e4eb1dd78d1cb408db15c64e9504579e, type: 3}
+  - Name: Medical Droid
+    Sprite: {fileID: 21300000, guid: de4fe4e0705332e469403274c819f27c, type: 3}
     Count: 3
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 3
-    Description: Gamma
+    Description: A malpractise suit just waiting to happen on account of his doctorate
+      being in poetry. Dab hand with a scalpel though.
     ActionQueue: 01000000
     AttackArea: 0
-    AttackMode: 0
+    AoePrefab: {fileID: 0}
+  - Name: Torment Nexus
+    Sprite: {fileID: 21300000, guid: e364387586b565844b534181b97b2401, type: 3}
+    Count: 3
+    DoesStartWith: 1
+    HealthPoints: 4
+    Attack: 3
+    Description: What is the ONE thing we told you not to do?
+    ActionQueue: 0100000003000000
+    AttackArea: 2
+    AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}

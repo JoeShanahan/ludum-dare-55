@@ -69,14 +69,23 @@ namespace LudumDare55
             {
                 SkipTurnAnimation(time);
             }
-            else if (NextAction == BoardAction.Bounce)
+            else if (NextAction == BoardAction.X_Bounce)
             {
                 DoBounce(NextDirection, time, true);
             }
-            else if (NextAction == BoardAction.HalfBounce)
+            else if (NextAction == BoardAction.X_HalfBounce)
             {
                 DoBounce(NextDirection, time, false);
             }
+            else if (NextAction == BoardAction.AOEAttack)
+            {
+                DoAoeAttack();
+            }
+        }
+
+        protected virtual void DoAoeAttack()
+        {
+               
         }
 
         public void OverrideNextAction(BoardAction action, Vector2Int endPosition)

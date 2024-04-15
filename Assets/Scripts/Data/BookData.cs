@@ -11,6 +11,11 @@ namespace LudumDare55
 
         public string Genre;
 
+        public Color BookColor;
+        public Color TitleColor;
+        public Color GenreColor;
+        public Sprite CoverImage;
+        
         [TextArea(3, 10)]
         public string LongDescription;
 
@@ -52,25 +57,21 @@ namespace LudumDare55
         [Header("Behaviour")]
         public List<BoardAction> ActionQueue;
         public AttackArea AttackArea;
-        public AttackMode AttackMode;
+        public GameObject AoePrefab;
     }
 
-    public enum AttackMode
-    {
-        Never,
-        Bump,
-        InRange,
-        OnDeath
-    }
 
     public enum AttackArea
     {
-        InFront,
+        OneByOne,
         Sides,
         Circle,
-        Ranged,
         Row,
-        Column
+        Column,
+        ThreeByOne,
+        OneByTwo,
+        OneByThree,
+        Cardinals
     }
     
     public enum BoardAction
@@ -78,9 +79,8 @@ namespace LudumDare55
         Wait,
         Move,
         DoubleMove,
-        Attack,
-        Bounce,
-        HalfBounce,
-        AttackMove
+        AOEAttack,
+        X_Bounce,       // X means not to be used in the editor
+        X_HalfBounce    // X means not to be used in the editor
     }
 }
