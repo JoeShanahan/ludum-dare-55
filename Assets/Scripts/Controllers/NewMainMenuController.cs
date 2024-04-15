@@ -51,10 +51,10 @@ namespace LudumDare55
 
         private void OnSubmitPressed(InputAction.CallbackContext ctx)
         {
-            if (_currentScreen == ScreenID.Confirm)
+            /*if (_currentScreen == ScreenID.Confirm)
             {
                 BtnPressPlay();
-            }
+            }*/
             StartCoroutine(DelayedSubmit());
         }
 
@@ -123,6 +123,7 @@ namespace LudumDare55
         {
             _currentScreen = ScreenID.Confirm;
             _bookScreen.gameObject.SetActive(false);
+            BtnPressPlay();
             // TODO swap with overlay instead
         }
 

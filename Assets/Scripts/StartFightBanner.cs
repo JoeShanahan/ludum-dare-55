@@ -12,6 +12,7 @@ namespace LudumDare55
         [SerializeField] private TMP_Text _topText;
         [SerializeField] private TMP_Text _bottomText;
         [SerializeField] private Mask _mask;
+        [SerializeField] private bool isStartFightBanner;
         
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void OnEnable()
@@ -49,6 +50,10 @@ namespace LudumDare55
 
             newSize = new Vector2(rect.sizeDelta.x, 0);
             rect.DOSizeDelta(newSize, 0.5f);
+            if (!isStartFightBanner)
+            {
+                FindFirstObjectByType<TransitionManager>().GoToMenu();
+            }
         }
 
         // Update is called once per frame
