@@ -680,7 +680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameState: {fileID: 11400000, guid: 151646503f3a44d1ea16ecf871a79bf4, type: 2}
   _audio: {fileID: 614981082}
-  _menuMusic: {fileID: 0}
+  _menuMusic: {fileID: 8300000, guid: 54b3d0c75f21547a4bb50042e47a704c, type: 3}
   _maxVolume: 0.3
   _fadeTime: 0.3
 --- !u!82 &614981082
