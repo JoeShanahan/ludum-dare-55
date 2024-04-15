@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 69474078}
   - component: {fileID: 69474077}
   m_Layer: 0
-  m_Name: BattleMusic
+  m_Name: MusicController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,6 +693,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameState: {fileID: 11400000, guid: 151646503f3a44d1ea16ecf871a79bf4, type: 2}
   _audio: {fileID: 69474078}
+  _menuMusic: {fileID: 0}
+  _maxVolume: 0.3
+  _fadeTime: 0.3
 --- !u!82 &69474078
 AudioSource:
   m_ObjectHideFlags: 0

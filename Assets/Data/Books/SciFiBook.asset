@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Don't Create the Torment Nexus
   Genre: SciFi
-  BookColor: {r: 0, g: 0, b: 0, a: 0}
-  TitleColor: {r: 0, g: 0, b: 0, a: 0}
-  GenreColor: {r: 0, g: 0, b: 0, a: 0}
+  BookColor: {r: 0.23137255, g: 0.28627452, b: 0.33333334, a: 1}
+  TitleColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
+  GenreColor: {r: 0.99607843, g: 0.99607843, b: 0.99607843, a: 1}
   CoverImage: {fileID: 0}
   LongDescription: A cautionary tale that definitely will not be used as an instruction
-    manual with people who have more venture capitalist money than sense.
+    manual for people who have more venture capitalist money than sense.
   Summons:
   - Name: Bzorp Jacksonian
     Sprite: {fileID: 21300000, guid: 46f61de30bbf7c146aa947785ef2b507, type: 3}
@@ -27,6 +27,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
+    Shield: 1
     Description: Greatest hero in the Galaxy. Mainly because he shoots anyone who
       doesn't agree.
     ActionQueue: 01000000
@@ -38,8 +39,9 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 2
+    Shield: 0
     Description: Just a zippy little guy.
-    ActionQueue: 02000000
+    ActionQueue: 01000000
     AttackArea: 0
     AoePrefab: {fileID: 0}
   - Name: Laser Cannon
@@ -48,6 +50,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 2
+    Shield: 0
     Description: You'll want to get out of the way before this guy lets loose.
     ActionQueue: 00000000000000000000000003000000
     AttackArea: 3
@@ -58,6 +61,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 3
+    Shield: 0
     Description: A malpractise suit just waiting to happen on account of his doctorate
       being in poetry. Dab hand with a scalpel though.
     ActionQueue: 01000000
@@ -69,7 +73,8 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 4
     Attack: 3
+    Shield: 0
     Description: What is the ONE thing we told you not to do?
     ActionQueue: 0100000003000000
-    AttackArea: 2
+    AttackArea: 4
     AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}

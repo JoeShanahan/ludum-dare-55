@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cc97b84716c84fb9901ff22d64e81f1, type: 3}
-  m_Name: Purple
+  m_Name: RomanceLover
   m_EditorClassIdentifier: 
-  PersonName: Dissatisfied Customer
+  PersonName: Romeo
+  GenreDescription: Romance Lover
   ChosenBook: {fileID: 11400000, guid: b43291133760a4e0db234b869652391c, type: 2}
   ThemeSong: {fileID: 8300000, guid: e0f2ceb2d0de14692aa2930c0970d8e5, type: 3}
   Sprite: {fileID: 21300000, guid: 5f72fdb6500d9494aa19e788849a9791, type: 3}

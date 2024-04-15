@@ -15,6 +15,7 @@ namespace LudumDare55
         private void Start()
         {
             Application.targetFrameRate = 60;
+            FindFirstObjectByType<MusicController>().SwapToMenuMusic();
         }
         
         public void BtnPressOpponent(OpponentData data)
@@ -36,6 +37,7 @@ namespace LudumDare55
         {
             _gameState.InitGame(_selectedBook, _selectedPlayer, _selectedOpponent);
             FindFirstObjectByType<TransitionManager>().GoToGame();
+            FindFirstObjectByType<MusicController>().SwapToGameMusic();
         }
     }
 }

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Frog Encyclopedia (Volume III)
   Genre: Non Fiction
-  BookColor: {r: 0, g: 0, b: 0, a: 0}
-  TitleColor: {r: 0, g: 0, b: 0, a: 0}
-  GenreColor: {r: 0, g: 0, b: 0, a: 0}
-  CoverImage: {fileID: 0}
+  BookColor: {r: 0.36078432, g: 0.20392157, b: 0.18039216, a: 1}
+  TitleColor: {r: 0.6509804, g: 0.5921569, b: 0, a: 1}
+  GenreColor: {r: 0.99607843, g: 0.7254902, b: 0.4745098, a: 1}
+  CoverImage: {fileID: 21300000, guid: bc2fc27e99bb6424f807e50235d4cbe5, type: 3}
   LongDescription: Contains everything you ever wanted to know about frogs, as well
     as many things you could've lived your whole life without knowing and probably
     been the better for it.
@@ -28,6 +28,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
+    Shield: 0
     Description: It may be common but that doesn't make it any less special
     ActionQueue: 01000000
     AttackArea: 0
@@ -38,6 +39,7 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
+    Shield: 0
     Description: He's still banned from Australia. He knows what he did.
     ActionQueue: 0100000003000000
     AttackArea: 2
@@ -48,8 +50,9 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 1
+    Shield: 0
     Description: Flyest of all the frogs!
-    ActionQueue: 02000000
+    ActionQueue: 01000000
     AttackArea: 3
     AoePrefab: {fileID: 0}
   - Name: Dart Frog
@@ -58,6 +61,7 @@ MonoBehaviour:
     DoesStartWith: 0
     HealthPoints: 1
     Attack: 2
+    Shield: 0
     Description: Not poisonous, but lethally accurate.
     ActionQueue: 01000000
     AttackArea: 3
@@ -68,6 +72,7 @@ MonoBehaviour:
     DoesStartWith: 0
     HealthPoints: 3
     Attack: 4
+    Shield: 0
     Description: Upon spotting another Peruvian Fighting Frog (or anything else for
       that matter) they will commence battle until nightfall.
     ActionQueue: 02000000

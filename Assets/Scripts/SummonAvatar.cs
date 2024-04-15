@@ -24,6 +24,7 @@ namespace LudumDare55
             SetSprite(data.Sprite, isRight);
             HealthPoints = data.HealthPoints;
             AttackDamage = data.Attack;
+            ShieldPoints = data.Shield;
             
             _spawnedUI = W2C.InstantiateAs<SummonHealthUI>(_healthPrefab);
             _spawnedUI.Init(this); 
@@ -36,6 +37,8 @@ namespace LudumDare55
 
         public override void Attack(int damage)
         {
+            damage = Mathf.Max(damage - ShieldPoints, 1);
+            
             HealthPoints -= damage;
             HealthPoints = Mathf.Max(HealthPoints, 0);
 
@@ -117,11 +120,11 @@ namespace LudumDare55
             }
             
             // In front
-            if (aoeMode is AttackArea.OneByOne or AttackArea.OneByTwo or AttackArea.OneByThree or AttackArea.ThreeByOne)
+            if (aoeMode is AttackArea.OneByOne or AttackArea.TwoByOne or AttackArea.OneByThree or AttackArea.ThreeByOne)
             {
                 positions.Add(currentPos + new Vector2Int(one, 0));
             }
-            if (aoeMode is AttackArea.OneByTwo)
+            if (aoeMode is AttackArea.TwoByOne)
             {
                 positions.Add(currentPos + new Vector2Int(one + one, 0));
             }

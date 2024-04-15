@@ -9,6 +9,7 @@ namespace LudumDare55
     public class SummonHealthUI : W2C
     {
         [SerializeField] private RectTransform[] _hearts;
+        [SerializeField] private RectTransform[] _shields;
         private SummonAvatar _summon;
         private int _cachedHealth;
         private bool _isDestroying;
@@ -18,6 +19,11 @@ namespace LudumDare55
             _summon = avatar;
             SetPosition(_summon.transform, Vector3.up * 0.4f);
 
+            for (int i = 0; i < _shields.Length; i++)
+            {
+                _shields[i].gameObject.SetActive(avatar.ShieldPoints > i);
+            }
+            
             for (int i = 0; i < _hearts.Length; i++)
             {
                 _hearts[i].gameObject.SetActive(avatar.HealthPoints > i);

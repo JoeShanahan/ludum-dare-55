@@ -6,6 +6,7 @@ namespace LudumDare55
     public class OpponentData : ScriptableObject
     {
         public string PersonName;
+        public string GenreDescription;
         public BookData ChosenBook;
         public AudioClip ThemeSong;
 

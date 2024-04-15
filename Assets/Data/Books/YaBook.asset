@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookName: Defiance
   Genre: Young Adult Dystopian
+  BookColor: {r: 0.39730823, g: 0.5754717, b: 0.28502136, a: 1}
+  TitleColor: {r: 0.1009256, g: 0.19634466, b: 0.7924528, a: 1}
+  GenreColor: {r: 1, g: 0, b: 0, a: 1}
+  CoverImage: {fileID: 0}
   LongDescription: Dariangeline always felt she was different, despite being put
     in a box like everyone under the Conservative Government. When her life is saved
     by Darius and the Resibelliance, she discovers something new to fight for. But
@@ -26,50 +30,55 @@ MonoBehaviour:
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 1
+    Shield: 0
     Description: Surprisingly, she only has the physical capabilities of a regular
       teenage girl.
     ActionQueue: 01000000
     AttackArea: 0
-    AttackMode: 1
+    AoePrefab: {fileID: 0}
   - Name: Blonde love interest
     Sprite: {fileID: 21300000, guid: ba5c0685ad906e246af9e14b08f73014, type: 3}
     Count: 3
     DoesStartWith: 1
     HealthPoints: 3
     Attack: 2
+    Shield: 0
     Description: Beefy and dependable
     ActionQueue: 0100000003000000
     AttackArea: 0
-    AttackMode: 0
+    AoePrefab: {fileID: 0}
   - Name: Dark love interest
     Sprite: {fileID: 21300000, guid: bb2902e58b6ce4142a89ac69b494bb35, type: 3}
     Count: 3
     DoesStartWith: 1
     HealthPoints: 1
     Attack: 3
+    Shield: 0
     Description: Edgy and brooding.
     ActionQueue: 0100000003000000
     AttackArea: 3
-    AttackMode: 0
+    AoePrefab: {fileID: 0}
   - Name: Evil Government
     Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
     Count: 3
     DoesStartWith: 1
     HealthPoints: 4
     Attack: 4
+    Shield: 0
     Description: The State, dedicated to nothing other than its own survival at any
       cost.
     ActionQueue: 0100000003000000
     AttackArea: 5
-    AttackMode: 2
+    AoePrefab: {fileID: 0}
   - Name: The Resibelliance
     Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
     Count: 3
     DoesStartWith: 1
     HealthPoints: 2
     Attack: 4
+    Shield: 0
     Description: The last few willing to stand up to tyranny. No one know how they
       manage to stay so groomed while supposedly living off grid.
     ActionQueue: 02000000
     AttackArea: 5
-    AttackMode: 2
+    AoePrefab: {fileID: 0}
