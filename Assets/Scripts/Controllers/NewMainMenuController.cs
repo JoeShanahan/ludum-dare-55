@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace LudumDare55
@@ -12,6 +15,12 @@ namespace LudumDare55
         [SerializeField] private RectTransform _titleScreen;
         [SerializeField] private RectTransform _opponentScreen;
         [SerializeField] private RectTransform _bookScreen;
+
+        [SerializeField] private List<OpponentSelectItem> _opps;
+        [SerializeField] private List<BookSelectItem> _boops;
+
+        private int _opIdx;
+        private int _bookIdx;
         
         private OpponentData _selectedOpponent;
         private BookData _selectedBook;
@@ -42,14 +51,19 @@ namespace LudumDare55
 
         private void OnSubmitPressed(InputAction.CallbackContext ctx)
         {
+            if (_currentScreen == ScreenID.Confirm)
+            {
+                BtnPressPlay();
+            }
+            StartCoroutine(DelayedSubmit());
+        }
+
+        private IEnumerator DelayedSubmit()
+        {
+            yield return null;
             if (_currentScreen == ScreenID.Title)
             {
                 ShowOpponentSelect();
-            }
-
-            else if (_currentScreen == ScreenID.Confirm)
-            {
-                BtnPressPlay();
             }
         }
         
@@ -91,6 +105,9 @@ namespace LudumDare55
             BlueBgGoBig();
             _titleScreen.gameObject.SetActive(false);
             _opponentScreen.gameObject.SetActive(true);
+            _bookScreen.gameObject.SetActive(false);
+            
+            EventSystem.current.SetSelectedGameObject(_opps[_opIdx].gameObject);
         }
 
         private void ShowBookSelect()
@@ -98,11 +115,15 @@ namespace LudumDare55
             _currentScreen = ScreenID.PickBook;
             _bookScreen.gameObject.SetActive(true);
             _opponentScreen.gameObject.SetActive(false);
+            
+            EventSystem.current.SetSelectedGameObject(_boops[_bookIdx].gameObject);
         }
 
         private void ShowConfirm()
         {
             _currentScreen = ScreenID.Confirm;
+            _bookScreen.gameObject.SetActive(false);
+            // TODO swap with overlay instead
         }
 
         private void BlueBgGoSmall(float time=0.5f)
