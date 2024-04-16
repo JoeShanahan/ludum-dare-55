@@ -16,7 +16,6 @@ namespace LudumDare55
         [SerializeField] private Sprite _icoAttack;
         [SerializeField] private Sprite[] _aoeSprites;
         [SerializeField] private Sprite _icoDoubleAttack;
-
         
         private GameObject _queueParent => _queueImages[0].transform.parent.gameObject;
         private GameObject _heartParent => _heartImages[0].transform.parent.gameObject;
