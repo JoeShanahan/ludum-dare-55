@@ -42,8 +42,12 @@ namespace LudumDare55
         {
             if (_isInMenuScene)
                 return;
-            
-            if (CardController.Player.TrySummon(Data)) { CardController.RemoveCard(this); }
+
+            if (CardController.Player.TrySummon(Data))
+            {
+                CardController.RemoveCard(this);
+                _statsUi.SetSummon(null);
+            }
         }
 
         public void OnPointerEnter(PointerEventData eventData)

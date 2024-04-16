@@ -9,7 +9,8 @@ namespace LudumDare55
         [SerializeField] private List<Image> _queueImages;
         [SerializeField] private List<Image> _heartImages;
         [SerializeField] private List<Image> _strengthImages;
-
+        [SerializeField] private Image _aoeImage;
+        
         [Header("Icons")]
         [SerializeField] private Sprite _icoMove;
         [SerializeField] private Sprite _icoWait;
@@ -20,20 +21,34 @@ namespace LudumDare55
         private GameObject _queueParent => _queueImages[0].transform.parent.gameObject;
         private GameObject _heartParent => _heartImages[0].transform.parent.gameObject;
         private GameObject _strengthParent => _strengthImages[0].transform.parent.gameObject;
+        private GameObject _aoeParent => _aoeImage.transform.parent.gameObject;
 
         public void SetSummon(SummonData data)
         {
+            bool hasAoe = false;
+
             if (data == null)
             {
                 _queueParent.SetActive(false);
                 _heartParent.SetActive(false);
                 _strengthParent.SetActive(false);
+                _aoeParent.SetActive(false);
                 return;
             }
             
+                        
+            foreach (var i in data.ActionQueue)
+            {
+                if (i == BoardAction.AOEAttack)
+                    hasAoe = true;
+            }
+
+            _aoeParent.SetActive(hasAoe);
             _queueParent.SetActive(true);
             _heartParent.SetActive(true);
             _strengthParent.SetActive(data.Attack > 0);
+
+            _aoeImage.sprite = _aoeSprites[(int)data.AttackArea];
 
             for (int i = 0; i < _queueImages.Count; i++)
             {
