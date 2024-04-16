@@ -53,7 +53,7 @@ namespace LudumDare55
                 return;
             
             _childRect.DOAnchorPosY(0, 0.5f).SetEase(Ease.OutExpo);
-            _statsUi.SetSummon(_data);
+            _statsUi.SetSummon(Data);
         }
 
         public void OnPointerExit(PointerEventData eventData)
