@@ -255,8 +255,9 @@ namespace LudumDare55
             _summonsToKill.Clear();
             _turnsUntilPlayerPage -= 1;
             _turnsUntilOpponentPage -= 1;
-            if (_turnsUntilPlayerPage == 0) { SpawnPage(true); }
-            if (_turnsUntilOpponentPage == 0) { SpawnPage(false); }
+            Debug.Log("pPageTurns:" + _turnsUntilPlayerPage);
+            if (_turnsUntilPlayerPage <= 0) { SpawnPage(true); }
+            if (_turnsUntilOpponentPage <= 0) { SpawnPage(false); }
         }
 
         private void ResolveCollisions()
