@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace LudumDare55
 {
@@ -16,12 +17,15 @@ namespace LudumDare55
         [SerializeField] private RectTransform _titleScreen;
         [SerializeField] private RectTransform _opponentScreen;
         [SerializeField] private RectTransform _bookScreen;
+        [SerializeField] private RectTransform _readyScreen;
 
         [SerializeField] private List<OpponentSelectItem> _opps;
         [SerializeField] private List<BookSelectItem> _boops;
 
         [SerializeField] private TMP_Text _bookBlurb;
         [SerializeField] private List<SummonCard> _cards;
+        [SerializeField] private Image _oppImage;
+        [SerializeField] private TMP_Text _battleText;
         
         private int _opIdx;
         private int _bookIdx;
@@ -132,25 +136,56 @@ namespace LudumDare55
 
         private void ShowBookSelect()
         {
+            foreach (BookSelectItem itm in _boops)
+            {
+                itm.gameObject.SetActive(_selectedOpponent.ChosenBook != itm.BookData);
+            }
             _currentScreen = ScreenID.PickBook;
             _bookScreen.gameObject.SetActive(true);
             _opponentScreen.gameObject.SetActive(false);
-            
-            EventSystem.current.SetSelectedGameObject(_boops[_bookIdx].gameObject);
+            _readyScreen.gameObject.SetActive(false);
+            BlueBgGoBig();
+
+            if (_boops[_bookIdx].gameObject.activeSelf)
+            {
+                EventSystem.current.SetSelectedGameObject(_boops[_bookIdx].gameObject);
+            }
+            else
+            {
+                foreach (var itm in _boops)
+                {
+                    if (itm.gameObject.activeSelf)
+                    {
+                        EventSystem.current.SetSelectedGameObject(itm.gameObject);
+                        break;
+                    }
+                }
+            }
         }
 
         private void ShowConfirm()
         {
+            _oppImage.sprite = _selectedOpponent.sprite;
+            _battleText.text = $"{_selectedBook.Genre} <size=20>vs</size> {_selectedOpponent.ChosenBook.Genre}";
             _currentScreen = ScreenID.Confirm;
             _bookScreen.gameObject.SetActive(false);
-            BtnPressPlay();
-            // TODO swap with overlay instead
+            _readyScreen.gameObject.SetActive(true);
+            BlueBgGoSmall2();
         }
 
         private void BlueBgGoSmall(float time=0.5f)
         {
             DOTween.Kill(_bgBlue);
             _bgBlue.DOAnchorPosY(128, time).SetEase(Ease.OutExpo);
+            Vector2 sd = _bgBlue.sizeDelta;
+            sd.y = 180;
+            _bgBlue.DOSizeDelta(sd, time).SetEase(Ease.OutExpo);
+        }
+        
+        private void BlueBgGoSmall2(float time=0.5f)
+        {
+            DOTween.Kill(_bgBlue);
+            _bgBlue.DOAnchorPosY(0, time).SetEase(Ease.OutExpo);
             Vector2 sd = _bgBlue.sizeDelta;
             sd.y = 180;
             _bgBlue.DOSizeDelta(sd, time).SetEase(Ease.OutExpo);

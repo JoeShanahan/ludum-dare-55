@@ -13,7 +13,6 @@ namespace LudumDare55
         [SerializeField] private Image _icon;
         [SerializeField] private bool _isInMenuScene;
 
-        private SummonData _data;
         private RectTransform _childRect;
         private CardStatsUI _statsUi;
 
