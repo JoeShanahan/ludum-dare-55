@@ -13,7 +13,6 @@ namespace LudumDare55
         [SerializeField] private Image _icon;
         [SerializeField] private bool _isInMenuScene;
 
-        private SummonData _data;
         private RectTransform _childRect;
         private CardStatsUI _statsUi;
 
@@ -53,7 +52,7 @@ namespace LudumDare55
                 return;
             
             _childRect.DOAnchorPosY(0, 0.5f).SetEase(Ease.OutExpo);
-            _statsUi.SetSummon(_data);
+            _statsUi.SetSummon(Data);
         }
 
         public void OnPointerExit(PointerEventData eventData)
