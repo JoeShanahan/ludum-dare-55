@@ -71,7 +71,7 @@ MonoBehaviour:
     AttackArea: 5
     AoePrefab: {fileID: 6997704321720672169, guid: 597032b5cb8b3fa4ab4f89761ac09c9e, type: 3}
   - Name: The Resibelliance
-    Sprite: {fileID: 21300000, guid: 6a6083cc60a2d5747b3db357633808a3, type: 3}
+    Sprite: {fileID: 21300000, guid: 9d83709e1ce9d004b9bf1a38cca9f759, type: 3}
     Weight: 2
     DoesStartWith: 0
     HealthPoints: 1
