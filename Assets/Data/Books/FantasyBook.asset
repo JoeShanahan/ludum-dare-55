@@ -32,14 +32,14 @@ MonoBehaviour:
     Attack: 2
     Shield: 0
     Description: Technically a wyrm. Sometimes wishes it had legs.
-    ActionQueue: 0200000003000000
+    ActionQueue: 0100000003000000
     AttackArea: 5
     AoePrefab: {fileID: 6997704321720672169, guid: b409a32dec1d04b4d8c5e1bd0b45cbcc, type: 3}
   - Name: Brodvar the Dwarf
     Sprite: {fileID: 21300000, guid: 4d489933f5243c4459fc5894e4a31781, type: 3}
     Weight: 3
     DoesStartWith: 1
-    HealthPoints: 4
+    HealthPoints: 3
     Attack: 1
     Shield: 1
     Description: Stout and frequently full of stout.

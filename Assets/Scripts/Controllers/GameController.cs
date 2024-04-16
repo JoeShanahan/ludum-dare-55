@@ -105,6 +105,7 @@ namespace LudumDare55
             _input.Player.SkipMove.performed += OnSkipPressed;
             _input.Player.Menu.performed += OnMenuPressed;
 
+            _gameState.RestartMatch();
             _gameState.InitUI(PlayerHP, OpponentHP, WinBanner, LoseBanner);
             _gameState.InitHands();
             _cards.Refresh();

@@ -62,6 +62,11 @@ namespace LudumDare55
 
         }
 
+        public void RestartMatch()
+        {
+            InitGame(_playerBook, _player, _opponent);
+        }
+
         public void InitHands()
         {
             Debug.Log($"Populating player with {_playerBook.name}");
