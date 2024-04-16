@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SciFiBook
   m_EditorClassIdentifier: 
   BookName: Don't Create the Torment Nexus
-  Genre: SciFi
+  Genre: Science Fiction
   BookColor: {r: 0.23137255, g: 0.28627452, b: 0.33333334, a: 1}
   TitleColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
   GenreColor: {r: 0.99607843, g: 0.99607843, b: 0.99607843, a: 1}

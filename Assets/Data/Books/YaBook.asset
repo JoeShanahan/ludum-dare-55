@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: YaBook
   m_EditorClassIdentifier: 
   BookName: Defiance
-  Genre: Young Adult Dystopian
+  Genre: Young Adult
   BookColor: {r: 1, g: 0.39257425, b: 0, a: 1}
   TitleColor: {r: 0, g: 0, b: 0, a: 1}
   GenreColor: {r: 0, g: 0, b: 0, a: 1}
