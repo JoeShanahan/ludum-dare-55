@@ -7434,6 +7434,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9b86eaf35ccdf4038a7f13018fc78dab, type: 3}
   - {fileID: 21300000, guid: d397036e5f22d424db95f575c74dff7e, type: 3}
   _icoDoubleAttack: {fileID: 696247259, guid: 57af946e891324a53b12d9a7d791afb7, type: 3}
+
 --- !u!1 &1848573315
 GameObject:
   m_ObjectHideFlags: 0
