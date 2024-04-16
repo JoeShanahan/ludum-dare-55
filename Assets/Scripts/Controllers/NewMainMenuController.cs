@@ -75,10 +75,10 @@ namespace LudumDare55
 
         private void OnSubmitPressed(InputAction.CallbackContext ctx)
         {
-            /*if (_currentScreen == ScreenID.Confirm)
+            if (_currentScreen == ScreenID.Confirm)
             {
                 BtnPressPlay();
-            }*/
+            }
             StartCoroutine(DelayedSubmit());
         }
 
@@ -171,6 +171,7 @@ namespace LudumDare55
             _bookScreen.gameObject.SetActive(false);
             _readyScreen.gameObject.SetActive(true);
             BlueBgGoSmall2();
+
         }
 
         private void BlueBgGoSmall(float time=0.5f)
