@@ -99,6 +99,10 @@ namespace LudumDare55
                     _gameDone = true;
                     Debug.Log("Player win!"); /*DO win.*/
                     _winBan.gameObject.SetActive(true);
+                    
+                    string key = $"DebugHasBeaten{_opponent.PersonName}";
+                    PlayerPrefs.SetInt(key, 1);
+                    PlayerPrefs.Save();
                 }
             }
 
