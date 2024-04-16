@@ -15,6 +15,8 @@ namespace LudumDare55
         [SerializeField] private Sprite _icoWait;
         [SerializeField] private Sprite _icoAttack;
         [SerializeField] private Sprite[] _aoeSprites;
+        [SerializeField] private Sprite _icoDoubleAttack;
+
         
         private GameObject _queueParent => _queueImages[0].transform.parent.gameObject;
         private GameObject _heartParent => _heartImages[0].transform.parent.gameObject;
@@ -41,10 +43,17 @@ namespace LudumDare55
                 if (_queueImages[i].gameObject.activeSelf)
                     _queueImages[i].sprite = GetQueueSprite(data.ActionQueue[i]);
             }
-            
-            for (int i = 0; i < _heartImages.Count; i++)
+
+            if (data.Shield > 0)
             {
-                _heartImages[i].gameObject.SetActive(data.HealthPoints > i);
+                _heartImages[0].gameObject.SetActive(true);
+            } else
+            {
+                _heartImages[0].gameObject.SetActive(false);
+            }
+            for (int i = 1; i < _heartImages.Count; i++)
+            {
+                _heartImages[i].gameObject.SetActive(data.HealthPoints + 1 > i);
             }
             
             for (int i = 0; i < _strengthImages.Count; i++)
@@ -58,6 +67,7 @@ namespace LudumDare55
             return action switch
             {
                 BoardAction.Move => _icoMove,
+                BoardAction.DoubleMove => _icoDoubleAttack,
                 BoardAction.Wait => _icoWait,
                 BoardAction.AOEAttack => _icoAttack,
                 _ => null
