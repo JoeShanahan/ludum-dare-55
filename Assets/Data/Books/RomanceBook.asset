@@ -26,7 +26,7 @@ MonoBehaviour:
   - Name: Jilted lover
     Sprite: {fileID: 21300000, guid: 6a70aff9d0a1cbd4584b3e4ba2737c23, type: 3}
     Weight: 2
-    DoesStartWith: 0
+    DoesStartWith: 1
     HealthPoints: 1
     Attack: 3
     Shield: 0

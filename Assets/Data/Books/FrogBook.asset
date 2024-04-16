@@ -29,7 +29,7 @@ MonoBehaviour:
     HealthPoints: 2
     Attack: 1
     Shield: 0
-    Description: It may be common but that doesn't make it any less special
+    Description: It may be common but that doesn't make it any less special.
     ActionQueue: 01000000
     AttackArea: 0
     AoePrefab: {fileID: 0}

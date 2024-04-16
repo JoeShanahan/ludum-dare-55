@@ -62,8 +62,8 @@ MonoBehaviour:
     HealthPoints: 2
     Attack: 2
     Shield: 1
-    Description: A malpractise suit just waiting to happen on account of his doctorate
-      being in poetry. Dab hand with a scalpel though.
+    Description: A malpractise suit just waiting to happen due to his doctorate being
+      in poetry. Good with a scalpel though.
     ActionQueue: 01000000
     AttackArea: 0
     AoePrefab: {fileID: 0}

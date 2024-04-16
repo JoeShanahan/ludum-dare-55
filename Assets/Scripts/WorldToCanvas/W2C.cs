@@ -32,7 +32,11 @@ public abstract class W2C : MonoBehaviour
             return;
 
         Vector3 pos = _toFollow  ? _toFollow.position + _worldPosition : _worldPosition;
-        _trackRect.anchoredPosition = _camera.WorldToScreenPoint(pos)  / _canvas.scaleFactor;
+        try { _trackRect.anchoredPosition = _camera.WorldToScreenPoint(pos) / _canvas.scaleFactor; }
+        catch
+        {
+            Debug.Log("skill issue");
+        }
     }
 
     /// <summary> 

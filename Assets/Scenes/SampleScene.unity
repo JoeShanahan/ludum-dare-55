@@ -271,7 +271,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 40
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -1056,6 +1056,7 @@ MonoBehaviour:
   _topText: {fileID: 1587671335}
   _bottomText: {fileID: 666320195}
   _mask: {fileID: 192529449}
+  isStartFightBanner: 0
 --- !u!114 &192529449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5103,6 +5104,7 @@ MonoBehaviour:
   _topText: {fileID: 1764428388}
   _bottomText: {fileID: 2086448045}
   _mask: {fileID: 1266511624}
+  isStartFightBanner: 1
 --- !u!1 &1278460257
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,6 +5292,7 @@ MonoBehaviour:
   _topText: {fileID: 1167201254}
   _bottomText: {fileID: 1226182455}
   _mask: {fileID: 1340604413}
+  isStartFightBanner: 0
 --- !u!114 &1340604413
 MonoBehaviour:
   m_ObjectHideFlags: 0
